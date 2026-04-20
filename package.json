@@ -1,0 +1,16 @@
+{
+  "name": "aegis-monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Age of Empires 2 Build Order assistant – monorepo root",
+  "scripts": {
+    "dev": "pnpm --filter @aegis/web dev",
+    "build": "pnpm --filter @aegis/core build && pnpm --filter @aegis/web build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  }
+}

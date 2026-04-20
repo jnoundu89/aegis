@@ -1,0 +1,9 @@
+{
+  "name": "@aegis/data",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Static JSON data files for Aegis build orders",
+  "exports": {
+    "./fast_castle.json": "./src/fast_castle.json"
+  }
+}
