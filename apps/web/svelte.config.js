@@ -10,7 +10,11 @@ const config = {
 		// adapter-static is required for Tauri integration (serves from apps/web/build).
 		adapter: adapter({
 			fallback: 'index.html'
-		})
+		}),
+		paths: {
+			// Use /aegis base path in production (GitHub Pages), root in dev
+			base: process.argv.includes('dev') ? '' : '/aegis'
+		}
 	}
 };
 
