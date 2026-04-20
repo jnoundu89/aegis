@@ -1,87 +1,101 @@
 <script lang="ts">
-	import steps from '@aegis/data/fast_castle.json';
-	import { StateMachine } from '@aegis/core';
+	import { catalog } from '$lib/registry';
+	import { base } from '$app/paths';
 
-	const sm = new StateMachine(steps);
+	let selectedGameId = $state<string | null>(null);
 
-	let currentStep = $state(sm.currentStep);
-	let currentIndex = $state(sm.index);
+	const filteredBOs = $derived(
+		selectedGameId
+			? catalog.buildOrders.filter((bo) => bo.gameId === selectedGameId)
+			: catalog.buildOrders
+	);
 
-	function next() {
-		sm.next();
-		currentStep = sm.currentStep;
-		currentIndex = sm.index;
-	}
-
-	function prev() {
-		sm.prev();
-		currentStep = sm.currentStep;
-		currentIndex = sm.index;
+	function selectGame(id: string) {
+		selectedGameId = selectedGameId === id ? null : id;
 	}
 </script>
 
 <svelte:head>
-	<title>Aegis – Build Order Assistant</title>
+	<title>Aegis – Build Order Library</title>
 </svelte:head>
 
-<main class="min-h-screen bg-stone-900 text-stone-100 flex flex-col items-center justify-center p-6">
-	<h1 class="text-4xl font-bold tracking-tight mb-2">⚔️ Aegis</h1>
-	<p class="text-stone-400 mb-10 text-sm">Age of Empires II – Build Order Assistant</p>
+<main class="min-h-screen bg-stone-950 text-stone-100 flex flex-col items-center px-4 py-10 gap-10">
+	<!-- Header -->
+	<header class="text-center space-y-2">
+		<h1 class="text-5xl font-extrabold tracking-tight">⚔️ Aegis</h1>
+		<p class="text-stone-400 text-base">Build Order Library — select a strategy to begin</p>
+	</header>
 
-	<!-- Progress indicator -->
-	<p class="text-xs text-stone-500 mb-6 uppercase tracking-widest">
-		Step {currentIndex + 1} / {sm.totalSteps}
-	</p>
-
-	<!-- Step card -->
-	<div class="w-full max-w-lg bg-stone-800 rounded-2xl shadow-xl p-6 flex flex-col gap-4">
-		<div class="flex items-center gap-3">
-			<span class="bg-amber-500 text-stone-900 text-sm font-bold px-3 py-1 rounded-full">
-				#{currentStep.id}
-			</span>
-			<h2 class="text-xl font-semibold">{currentStep.label}</h2>
-		</div>
-
-		<p class="text-stone-300 leading-relaxed">{currentStep.description}</p>
-
-		{#if currentStep.notes}
-			<p class="text-sm text-amber-400 bg-amber-900/30 rounded-lg px-4 py-2">
-				💡 {currentStep.notes}
-			</p>
-		{/if}
-
-		<!-- Economy snapshot -->
-		<div class="grid grid-cols-5 gap-2 mt-2">
-			{#each [
-				{ label: '👥 Villagers', value: currentStep.villagerCount },
-				{ label: '🍖 Food', value: currentStep.food },
-				{ label: '🪵 Wood', value: currentStep.wood },
-				{ label: '🪙 Gold', value: currentStep.gold },
-				{ label: '🪨 Stone', value: currentStep.stone }
-			] as stat}
-				<div class="bg-stone-700 rounded-lg p-2 text-center">
-					<div class="text-xs text-stone-400">{stat.label}</div>
-					<div class="font-bold text-lg">{stat.value}</div>
-				</div>
+	<!-- Game filter pills -->
+	<section class="w-full max-w-2xl space-y-3">
+		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">Filter by Game</h2>
+		<div class="flex flex-wrap gap-3">
+			<button
+				onclick={() => (selectedGameId = null)}
+				class="px-4 py-2 rounded-full text-sm font-semibold transition-all
+					{selectedGameId === null
+					? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
+					: 'bg-stone-800 text-stone-300 hover:bg-stone-700'}"
+			>
+				All Games
+			</button>
+			{#each catalog.games as game}
+				<button
+					onclick={() => selectGame(game.id)}
+					class="px-4 py-2 rounded-full text-sm font-semibold transition-all
+						{selectedGameId === game.id
+						? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
+						: 'bg-stone-800 text-stone-300 hover:bg-stone-700'}"
+				>
+					{game.icon} {game.name}
+				</button>
 			{/each}
 		</div>
-	</div>
+	</section>
 
-	<!-- Navigation -->
-	<div class="flex gap-4 mt-8">
-		<button
-			onclick={prev}
-			disabled={!sm.hasPrev}
-			class="px-6 py-2 rounded-lg bg-stone-700 hover:bg-stone-600 disabled:opacity-30 disabled:cursor-not-allowed transition"
-		>
-			← Previous
-		</button>
-		<button
-			onclick={next}
-			disabled={!sm.hasNext}
-			class="px-6 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold disabled:opacity-30 disabled:cursor-not-allowed transition"
-		>
-			Next →
-		</button>
-	</div>
+	<!-- Build order grid -->
+	<section class="w-full max-w-2xl space-y-3">
+		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
+			{filteredBOs.length} Build Order{filteredBOs.length !== 1 ? 's' : ''}
+		</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+			{#each filteredBOs as bo (bo.id)}
+				{@const game = catalog.games.find((g) => g.id === bo.gameId)}
+				<a
+					href="{base}/{bo.gameId}/{bo.id}"
+					class="group bg-stone-900 border border-stone-800 hover:border-amber-500/60 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-lg hover:shadow-amber-500/10 active:scale-[0.98]"
+				>
+					<!-- Game badge -->
+					<span class="text-xs text-stone-500 font-medium">
+						{game?.icon ?? ''} {game?.name ?? bo.gameId}
+					</span>
+
+					<!-- Title -->
+					<h3 class="text-xl font-bold text-stone-100 group-hover:text-amber-400 transition-colors">
+						{bo.name}
+					</h3>
+
+					{#if bo.civilization}
+						<span class="text-sm text-amber-500 font-medium">{bo.civilization}</span>
+					{/if}
+
+					{#if bo.description}
+						<p class="text-sm text-stone-400 leading-relaxed line-clamp-2">{bo.description}</p>
+					{/if}
+
+					<!-- Tags -->
+					{#if bo.tags && bo.tags.length > 0}
+						<div class="flex flex-wrap gap-1 mt-auto">
+							{#each bo.tags as tag}
+								<span class="text-xs bg-stone-800 text-stone-400 px-2 py-0.5 rounded-full"
+									>{tag}</span
+								>
+							{/each}
+						</div>
+					{/if}
+				</a>
+			{/each}
+		</div>
+	</section>
 </main>
+

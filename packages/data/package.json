@@ -4,6 +4,9 @@
   "private": true,
   "description": "Static JSON data files for Aegis build orders",
   "exports": {
-    "./fast_castle.json": "./src/fast_castle.json"
+    "./catalog.json": "./src/catalog.json",
+    "./fast_castle.json": "./src/fast_castle.json",
+    "./aoe2/fast_castle.json": "./src/aoe2/fast_castle.json",
+    "./aom/zeus_rush.json": "./src/aom/zeus_rush.json"
   }
 }

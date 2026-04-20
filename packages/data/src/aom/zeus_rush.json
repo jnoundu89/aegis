@@ -1,0 +1,86 @@
+{
+  "id": "zeus_rush",
+  "gameId": "aom",
+  "name": "Zeus Rush",
+  "civilization": "Greek (Zeus)",
+  "description": "Leverage Zeus' passive favor generation and Bolt divine power for an early attack.",
+  "steps": [
+    {
+      "id": 1,
+      "label": "3 Villagers on Food",
+      "description": "Send your 3 starting villagers onto the nearest herd of animals or berry bushes.",
+      "villagerCount": 3,
+      "food": 150,
+      "wood": 0,
+      "gold": 0,
+      "favor": 0,
+      "notes": "Zeus worshippers generate favor passively — no Temple needed in the early game."
+    },
+    {
+      "id": 2,
+      "label": "2 Villagers on Wood",
+      "description": "Queue 2 more villagers. Task both on the nearest trees when they pop.",
+      "villagerCount": 5,
+      "food": 200,
+      "wood": 75,
+      "gold": 0,
+      "favor": 5,
+      "notes": "Wood is critical for houses and a future Temple of Zeus."
+    },
+    {
+      "id": 3,
+      "label": "Build House & 2 more Food Villagers",
+      "description": "Build 1 House to raise your population cap, then queue 2 food villagers.",
+      "villagerCount": 7,
+      "food": 250,
+      "wood": 50,
+      "gold": 0,
+      "favor": 10,
+      "notes": "Each house gives +10 pop. Keep building houses proactively."
+    },
+    {
+      "id": 4,
+      "label": "Research Hunting Dogs",
+      "description": "Research Hunting Dogs at your Town Center to speed up food gathering.",
+      "villagerCount": 9,
+      "food": 100,
+      "wood": 100,
+      "gold": 0,
+      "favor": 15,
+      "notes": "Hunting Dogs costs 100 food and dramatically increases hunt gather rate."
+    },
+    {
+      "id": 5,
+      "label": "Advance to Heroic Age – Ares",
+      "description": "With 9–10 villagers and enough resources, click Classical Age, choosing Ares as your minor god.",
+      "villagerCount": 10,
+      "food": 400,
+      "wood": 0,
+      "gold": 0,
+      "favor": 25,
+      "notes": "Ares provides Pestilence to weaken enemy eco and the powerful Cyclops myth unit."
+    },
+    {
+      "id": 6,
+      "label": "Produce Hoplites & Use Bolt",
+      "description": "Build a Military Academy and train Hoplites. Fire Zeus' Bolt divine power at an enemy building.",
+      "villagerCount": 12,
+      "food": 200,
+      "wood": 100,
+      "gold": 100,
+      "favor": 20,
+      "notes": "Bolt deals 600 damage to any unit or building — use it on the Town Center for maximum disruption."
+    },
+    {
+      "id": 7,
+      "label": "Push with Hoplites + Myth Unit",
+      "description": "Combine Hoplites with a Cyclops myth unit and push the enemy base. Use Pestilence on key resource gatherers.",
+      "villagerCount": 14,
+      "food": 100,
+      "wood": 50,
+      "gold": 150,
+      "favor": 30,
+      "notes": "Hoplites deal bonus damage to myth units — mix with Cyclops to counter enemy armies."
+    }
+  ]
+}
