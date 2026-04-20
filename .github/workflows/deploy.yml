@@ -35,8 +35,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build web app
-        run: pnpm --filter web build
+      - name: Build packages + web app
+        run: pnpm -r --filter @aegis/web... build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
