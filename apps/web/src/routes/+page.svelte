@@ -21,9 +21,15 @@
 
 <main class="min-h-screen bg-stone-950 text-stone-100 flex flex-col items-center px-4 py-10 gap-10">
 	<!-- Header -->
-	<header class="text-center space-y-2">
+	<header class="text-center space-y-4">
 		<h1 class="text-5xl font-extrabold tracking-tight">⚔️ Aegis</h1>
 		<p class="text-stone-400 text-base">Build Order Library — select a strategy to begin</p>
+		<a
+			href="{base}/builder"
+			class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 active:bg-amber-300 text-stone-950 font-bold text-sm shadow-lg shadow-amber-500/30 transition-all"
+		>
+			⚒️ Créer un Build Order
+		</a>
 	</header>
 
 	<!-- Game filter pills -->
