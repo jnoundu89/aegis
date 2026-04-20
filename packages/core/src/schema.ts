@@ -40,6 +40,14 @@ export const buildOrderSchema = z.object({
   name: z.string().min(1, 'Le nom est requis'),
   civilization: z.string().optional(),
   description: z.string().optional(),
+  strategy_notes: z
+    .array(
+      z.object({
+        phase: z.string().min(1),
+        notes: z.array(z.string().min(1)).min(1),
+      })
+    )
+    .optional(),
   steps: z.array(stepSchema).min(1, 'Au moins une étape est requise'),
 });
 

@@ -1,0 +1,240 @@
+{
+  "id": "fast_archer_hera",
+  "gameId": "aoe2",
+  "name": "19 Vils 1-Range Archers",
+  "civilization": "Britons, Mayans, Ethiopians, Tatars, Vikings",
+  "description": "The objective of this build is to go up rather quickly and start massing archers right away. We commit to just 1 range because we value the faster Fletching more than the second range and more army. This allows for a faster Castle time, or transition into scouts as a response to our opponent having a lot of skirms. This build is best executed with a civilization that has both Arbalest and Bracer because that is what we are scaling into.",
+  "strategy_notes": [
+    {
+      "phase": "LATE FEUDAL",
+      "notes": [
+        "The goal from here is to get up to Castle Age with a healthy mass of 10-15 archers and simply get Crossbowman/Bodkin.",
+        "However, if your opponent is attacking you with many skirms and your walls aren't up yet, you can add a stable and use a few scouts to defend alongside your archers.",
+        "When you click up to Castle Age, you can add another production building (either a 2nd range or a stable)."
+      ]
+    },
+    {
+      "phase": "CASTLE AGE",
+      "notes": [
+        "When you get to Castle Age you have a ton of options, you start by getting Bow Saw/Bodkin/Crossbowman.",
+        "Then you can either add TCs for your economy, or invest more into military by adding a monastery/university/siege workshop.",
+        "The choices are many and depend a lot on your personal style, on the civ matchup, and on the position in the game. Try to be flexible and really consider your options to find the best approach."
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "label": "Début de partie",
+      "description": "Envoyer 6 villageois sur les moutons.",
+      "villagerCount": 6,
+      "food": 6,
+      "wood": 0,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 2,
+      "label": "Création Vills 7 à 9",
+      "description": "Envoyer 3 villageois au bois.",
+      "villagerCount": 9,
+      "food": 6,
+      "wood": 3,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 3,
+      "label": "Création Vill 10",
+      "description": "Envoyer 1 villageois attirer le sanglier.",
+      "villagerCount": 10,
+      "food": 7,
+      "wood": 3,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 4,
+      "label": "Création Vill 11",
+      "description": "Envoyer 1 villageois construire une maison puis un moulin sur les baies.",
+      "villagerCount": 11,
+      "food": 8,
+      "wood": 3,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 5,
+      "label": "Exploration",
+      "description": "[Recommandé] Attirer les cerfs avec le scout une fois les moutons trouvés.",
+      "villagerCount": 11,
+      "food": 8,
+      "wood": 3,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 6,
+      "label": "Création Vills 12 à 17",
+      "description": "Les 6 prochains villageois sur la chasse sous le Forum (prendre le deuxième sanglier pendant ce temps).",
+      "villagerCount": 17,
+      "food": 14,
+      "wood": 3,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 7,
+      "label": "Création Vills 18 à 19",
+      "description": "Envoyer 2 villageois au bois.",
+      "villagerCount": 19,
+      "food": 14,
+      "wood": 5,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 8,
+      "label": "Pop 19",
+      "description": "Rechercher le Métier à tisser (Loom).",
+      "villagerCount": 19,
+      "food": 14,
+      "wood": 5,
+      "gold": 0,
+      "stone": 0,
+      "notes": "N'oubliez pas de rechercher Loom avant de cliquer l'Âge Féodal."
+    },
+    {
+      "id": 9,
+      "label": "Fin Métier à tisser",
+      "description": "Cliquer l'Âge Féodal (temps d'arrivée idéal : 9:15).",
+      "villagerCount": 19,
+      "food": 14,
+      "wood": 5,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 10,
+      "label": "Transition Féodal (Bois)",
+      "description": "Déplacer 5 villageois du Forum pour construire un Camp de Bûcherons sur une deuxième ligne de bois.",
+      "villagerCount": 19,
+      "food": 9,
+      "wood": 10,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 11,
+      "label": "Transition Féodal (Stragglers)",
+      "description": "Déplacer 2 villageois du Forum vers les arbres isolés (stragglers).",
+      "villagerCount": 19,
+      "food": 7,
+      "wood": 12,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 12,
+      "label": "Transition Féodal (Caserne)",
+      "description": "Déplacer 1 villageois du Forum : construire Maison > Caserne > retour à la nourriture.",
+      "villagerCount": 19,
+      "food": 7,
+      "wood": 12,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 13,
+      "label": "Transition Féodal (Or)",
+      "description": "Déplacer 2 villageois du Forum pour construire un Camp de Mineurs sur l'or.",
+      "villagerCount": 19,
+      "food": 5,
+      "wood": 12,
+      "gold": 2,
+      "stone": 0
+    },
+    {
+      "id": 14,
+      "label": "Arrivée Âge Féodal (Double-Bit Axe)",
+      "description": "Rechercher la Hache à double tranchant (Double-Bit Axe). Ignorer le Collier de cheval pour l'instant.",
+      "villagerCount": 19,
+      "food": 5,
+      "wood": 12,
+      "gold": 2,
+      "stone": 0
+    },
+    {
+      "id": 15,
+      "label": "Arrivée Âge Féodal (Range)",
+      "description": "Construire un Camp à l'arc (Range) et produire des archers en continu.",
+      "villagerCount": 19,
+      "food": 5,
+      "wood": 12,
+      "gold": 2,
+      "stone": 0
+    },
+    {
+      "id": 16,
+      "label": "Création Vills 20 à 21",
+      "description": "Envoyer 2 nouveaux villageois à l'or.",
+      "villagerCount": 21,
+      "food": 5,
+      "wood": 12,
+      "gold": 4,
+      "stone": 0
+    },
+    {
+      "id": 17,
+      "label": "Dès que possible (Fletching)",
+      "description": "Construire une Forge et rechercher Empennage (Fletching) dès que possible.",
+      "villagerCount": 21,
+      "food": 5,
+      "wood": 12,
+      "gold": 4,
+      "stone": 0,
+      "notes": "Fletching est la priorité absolue — ne pas retarder pour une 2ème Range."
+    },
+    {
+      "id": 18,
+      "label": "Optionnel (Défense)",
+      "description": "Créer 1 à 4 lanciers si vous craignez des scouts ennemis.",
+      "villagerCount": 21,
+      "food": 5,
+      "wood": 12,
+      "gold": 4,
+      "stone": 0
+    },
+    {
+      "id": 19,
+      "label": "Ajustement éco (Baies)",
+      "description": "Déplacer 4 villageois supplémentaires du Forum vers les baies (5 au total sur les baies).",
+      "villagerCount": 21,
+      "food": 5,
+      "wood": 12,
+      "gold": 4,
+      "stone": 0
+    },
+    {
+      "id": 20,
+      "label": "Ajustement éco (Fermes)",
+      "description": "Commencer à construire des fermes dès que le bois le permet.",
+      "villagerCount": 21,
+      "food": 5,
+      "wood": 12,
+      "gold": 4,
+      "stone": 0
+    },
+    {
+      "id": 21,
+      "label": "Murs défensifs",
+      "description": "Commencer à faire des murs avec 2-3 villageois (mixte maisons/palissades).",
+      "villagerCount": 21,
+      "food": 5,
+      "wood": 12,
+      "gold": 4,
+      "stone": 0,
+      "notes": "Montez en Âge Château dès que vous avez 10-15 archers et Fletching."
+    }
+  ]
+}

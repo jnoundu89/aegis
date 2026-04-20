@@ -23,6 +23,24 @@
       "tags": ["eco", "castle", "beginner"]
     },
     {
+      "id": "fast_archer_hera",
+      "gameId": "aoe2",
+      "name": "19 Vils 1-Range Archers",
+      "author": "Hera",
+      "civilization": "Britons, Mayans, Ethiopians, Tatars, Vikings",
+      "description": "Go up quickly to Feudal and mass archers from a single range, prioritising Fletching for a faster Castle Age.",
+      "tags": ["Archers", "Feudal Age", "Rush", "1-Range", "Advanced"]
+    },
+    {
+      "id": "fast_archer_capoch",
+      "gameId": "aoe2",
+      "name": "Fast Archer Opening",
+      "author": "Capoch",
+      "civilization": "Britons, Ethiopians, Mayans, Malay, Saracens, Vietnamese",
+      "description": "Solid archer opening for wallable land maps. Hit Feudal at 7:30 and punish opponents who fail to fully wall.",
+      "tags": ["Archers", "Feudal Age", "Rush", "Flank", "Intermediate"]
+    },
+    {
       "id": "zeus_rush",
       "gameId": "aom",
       "name": "Zeus Rush",

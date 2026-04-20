@@ -35,6 +35,8 @@ export interface CatalogEntry {
   description?: string;
   /** Searchable tags, e.g. ["eco", "castle"] */
   tags?: string[];
+  /** Author or content creator of the build order */
+  author?: string;
 }
 
 /**
@@ -85,6 +87,16 @@ export interface Step {
 }
 
 /**
+ * A single phase in the strategy notes, grouping tips by game phase.
+ */
+export interface StrategyPhase {
+  /** Phase label, e.g. "LATE FEUDAL" or "CASTLE AGE" */
+  phase: string;
+  /** Ordered list of notes for this phase */
+  notes: string[];
+}
+
+/**
  * A complete build order, consisting of an ordered list of steps.
  */
 export interface BuildOrder {
@@ -98,6 +110,8 @@ export interface BuildOrder {
   civilization?: string;
   /** Short description of the strategy */
   description?: string;
+  /** Strategic notes grouped by game phase (late feudal, castle age, etc.) */
+  strategy_notes?: StrategyPhase[];
   /** Ordered list of steps */
   steps: Step[];
 }
