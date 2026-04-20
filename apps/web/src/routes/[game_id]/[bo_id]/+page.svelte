@@ -63,8 +63,8 @@
 	// Register a Tauri event listener for the global F9 shortcut (desktop only)
 	onMount(() => {
 		if (typeof window === 'undefined' || !('__TAURI__' in window)) return;
-		const unlistenPromise = listen('aegis-next-step', () => next());
-		return () => { unlistenPromise.then(fn => fn()); };
+		const unlistenPromise = listen('aegis-next-step', () => next()).catch(() => undefined);
+		return () => { unlistenPromise.then(fn => fn?.()); };
 	});
 </script>
 
