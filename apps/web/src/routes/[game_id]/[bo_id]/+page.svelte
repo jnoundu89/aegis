@@ -13,6 +13,7 @@
 
 	let stepIndex = $state(0);
 	let animating = $state(false);
+	let strategyNotesOpen = $state(false);
 
 	const currentStep = $derived(steps[stepIndex]);
 	const hasPrev = $derived(stepIndex > 0);
@@ -59,6 +60,7 @@
 
 	function next() { move('next'); }
 	function prev() { move('prev'); }
+	function toggleStrategyNotes() { strategyNotesOpen = !strategyNotesOpen; }
 
 	// Register a Tauri event listener for the global F9 shortcut (desktop only)
 	onMount(() => {
@@ -88,7 +90,7 @@
 			class="mt-1 text-stone-500 hover:text-amber-400 transition-colors text-lg leading-none"
 			aria-label="Back to library"
 		>←</a>
-		<div>
+		<div class="flex-1 min-w-0">
 			<p class="text-xs text-stone-500 uppercase tracking-widest font-semibold">
 				{game?.icon ?? ''} {game?.name ?? data.buildOrder.gameId}
 				{#if data.buildOrder.civilization}
@@ -96,13 +98,54 @@
 				{/if}
 			</p>
 			<h1 class="text-2xl font-extrabold tracking-tight">{data.buildOrder.name}</h1>
+			{#if data.buildOrder.description}
+				<p class="mt-1 text-sm text-stone-400 italic leading-relaxed">{data.buildOrder.description}</p>
+			{/if}
 		</div>
 	</header>
+
+	<!-- Strategy Notes collapsible panel -->
+	{#if data.buildOrder.strategy_notes && data.buildOrder.strategy_notes.length > 0}
+		<div class="w-full max-w-lg">
+			<button
+			onclick={toggleStrategyNotes}
+				class="w-full flex items-center justify-between px-4 py-3 rounded-xl
+					bg-stone-800 border border-stone-700 hover:border-amber-600/60
+					hover:bg-stone-700 active:bg-stone-600 transition-all duration-150
+					text-sm font-semibold text-stone-200"
+				aria-expanded={strategyNotesOpen}
+			>
+				<span class="flex items-center gap-2">
+					<span>📋</span>
+					<span>Notes Stratégiques</span>
+				</span>
+				<span class="text-stone-400 text-xs transition-transform duration-200 {strategyNotesOpen ? 'rotate-180' : ''}">▼</span>
+			</button>
+
+			{#if strategyNotesOpen}
+				<div class="mt-2 rounded-xl bg-stone-900 border border-stone-700 divide-y divide-stone-800 overflow-hidden">
+					{#each data.buildOrder.strategy_notes as phase}
+						<div class="px-4 py-3">
+							<h3 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">{phase.phase}</h3>
+							<ul class="space-y-1.5">
+								{#each phase.notes as note}
+									<li class="text-sm text-stone-300 leading-relaxed flex gap-2">
+										<span class="text-stone-600 shrink-0 mt-0.5">•</span>
+										<span>{note}</span>
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/each}
+				</div>
+			{/if}
+		</div>
+	{/if}
 
 	<!-- Progress bar -->
 	<div class="w-full max-w-lg space-y-1">
 		<div class="flex justify-between text-xs text-stone-500 font-mono">
-			<span>STEP</span>
+			<span>ÉTAPE</span>
 			<span>{stepIndex + 1} / {totalSteps}</span>
 		</div>
 		<div class="h-1.5 w-full bg-stone-800 rounded-full overflow-hidden">
@@ -162,7 +205,7 @@
 				disabled:opacity-25 disabled:cursor-not-allowed
 				transition-all duration-150 shadow-md"
 		>
-			← Previous
+			← Précédent
 		</button>
 		<button
 			onclick={next}
@@ -172,13 +215,12 @@
 				disabled:opacity-25 disabled:cursor-not-allowed
 				transition-all duration-150 shadow-lg shadow-amber-500/30"
 		>
-			Next →
+			Suivant →
 		</button>
 	</nav>
 
 	<!-- Keyboard hint -->
 	<p class="text-xs text-stone-600">
-		← → arrow keys or <kbd class="bg-stone-800 px-1.5 py-0.5 rounded text-stone-400">F9</kbd> to navigate
+		← → touches fléchées ou <kbd class="bg-stone-800 px-1.5 py-0.5 rounded text-stone-400">F9</kbd> pour naviguer
 	</p>
 </main>
-

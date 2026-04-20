@@ -1,0 +1,141 @@
+{
+  "id": "fast_archer_capoch",
+  "gameId": "aoe2",
+  "name": "Fast Archer Opening",
+  "civilization": "Britons, Ethiopians, Mayans, Malay, Saracens, Vietnamese",
+  "description": "In generated land maps that you can wall easily, this is a good opening, especially if your opponent doesn't fully wall so you can do some damage early on. Best civs for this opening are archer civs such as Britons, Ethiopians, Mayans, Malay, Saracens, Vietnamese, and any civilization that has a good ranged tech tree.",
+  "strategy_notes": [
+    {
+      "phase": "FEUDAL AGE",
+      "notes": [
+        "As soon as you hit Feudal Age, you should get wood upgrade and 1 or 2 ranges (depending if your opponent is already fully walled or not). If he's fully walled, open 1 range, get horse collar and start walling yourself.",
+        "If he's still open, go for 2 ranges (delay horse collar for late feudal or while upping to castle) and make a blacksmith for fletching. Start walling slowly with palisades/houses.",
+        "While researching fletching or when you just got it, move out with archers and look for opponent's weak spots.",
+        "Keep farming a lot (probably have 14-16 farms before upping), and once you have around 400-500 food, at around 17 minutes into the game and unless the enemy comes forward and the game gets messy, you should get wheelbarrow.",
+        "After that, try to click up to Castle Age as soon as you can. You should have around 8 villagers on gold to support double range and future Castle Age upgrades. While upping, make gold upgrade and archer armor."
+      ]
+    },
+    {
+      "phase": "CASTLE AGE",
+      "notes": [
+        "As soon as you hit Castle Age, you must get crossbow upgrade, bodkin arrow and bow saw.",
+        "Next most common thing while harassing with crossbow is setting a good eco with 2 or 3 TCs and then doing what suits the game and your play style (ballistics, siege, monks, etc).",
+        "With this opening, fast ballistics is really good if you feel that there's going to be a fight in early castle or if you think you can do some damage, so doing fast university even before the new TCs can be a good thing."
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "label": "Début de partie",
+      "description": "6 villageois sur les moutons.",
+      "villagerCount": 6,
+      "food": 6,
+      "wood": 0,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 2,
+      "label": "Création Vills 7 à 10",
+      "description": "4 villageois au bois.",
+      "villagerCount": 10,
+      "food": 6,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 3,
+      "label": "Création Vill 11",
+      "description": "1 villageois attire le premier sanglier.",
+      "villagerCount": 11,
+      "food": 7,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 4,
+      "label": "Création Vill 12",
+      "description": "1 villageois construit une maison puis un moulin sur les baies.",
+      "villagerCount": 12,
+      "food": 8,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 5,
+      "label": "Création Vills 13 à 14",
+      "description": "2 villageois supplémentaires sur les baies.",
+      "villagerCount": 14,
+      "food": 10,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 6,
+      "label": "Création Vill 15",
+      "description": "1 villageois attire le deuxième sanglier.",
+      "villagerCount": 15,
+      "food": 11,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 7,
+      "label": "Création Vill 16",
+      "description": "1 villageois supplémentaire sur les baies.",
+      "villagerCount": 16,
+      "food": 12,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 8,
+      "label": "Création Vills 17 à 18",
+      "description": "2 villageois à la nourriture sous le Forum. L'un d'eux doit construire une maison.",
+      "villagerCount": 18,
+      "food": 14,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 9,
+      "label": "Création Vills 19 à 20",
+      "description": "2 villageois au bois (construire un 2ème Camp de Bûcherons). Déplacer également 1 villageois de la nourriture vers le bois (pour avoir 7 au bois au total).",
+      "villagerCount": 20,
+      "food": 13,
+      "wood": 7,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 10,
+      "label": "Pop 21 — Loom & Féodal",
+      "description": "Rechercher le Métier à tisser (Loom) et cliquer vers l'Âge Féodal (Temps visé : 07:30).",
+      "villagerCount": 20,
+      "food": 13,
+      "wood": 7,
+      "gold": 0,
+      "stone": 0,
+      "notes": "Le compteur de population inclut le scout. Objectif : Féodal à 7:30."
+    },
+    {
+      "id": 11,
+      "label": "Transition Féodal",
+      "description": "Déplacer 3 villageois des moutons vers l'or, construire une Caserne. Déplacer 2 villageois des moutons et 3 des baies vers le bois.",
+      "villagerCount": 20,
+      "food": 5,
+      "wood": 12,
+      "gold": 3,
+      "stone": 0,
+      "notes": "Construire Range(s) et Forge. Rechercher Fletching en priorité."
+    }
+  ]
+}

@@ -7,6 +7,8 @@
     "./catalog.json": "./src/catalog.json",
     "./fast_castle.json": "./src/fast_castle.json",
     "./aoe2/fast_castle.json": "./src/aoe2/fast_castle.json",
+    "./aoe2/fast_archer_hera.json": "./src/aoe2/fast_archer_hera.json",
+    "./aoe2/fast_archer_capoch.json": "./src/aoe2/fast_archer_capoch.json",
     "./aom/zeus_rush.json": "./src/aom/zeus_rush.json"
   }
 }
