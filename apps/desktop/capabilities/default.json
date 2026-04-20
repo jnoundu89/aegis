@@ -1,0 +1,9 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema/acl-schema.json",
+  "identifier": "default",
+  "description": "Default capability set for the Aegis desktop app.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default"
+  ]
+}
