@@ -28,11 +28,10 @@ function createCustomBuildsStore() {
 		/** Save a build order to the custom builds list. */
 		save(bo: BuildOrder): void {
 			update((builds) => {
-				// Replace if same id already exists, otherwise append
-				const exists = builds.some((b) => b.id === bo.id);
-				const updated = exists
-					? builds.map((b) => (b.id === bo.id ? bo : b))
-					: [...builds, bo];
+				const idx = builds.findIndex((b) => b.id === bo.id);
+				const updated = idx === -1
+					? [...builds, bo]
+					: builds.map((b, i) => (i === idx ? bo : b));
 				if (typeof localStorage !== 'undefined') {
 					localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
 				}

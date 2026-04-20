@@ -4,6 +4,7 @@
 	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { listen } from '@tauri-apps/api/event';
+	import { TTS_LANG } from '$lib/config';
 
 	let { data } = $props();
 
@@ -40,7 +41,7 @@
 		if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
 		window.speechSynthesis.cancel();
 		const utterance = new SpeechSynthesisUtterance(text);
-		utterance.lang = 'fr-FR';
+		utterance.lang = TTS_LANG;
 		utterance.rate = 1.0;
 		window.speechSynthesis.speak(utterance);
 	}
