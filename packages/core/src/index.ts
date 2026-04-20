@@ -190,3 +190,5 @@ export class StateMachine {
     this._index = 0;
   }
 }
+
+export * from './schema.js';
