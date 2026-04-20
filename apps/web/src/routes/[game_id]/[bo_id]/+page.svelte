@@ -40,7 +40,7 @@
 		if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
 		window.speechSynthesis.cancel();
 		const utterance = new SpeechSynthesisUtterance(text);
-		utterance.lang = 'en-US';
+		utterance.lang = 'fr-FR';
 		utterance.rate = 1.0;
 		window.speechSynthesis.speak(utterance);
 	}
