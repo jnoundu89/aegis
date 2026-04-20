@@ -28,7 +28,7 @@
 	function handleShare() {
 		if (!isValid) return;
 		const compressed = compressToEncodedURIComponent(JSON.stringify(buildOrder));
-		shareUrl = `${window.location.origin}${base}/builder?bo=${compressed}`;
+		shareUrl = `${window.location.origin}${base}/share?data=${compressed}`;
 	}
 
 	onMount(() => {
