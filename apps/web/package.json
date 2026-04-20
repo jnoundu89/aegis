@@ -15,7 +15,8 @@
 	},
 	"dependencies": {
 		"@aegis/core": "workspace:*",
-		"@aegis/data": "workspace:*"
+		"@aegis/data": "workspace:*",
+		"@tauri-apps/api": "^2"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.8",

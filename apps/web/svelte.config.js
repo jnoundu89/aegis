@@ -12,8 +12,8 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			// Use /aegis base path in production (GitHub Pages), root in dev
-			base: process.argv.includes('dev') ? '' : '/aegis'
+			// Use /aegis base path in production (GitHub Pages), root in dev or Tauri builds
+			base: process.argv.includes('dev') ? '' : (process.env.TAURI_BUILD ? '' : '/aegis')
 		}
 	}
 };

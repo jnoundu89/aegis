@@ -2,6 +2,8 @@
 	import type { Step, ResourceKey } from '@aegis/core';
 	import { catalog } from '$lib/registry';
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
+	import { listen } from '@tauri-apps/api/event';
 
 	let { data } = $props();
 
@@ -57,6 +59,13 @@
 
 	function next() { move('next'); }
 	function prev() { move('prev'); }
+
+	// Register a Tauri event listener for the global F9 shortcut (desktop only)
+	onMount(() => {
+		if (typeof window === 'undefined' || !('__TAURI__' in window)) return;
+		const unlistenPromise = listen('aegis-next-step', () => next()).catch(() => undefined);
+		return () => { unlistenPromise.then(fn => fn?.()); };
+	});
 </script>
 
 <svelte:head>
