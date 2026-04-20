@@ -60,6 +60,7 @@
 
 	function next() { move('next'); }
 	function prev() { move('prev'); }
+	function toggleStrategyNotes() { strategyNotesOpen = !strategyNotesOpen; }
 
 	// Register a Tauri event listener for the global F9 shortcut (desktop only)
 	onMount(() => {
@@ -107,7 +108,7 @@
 	{#if data.buildOrder.strategy_notes && data.buildOrder.strategy_notes.length > 0}
 		<div class="w-full max-w-lg">
 			<button
-				onclick={() => { strategyNotesOpen = !strategyNotesOpen; }}
+			onclick={toggleStrategyNotes}
 				class="w-full flex items-center justify-between px-4 py-3 rounded-xl
 					bg-stone-800 border border-stone-700 hover:border-amber-600/60
 					hover:bg-stone-700 active:bg-stone-600 transition-all duration-150
