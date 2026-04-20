@@ -1,0 +1,86 @@
+{
+  "id": "fast_castle",
+  "gameId": "aoe2",
+  "name": "Fast Castle",
+  "civilization": "Any",
+  "description": "Rush to Castle Age with ~21 villagers, skipping military investment in Feudal Age.",
+  "steps": [
+    {
+      "id": 1,
+      "label": "6 Sheep",
+      "description": "Send your 3 starting villagers to the 6 sheep near your Town Center.",
+      "villagerCount": 3,
+      "food": 200,
+      "wood": 0,
+      "gold": 0,
+      "stone": 0,
+      "notes": "Keep sheep under the Town Center to avoid scout attacks."
+    },
+    {
+      "id": 2,
+      "label": "3 Wood",
+      "description": "Queue 3 more villagers and send the next 3 to the nearest wood line.",
+      "villagerCount": 6,
+      "food": 200,
+      "wood": 50,
+      "gold": 0,
+      "stone": 0,
+      "notes": "Lure the boar as soon as you have 8 villagers."
+    },
+    {
+      "id": 3,
+      "label": "1 Boar",
+      "description": "Lure the first boar with a villager and task 3–4 villagers on it.",
+      "villagerCount": 10,
+      "food": 400,
+      "wood": 100,
+      "gold": 0,
+      "stone": 0,
+      "notes": "Pull 1 sheep villager onto the boar to speed up food collection."
+    },
+    {
+      "id": 4,
+      "label": "Build Barracks & 2nd Boar",
+      "description": "Build a Barracks with a wood villager, then lure the 2nd boar.",
+      "villagerCount": 14,
+      "food": 500,
+      "wood": 175,
+      "gold": 0,
+      "stone": 0,
+      "notes": "The Barracks is required to advance to Feudal Age."
+    },
+    {
+      "id": 5,
+      "label": "Advance to Feudal Age",
+      "description": "With 14–15 villagers, click Feudal Age and task 2 villagers to build a Lumber Camp.",
+      "villagerCount": 15,
+      "food": 500,
+      "wood": 250,
+      "gold": 0,
+      "stone": 0,
+      "notes": "Feudal Age costs 500 food."
+    },
+    {
+      "id": 6,
+      "label": "Build Blacksmith & Market",
+      "description": "In Feudal Age, build a Blacksmith and Market to unlock Castle Age.",
+      "villagerCount": 17,
+      "food": 800,
+      "wood": 200,
+      "gold": 100,
+      "stone": 0,
+      "notes": "Castle Age costs 800 food and 200 gold."
+    },
+    {
+      "id": 7,
+      "label": "Advance to Castle Age",
+      "description": "Click Castle Age with ~21 villagers.",
+      "villagerCount": 21,
+      "food": 800,
+      "wood": 300,
+      "gold": 200,
+      "stone": 0,
+      "notes": "You have reached the Fast Castle! Build a Castle or boom from here."
+    }
+  ]
+}

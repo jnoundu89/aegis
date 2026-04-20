@@ -1,4 +1,51 @@
 /**
+ * Resource keys that can appear in a build-order step.
+ * Not all games use all resources (e.g. AoM uses "favor" instead of "stone").
+ */
+export type ResourceKey = 'food' | 'wood' | 'gold' | 'stone' | 'favor';
+
+/**
+ * Game engine configuration – defines which resources are relevant.
+ */
+export interface GameConfig {
+  /** Unique slug, e.g. "aoe2", "aom", "aoe4" */
+  id: string;
+  /** Display name, e.g. "Age of Empires II" */
+  name: string;
+  /** Emoji icon for quick visual identification */
+  icon: string;
+  /** Ordered list of resource keys shown for this game */
+  resources: ResourceKey[];
+}
+
+/**
+ * Lightweight metadata entry stored in catalog.json.
+ * Does NOT include the steps array – build order data is loaded on demand.
+ */
+export interface CatalogEntry {
+  /** Slug that maps to the JSON file name, e.g. "fast_castle" */
+  id: string;
+  /** Parent game slug */
+  gameId: string;
+  /** Display name */
+  name: string;
+  /** Civilisation the strategy is optimised for */
+  civilization?: string;
+  /** One-line summary shown in the library */
+  description?: string;
+  /** Searchable tags, e.g. ["eco", "castle"] */
+  tags?: string[];
+}
+
+/**
+ * Root structure of catalog.json – the global manifest for all build orders.
+ */
+export interface Catalog {
+  games: GameConfig[];
+  buildOrders: CatalogEntry[];
+}
+
+/**
  * Represents the current economic state of the player during a build order step.
  */
 export interface EconomyState {
@@ -10,8 +57,10 @@ export interface EconomyState {
   wood: number;
   /** Gold stockpile (approximate) */
   gold: number;
-  /** Stone stockpile (approximate) */
-  stone: number;
+  /** Stone stockpile (approximate, absent in some games) */
+  stone?: number;
+  /** Divine Favor stockpile (Age of Mythology only) */
+  favor?: number;
 }
 
 /**
@@ -31,7 +80,8 @@ export interface Step {
   food: EconomyState['food'];
   wood: EconomyState['wood'];
   gold: EconomyState['gold'];
-  stone: EconomyState['stone'];
+  stone?: EconomyState['stone'];
+  favor?: EconomyState['favor'];
 }
 
 /**
@@ -40,6 +90,8 @@ export interface Step {
 export interface BuildOrder {
   /** Unique identifier / slug for the build order */
   id: string;
+  /** Game engine this build order belongs to, e.g. "aoe2" */
+  gameId: string;
   /** Display name */
   name: string;
   /** Civilisation the build order is optimised for (empty = any) */
