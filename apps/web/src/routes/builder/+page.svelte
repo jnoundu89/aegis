@@ -2,7 +2,9 @@
 	import { onMount } from 'svelte';
 	import { compressToEncodedURIComponent } from 'lz-string';
 	import { validateStep, buildOrderSchema } from '@aegis/core';
+	import type { Difficulty } from '@aegis/core';
 	import { base } from '$app/paths';
+	import { catalog } from '$lib/registry';
 	import { builderStore } from '$lib/stores/builderStore';
 	import GuidedView from '$lib/components/GuidedView.svelte';
 	import TableView from '$lib/components/TableView.svelte';
@@ -11,10 +13,8 @@
 	type ViewMode = 'guided' | 'table';
 	let viewMode = $state<ViewMode>('guided');
 
-	// Reactive snapshot of the store (auto-subscribes via the $ prefix)
 	const buildOrder = $derived($builderStore);
 
-	// Collect all validation errors across every step
 	const allErrors = $derived(
 		buildOrder.steps.flatMap((step, i) => {
 			const msgs = validateStep(step);
@@ -26,6 +26,8 @@
 
 	let shareUrl = $state<string | null>(null);
 	let importError = $state<string | null>(null);
+
+	const difficulties: Difficulty[] = ['beginner', 'intermediate', 'advanced'];
 
 	function handleShare() {
 		if (!isValid) return;
@@ -66,7 +68,6 @@
 			}
 		};
 		reader.readAsText(file);
-		// Reset input so the same file can be re-selected
 		input.value = '';
 	}
 
@@ -93,20 +94,94 @@
 		</div>
 	</header>
 
-	<!-- Build order name -->
-	<section class="w-full max-w-3xl">
-		<label class="flex flex-col gap-1">
-			<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
-				{$t('builder.bo_name')}
-			</span>
-			<input
-				type="text"
-				value={buildOrder.name}
-				oninput={(e) => builderStore.updateName((e.target as HTMLInputElement).value)}
-				class="bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-stone-100
-				       text-lg font-bold focus:outline-none focus:border-amber-500 transition-colors w-full"
-			/>
-		</label>
+	<!-- Metadata section -->
+	<section class="w-full max-w-3xl flex flex-col gap-4">
+		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.metadata')}</h2>
+
+		<!-- Name + Game row -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+			<label class="flex flex-col gap-1">
+				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.bo_name')}</span>
+				<input
+					type="text"
+					value={buildOrder.name}
+					oninput={(e) => builderStore.updateName((e.target as HTMLInputElement).value)}
+					placeholder="My Build Order"
+					class="bg-stone-900 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100
+					       font-bold focus:outline-none focus:border-amber-500 transition-colors w-full text-base"
+				/>
+			</label>
+
+			<label class="flex flex-col gap-1">
+				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.game')}</span>
+				<select
+					value={buildOrder.gameId}
+					onchange={(e) => builderStore.updateGameId((e.target as HTMLSelectElement).value)}
+					class="bg-stone-900 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100
+					       focus:outline-none focus:border-amber-500 transition-colors w-full text-sm"
+				>
+					{#each catalog.games as game}
+						<option value={game.id}>{game.icon} {game.name}</option>
+					{/each}
+				</select>
+			</label>
+		</div>
+
+		<!-- Author + Civilization row -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+			<label class="flex flex-col gap-1">
+				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.author')}</span>
+				<input
+					type="text"
+					value={buildOrder.author ?? ''}
+					oninput={(e) => builderStore.updateMeta('author', (e.target as HTMLInputElement).value)}
+					placeholder="Your name / channel"
+					class="bg-stone-900 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100
+					       text-sm focus:outline-none focus:border-amber-500 transition-colors w-full"
+				/>
+			</label>
+
+			<label class="flex flex-col gap-1">
+				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.civilization')}</span>
+				<input
+					type="text"
+					value={buildOrder.civilization ?? ''}
+					oninput={(e) => builderStore.updateMeta('civilization', (e.target as HTMLInputElement).value)}
+					placeholder="e.g. Britons, Mayans, Any"
+					class="bg-stone-900 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100
+					       text-sm focus:outline-none focus:border-amber-500 transition-colors w-full"
+				/>
+			</label>
+		</div>
+
+		<!-- Description + Difficulty row -->
+		<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+			<label class="flex flex-col gap-1 sm:col-span-2">
+				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.description')}</span>
+				<input
+					type="text"
+					value={buildOrder.description ?? ''}
+					oninput={(e) => builderStore.updateMeta('description', (e.target as HTMLInputElement).value)}
+					placeholder="Brief strategy overview…"
+					class="bg-stone-900 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100
+					       text-sm focus:outline-none focus:border-amber-500 transition-colors w-full"
+				/>
+			</label>
+
+			<label class="flex flex-col gap-1">
+				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.difficulty')}</span>
+				<select
+					value={buildOrder.difficulty ?? 'beginner'}
+					onchange={(e) => builderStore.updateDifficulty((e.target as HTMLSelectElement).value as typeof difficulties[number])}
+					class="bg-stone-900 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100
+					       text-sm focus:outline-none focus:border-amber-500 transition-colors w-full"
+				>
+					{#each difficulties as d}
+						<option value={d}>{$t(`difficulty.${d}`)}</option>
+					{/each}
+				</select>
+			</label>
+		</div>
 	</section>
 
 	<!-- View toggle -->

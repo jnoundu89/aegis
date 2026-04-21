@@ -8,19 +8,42 @@ const translations: Record<Lang, Translations> = {
 		// Navigation
 		'nav.back_to_library': 'Back to library',
 		'nav.arrow_keys_hint': '← → arrow keys or {key} to navigate',
+		'nav.table_click_hint': 'Click any row to open it in guided view.',
 
 		// Home page
 		'home.tagline': 'Build Order Library — select a strategy to begin',
 		'home.create_bo': '⚒️ Create a Build Order',
+		'home.filter_game': 'Game',
 		'home.filter_by_game': 'Filter by Game',
 		'home.all_games': 'All Games',
+		'home.filter_author': 'Author',
+		'home.all_authors': 'All',
+		'home.filter_difficulty': 'Level',
+		'home.all_difficulties': 'All',
+		'home.search_placeholder': 'Search by name, civilization, author, tag…',
+		'home.results': 'results',
+		'home.clear_filters': 'Clear filters',
+		'home.no_results': 'No build orders match your filters.',
 		'home.build_order': 'Build Order',
+		'home.onboarding_title': 'Welcome to Aegis!',
+		'home.onboarding_body':
+			'Click any build order card to open the step-by-step guided viewer. Use ← → arrow keys or F9 to navigate steps. Use the filters above to find the right strategy for your game and skill level.',
+
+		// Difficulty labels
+		'difficulty.beginner': 'Beginner',
+		'difficulty.intermediate': 'Intermediate',
+		'difficulty.advanced': 'Advanced',
 
 		// BO viewer
 		'viewer.step': 'STEP',
 		'viewer.prev': '← Previous',
 		'viewer.next': 'Next →',
 		'viewer.strategy_notes': 'Strategy Notes',
+		'viewer.checkpoints': 'Milestones',
+		'viewer.click_time': 'Click',
+		'viewer.arrival_time': 'Arrival',
+		'viewer.view_guided': '🃏 Guided',
+		'viewer.view_table': '📋 Table',
 
 		// Share page
 		'share.invalid_link': 'Invalid share link',
@@ -35,7 +58,13 @@ const translations: Record<Lang, Translations> = {
 		// Builder
 		'builder.title': '⚒️ Build Order Editor',
 		'builder.autosave': 'Changes are saved automatically',
-		'builder.bo_name': 'Build Order Name',
+		'builder.metadata': 'Build Order Metadata',
+		'builder.bo_name': 'Name',
+		'builder.game': 'Game',
+		'builder.author': 'Author',
+		'builder.civilization': 'Civilization',
+		'builder.description': 'Description',
+		'builder.difficulty': 'Difficulty',
 		'builder.view': 'View:',
 		'builder.view_guided': '🃏 Guided',
 		'builder.view_table': '📋 Table',
@@ -53,6 +82,10 @@ const translations: Record<Lang, Translations> = {
 		// GuidedView
 		'guided.trigger': 'Trigger',
 		'guided.instruction': 'Instruction',
+		'guided.notes': '💡 Tip / Notes',
+		'guided.notes_placeholder': 'Optional tip or notes for this step…',
+		'guided.phase': 'Phase',
+		'guided.phase_placeholder': 'e.g. Dark Age, Feudal Age…',
 		'guided.population': '👥 Population (total)',
 		'guided.delete_step': 'Delete step',
 		'guided.add_step': '+ Add a step',
@@ -85,19 +118,42 @@ const translations: Record<Lang, Translations> = {
 		// Navigation
 		'nav.back_to_library': 'Retour à la bibliothèque',
 		'nav.arrow_keys_hint': '← → touches fléchées ou {key} pour naviguer',
+		'nav.table_click_hint': 'Cliquez sur une ligne pour l\'ouvrir en vue guidée.',
 
 		// Home page
 		'home.tagline': 'Bibliothèque de Build Orders — sélectionnez une stratégie',
 		'home.create_bo': '⚒️ Créer un Build Order',
+		'home.filter_game': 'Jeu',
 		'home.filter_by_game': 'Filtrer par jeu',
 		'home.all_games': 'Tous les jeux',
+		'home.filter_author': 'Auteur',
+		'home.all_authors': 'Tous',
+		'home.filter_difficulty': 'Niveau',
+		'home.all_difficulties': 'Tous',
+		'home.search_placeholder': 'Rechercher par nom, civilisation, auteur, tag…',
+		'home.results': 'résultats',
+		'home.clear_filters': 'Effacer les filtres',
+		'home.no_results': 'Aucun build order ne correspond à vos filtres.',
 		'home.build_order': 'Build Order',
+		'home.onboarding_title': 'Bienvenue sur Aegis !',
+		'home.onboarding_body':
+			"Cliquez sur une carte pour ouvrir la visionneuse guidée étape par étape. Utilisez les touches ← → ou F9 pour naviguer. Utilisez les filtres ci-dessus pour trouver la stratégie adaptée à votre jeu et niveau.",
+
+		// Difficulty labels
+		'difficulty.beginner': 'Débutant',
+		'difficulty.intermediate': 'Intermédiaire',
+		'difficulty.advanced': 'Avancé',
 
 		// BO viewer
 		'viewer.step': 'ÉTAPE',
 		'viewer.prev': '← Précédent',
 		'viewer.next': 'Suivant →',
 		'viewer.strategy_notes': 'Notes Stratégiques',
+		'viewer.checkpoints': 'Jalons',
+		'viewer.click_time': 'Clic',
+		'viewer.arrival_time': 'Arrivée',
+		'viewer.view_guided': '🃏 Guidée',
+		'viewer.view_table': '📋 Tableau',
 
 		// Share page
 		'share.invalid_link': 'Lien de partage invalide',
@@ -112,7 +168,13 @@ const translations: Record<Lang, Translations> = {
 		// Builder
 		'builder.title': '⚒️ Éditeur de Build Order',
 		'builder.autosave': 'Les modifications sont sauvegardées automatiquement',
-		'builder.bo_name': 'Nom du Build Order',
+		'builder.metadata': 'Métadonnées du Build Order',
+		'builder.bo_name': 'Nom',
+		'builder.game': 'Jeu',
+		'builder.author': 'Auteur',
+		'builder.civilization': 'Civilisation',
+		'builder.description': 'Description',
+		'builder.difficulty': 'Difficulté',
 		'builder.view': 'Vue :',
 		'builder.view_guided': '🃏 Guidée',
 		'builder.view_table': '📋 Tableau',
@@ -130,6 +192,10 @@ const translations: Record<Lang, Translations> = {
 		// GuidedView
 		'guided.trigger': 'Déclencheur',
 		'guided.instruction': 'Instruction',
+		'guided.notes': '💡 Astuce / Notes',
+		'guided.notes_placeholder': 'Astuce ou note optionnelle pour cette étape…',
+		'guided.phase': 'Phase',
+		'guided.phase_placeholder': 'ex. Âge sombre, Âge Féodal…',
 		'guided.population': '👥 Population (total)',
 		'guided.delete_step': "Supprimer l'étape",
 		'guided.add_step': '+ Ajouter une étape',

@@ -45,6 +45,21 @@
 				>✕</button>
 			</div>
 
+			<!-- Phase -->
+			<label class="flex flex-col gap-1">
+				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
+					{$t('guided.phase')}
+				</span>
+				<input
+					type="text"
+					value={step.phase ?? ''}
+					oninput={(e) => builderStore.updateStep(i, { phase: (e.target as HTMLInputElement).value || undefined })}
+					placeholder={$t('guided.phase_placeholder')}
+					class="bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-stone-100
+					       text-sm focus:outline-none focus:border-amber-500 transition-colors"
+				/>
+			</label>
+
 			<!-- Trigger / label -->
 			<label class="flex flex-col gap-1">
 				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
@@ -73,6 +88,21 @@
 					class="bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-stone-100
 					       text-sm resize-none focus:outline-none focus:border-amber-500 transition-colors"
 				></textarea>
+			</label>
+
+			<!-- Notes / tip -->
+			<label class="flex flex-col gap-1">
+				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
+					{$t('guided.notes')}
+				</span>
+				<input
+					type="text"
+					value={step.notes ?? ''}
+					oninput={(e) => builderStore.updateStep(i, { notes: (e.target as HTMLInputElement).value || undefined })}
+					placeholder={$t('guided.notes_placeholder')}
+					class="bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-stone-100
+					       text-sm focus:outline-none focus:border-amber-500 transition-colors"
+				/>
 			</label>
 
 			<!-- Population / total villagers -->

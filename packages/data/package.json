@@ -9,6 +9,8 @@
     "./aoe2/fast_castle.json": "./src/aoe2/fast_castle.json",
     "./aoe2/fast_archer_hera.json": "./src/aoe2/fast_archer_hera.json",
     "./aoe2/fast_archer_capoch.json": "./src/aoe2/fast_archer_capoch.json",
+    "./aoe2/scouts_cavalry_archers.json": "./src/aoe2/scouts_cavalry_archers.json",
+    "./aoe2/fast_castle_celts_hoang.json": "./src/aoe2/fast_castle_celts_hoang.json",
     "./aom/zeus_rush.json": "./src/aom/zeus_rush.json"
   }
 }
