@@ -19,6 +19,7 @@
       "gameId": "aoe2",
       "name": "Fast Castle",
       "civilization": "Any",
+      "difficulty": "beginner",
       "description": "Rush to Castle Age with ~21 villagers, skipping military investment in Feudal Age.",
       "tags": ["eco", "castle", "beginner"]
     },
@@ -28,6 +29,7 @@
       "name": "19 Vils 1-Range Archers",
       "author": "Hera",
       "civilization": "Britons, Mayans, Ethiopians, Tatars, Vikings",
+      "difficulty": "advanced",
       "description": "Go up quickly to Feudal and mass archers from a single range, prioritising Fletching for a faster Castle Age.",
       "tags": ["Archers", "Feudal Age", "Rush", "1-Range", "Advanced"]
     },
@@ -37,14 +39,36 @@
       "name": "Fast Archer Opening",
       "author": "Capoch",
       "civilization": "Britons, Ethiopians, Mayans, Malay, Saracens, Vietnamese",
+      "difficulty": "intermediate",
       "description": "Solid archer opening for wallable land maps. Hit Feudal at 7:30 and punish opponents who fail to fully wall.",
       "tags": ["Archers", "Feudal Age", "Rush", "Flank", "Intermediate"]
+    },
+    {
+      "id": "scouts_cavalry_archers",
+      "gameId": "aoe2",
+      "name": "18 Vils Scouts into Cavalry Archers",
+      "author": "Hera",
+      "civilization": "Huns, Mongols, Magyars, Japanese, Tatars",
+      "difficulty": "intermediate",
+      "description": "Play safe with scouts in Feudal Age, fully wall, then transition into Cavalry Archers for a devastating Castle Age.",
+      "tags": ["Scouts", "Cavalry Archers", "Feudal Age", "Castle Age", "Intermediate"]
+    },
+    {
+      "id": "fast_castle_celts_hoang",
+      "gameId": "aoe2",
+      "name": "Fast Castle All In — Celts Hoang Push",
+      "author": "Capoch",
+      "civilization": "Celts",
+      "difficulty": "advanced",
+      "description": "Pre-Mill Drush into Fast Castle with a forward Siege Workshop. Celts' siege bonus makes this push devastating if unchecked.",
+      "tags": ["Fast Castle", "All-in", "Siege", "Celts", "Advanced"]
     },
     {
       "id": "zeus_rush",
       "gameId": "aom",
       "name": "Zeus Rush",
       "civilization": "Greek (Zeus)",
+      "difficulty": "intermediate",
       "description": "Leverage Zeus' passive favor generation and Bolt divine power for an early attack.",
       "tags": ["rush", "greek", "zeus", "aggressive"]
     }

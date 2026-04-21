@@ -4,6 +4,41 @@
  */
 export type ResourceKey = 'food' | 'wood' | 'gold' | 'stone' | 'favor';
 
+/** Difficulty rating for a build order. */
+export type Difficulty = 'beginner' | 'intermediate' | 'advanced';
+
+/**
+ * A named sprite/icon attached to a build-order step.
+ * `key` maps to a well-known sprite registry entry (e.g. "sheep", "lumber_camp").
+ * `label` is optional human-readable text shown below the icon.
+ */
+export interface StepSprite {
+  /** Well-known key from the sprite registry */
+  key: string;
+  /** Optional override label (defaults to the registry label for the key) */
+  label?: string;
+}
+
+/**
+ * A milestone checkpoint — e.g. "Click up to Feudal Age at 10:50".
+ * Displayed as a visual panel alongside or below the build order.
+ */
+export interface Checkpoint {
+  /** Short label, e.g. "Click up to Feudal Age" */
+  label: string;
+  /** Target game time when clicking the age-up button, e.g. "10:50" */
+  clickTime?: string;
+  /** Expected arrival time in the new age, e.g. "13:00" */
+  arrivalTime?: string;
+  /** Villager economy snapshot at the checkpoint */
+  villagerCount?: number;
+  food?: number;
+  wood?: number;
+  gold?: number;
+  stone?: number;
+  favor?: number;
+}
+
 /**
  * Game engine configuration – defines which resources are relevant.
  */
@@ -37,6 +72,8 @@ export interface CatalogEntry {
   tags?: string[];
   /** Author or content creator of the build order */
   author?: string;
+  /** Skill level required to execute this build order */
+  difficulty?: Difficulty;
 }
 
 /**
@@ -77,6 +114,16 @@ export interface Step {
   description: string;
   /** Notes or tips for this step */
   notes?: string;
+  /**
+   * Game phase this step belongs to, e.g. "Dark Age", "Feudal Age".
+   * When the phase changes between consecutive steps, the viewer inserts a divider.
+   */
+  phase?: string;
+  /**
+   * Sprite/icon references illustrating the task (e.g. sheep, lumber camp).
+   * Keys map to the sprite registry in `$lib/sprites.ts`.
+   */
+  sprites?: StepSprite[];
   /** Expected economy state after completing this step */
   villagerCount: EconomyState['villagerCount'];
   food: EconomyState['food'];
@@ -106,12 +153,21 @@ export interface BuildOrder {
   gameId: string;
   /** Display name */
   name: string;
+  /** Author or content creator of the build order */
+  author?: string;
   /** Civilisation the build order is optimised for (empty = any) */
   civilization?: string;
   /** Short description of the strategy */
   description?: string;
+  /** Skill level required */
+  difficulty?: Difficulty;
   /** Strategic notes grouped by game phase (late feudal, castle age, etc.) */
   strategy_notes?: StrategyPhase[];
+  /**
+   * Key milestone checkpoints (e.g. "Click up to Feudal at 10:50").
+   * Displayed as visual reference panels in the viewer.
+   */
+  checkpoints?: Checkpoint[];
   /** Ordered list of steps */
   steps: Step[];
 }

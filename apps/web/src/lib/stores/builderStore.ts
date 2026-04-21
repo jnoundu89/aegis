@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import type { BuildOrder, Step } from '@aegis/core';
+import type { BuildOrder, Difficulty, Step } from '@aegis/core';
 
 const STORAGE_KEY = 'aegis_draft_bo';
 
@@ -7,6 +7,10 @@ const defaultBuildOrder: BuildOrder = {
 	id: 'draft',
 	gameId: 'aoe2',
 	name: 'New Build Order',
+	author: undefined,
+	civilization: undefined,
+	description: undefined,
+	difficulty: 'beginner',
 	steps: [
 		{
 			id: 1,
@@ -58,6 +62,33 @@ function createBuilderStore() {
 		updateName(name: string): void {
 			update((bo) => {
 				const updated = { ...bo, name };
+				save(updated);
+				return updated;
+			});
+		},
+
+		/** Update any top-level string metadata field. */
+		updateMeta(field: 'author' | 'civilization' | 'description', value: string): void {
+			update((bo) => {
+				const updated = { ...bo, [field]: value };
+				save(updated);
+				return updated;
+			});
+		},
+
+		/** Update the game ID. */
+		updateGameId(gameId: string): void {
+			update((bo) => {
+				const updated = { ...bo, gameId };
+				save(updated);
+				return updated;
+			});
+		},
+
+		/** Update the difficulty. */
+		updateDifficulty(difficulty: Difficulty): void {
+			update((bo) => {
+				const updated = { ...bo, difficulty };
 				save(updated);
 				return updated;
 			});

@@ -19,16 +19,37 @@ export const economyStateSchema = z
     message: 'Resource sum must equal total population',
   });
 
+/** Validates a sprite reference attached to a step. */
+export const stepSpriteSchema = z.object({
+  key: z.string().min(1),
+  label: z.string().optional(),
+});
+
 /** Validates a single build-order step. */
 export const stepSchema = z.object({
   id: z.number().int().positive(),
   label: z.string().min(1, 'Le déclencheur est requis'),
   description: z.string().min(1, "L'instruction est requise"),
   notes: z.string().optional(),
+  phase: z.string().optional(),
+  sprites: z.array(stepSpriteSchema).optional(),
   villagerCount: z.number().min(0),
   food: z.number().min(0),
   wood: z.number().min(0),
   gold: z.number().min(0),
+  stone: z.number().min(0).optional(),
+  favor: z.number().min(0).optional(),
+});
+
+/** Validates a milestone checkpoint. */
+export const checkpointSchema = z.object({
+  label: z.string().min(1),
+  clickTime: z.string().optional(),
+  arrivalTime: z.string().optional(),
+  villagerCount: z.number().min(0).optional(),
+  food: z.number().min(0).optional(),
+  wood: z.number().min(0).optional(),
+  gold: z.number().min(0).optional(),
   stone: z.number().min(0).optional(),
   favor: z.number().min(0).optional(),
 });
@@ -38,8 +59,10 @@ export const buildOrderSchema = z.object({
   id: z.string().min(1),
   gameId: z.string().min(1),
   name: z.string().min(1, 'Le nom est requis'),
+  author: z.string().optional(),
   civilization: z.string().optional(),
   description: z.string().optional(),
+  difficulty: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
   strategy_notes: z
     .array(
       z.object({
@@ -48,6 +71,7 @@ export const buildOrderSchema = z.object({
       })
     )
     .optional(),
+  checkpoints: z.array(checkpointSchema).optional(),
   steps: z.array(stepSchema).min(1, 'Au moins une étape est requise'),
 });
 
