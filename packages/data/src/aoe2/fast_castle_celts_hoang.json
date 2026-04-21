@@ -220,7 +220,7 @@
       "id": 14,
       "phase": "Dark Age",
       "label": "Vill 28 → Protect Base",
-      "description": "1 takes your base. Try to protect your gold with those walls, ideally no ranged unit shouldn't be able to reach your gold miners.",
+      "description": "1 takes your base. Try to protect your gold with those walls, ideally no ranged unit should be able to reach your gold miners.",
       "sprites": [{ "key": "palisade_wall" }],
       "villagerCount": 28,
       "food": 18,

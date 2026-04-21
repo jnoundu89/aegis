@@ -10,6 +10,9 @@ let selectedGameId = $state<string | null>(null);
 let selectedAuthor = $state<string | null>(null);
 let selectedDifficulty = $state<Difficulty | null>(null);
 
+/** Maximum number of tag pills shown on a card before truncating. */
+const MAX_VISIBLE_TAGS = 4;
+
 // ── Derived helpers ───────────────────────────────────────────────────────
 
 /** All unique authors (sorted alphabetically) */
@@ -307,11 +310,11 @@ class="group bg-stone-900 border border-stone-800 hover:border-amber-500/60
 <!-- Tags -->
 {#if bo.tags && bo.tags.length > 0}
 <div class="flex flex-wrap gap-1 mt-auto pt-1">
-{#each bo.tags.slice(0, 4) as tag}
+{#each bo.tags.slice(0, MAX_VISIBLE_TAGS) as tag}
 <span class="text-xs bg-stone-800 text-stone-400 px-2 py-0.5 rounded-full">{tag}</span>
 {/each}
-{#if bo.tags.length > 4}
-<span class="text-xs text-stone-600 px-1">+{bo.tags.length - 4}</span>
+{#if bo.tags.length > MAX_VISIBLE_TAGS}
+<span class="text-xs text-stone-600 px-1">+{bo.tags.length - MAX_VISIBLE_TAGS}</span>
 {/if}
 </div>
 {/if}

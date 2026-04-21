@@ -7,9 +7,9 @@ const defaultBuildOrder: BuildOrder = {
 	id: 'draft',
 	gameId: 'aoe2',
 	name: 'New Build Order',
-	author: '',
-	civilization: '',
-	description: '',
+	author: undefined,
+	civilization: undefined,
+	description: undefined,
 	difficulty: 'beginner',
 	steps: [
 		{
