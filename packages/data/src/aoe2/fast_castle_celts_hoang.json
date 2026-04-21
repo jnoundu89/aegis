@@ -1,0 +1,310 @@
+{
+  "id": "fast_castle_celts_hoang",
+  "gameId": "aoe2",
+  "name": "Fast Castle All In with Celts (Hoang Push)",
+  "author": "Capoch",
+  "civilization": "Celts",
+  "difficulty": "advanced",
+  "description": "Hoang is a very popular player who invented a unique strategy based on being super aggressive in early Castle Age. His push is feared by anyone he plays, and to stop it, you must be well prepared. This build starts in the same way as the Pre Mill Drush but deviates by hitting Feudal Age a bit faster with 28 vills instead of 29 like common Pre Mill Drush + FC. The push begins in Castle Age with a forward Siege Workshop and a heavy siege push with knights, spearman, siege and monks. Celts are good with this strategy because of their wood bonus, and in Castle Age, their siege attacks & produces units faster. This can be really hard to stop if the enemy doesn't scout well and prepares defenses.",
+  "strategy_notes": [
+    {
+      "phase": "DARK AGE",
+      "notes": [
+        "The Pre-Mill Drush portion (3 militia from barracks built before mill) is designed to disrupt the enemy economy early.",
+        "Keep your TC producing villagers at all times. Don't make more than 3 militias.",
+        "Build the mill near the berries once you have enough wood.",
+        "Send villagers to deer under the TC for efficient food collection."
+      ]
+    },
+    {
+      "phase": "FEUDAL AGE",
+      "notes": [
+        "Hit Feudal Age faster than the standard Pre Mill Drush + FC — aim for Feudal at 13:00.",
+        "Don't build any military in Feudal — go straight to Castle Age.",
+        "Get Horse Collar immediately on arrival in Feudal. Place your two Feudal Age buildings (e.g. Blacksmith + Market or Stable + Blacksmith).",
+        "Send 6 villagers to take deer (3 villagers on each deer) while going up to Feudal."
+      ]
+    },
+    {
+      "phase": "CASTLE AGE",
+      "notes": [
+        "The moment you hit Castle Age, build a forward Siege Workshop with 2-3 villagers as close to the opponent as possible.",
+        "Start producing knights, siege (battering rams / mangonels) and a few spearmen.",
+        "Add a monastery and train monks to heal your units during the push.",
+        "Celts' faster siege production and movement speed makes this particularly devastating.",
+        "If the push fails or is heavily defended, don't throw away your units — fall back, add TCs, and boom."
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "label": "Click up to Feudal Age",
+      "clickTime": "10:50",
+      "arrivalTime": "13:00",
+      "villagerCount": 28,
+      "food": 5,
+      "wood": 18,
+      "gold": 4,
+      "stone": 1
+    },
+    {
+      "label": "Click up to Castle Age",
+      "clickTime": "13:50",
+      "arrivalTime": "16:30",
+      "villagerCount": 30,
+      "food": 10,
+      "wood": 7,
+      "gold": 9,
+      "stone": 4
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "phase": "Dark Age",
+      "label": "Vills 1-6 → Sheep",
+      "description": "6 villagers on sheep.",
+      "sprites": [{ "key": "sheep" }],
+      "villagerCount": 6,
+      "food": 6,
+      "wood": 0,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 2,
+      "phase": "Dark Age",
+      "label": "Vills 7-10 → Wood",
+      "description": "4 on wood.",
+      "sprites": [{ "key": "lumber_camp" }],
+      "villagerCount": 10,
+      "food": 6,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 3,
+      "phase": "Dark Age",
+      "label": "Vill 11 → First Boar",
+      "description": "1 gets the first boar.",
+      "sprites": [{ "key": "boar" }],
+      "villagerCount": 11,
+      "food": 7,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 4,
+      "phase": "Dark Age",
+      "label": "Vill 12 → House + Barracks",
+      "description": "1 builds the third house, then as soon as you have 175 wood, build the barracks. Then add another house and send that villager to take food.",
+      "sprites": [{ "key": "house" }, { "key": "barracks" }],
+      "villagerCount": 12,
+      "food": 8,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 5,
+      "phase": "Dark Age",
+      "label": "Make Militia (max 3)",
+      "description": "As soon as you finish your barracks, start adding militia while keeping your villager production going (try to not have idle TC). Don't make more than 3 militias.",
+      "sprites": [{ "key": "militia" }],
+      "villagerCount": 12,
+      "food": 8,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0,
+      "notes": "These 3 militia are your Pre-Mill Drush units. Use them to disrupt the opponent's economy."
+    },
+    {
+      "id": 6,
+      "phase": "Dark Age",
+      "label": "Vills 13-14 → Boar",
+      "description": "2 more to the boar.",
+      "sprites": [{ "key": "boar" }],
+      "villagerCount": 14,
+      "food": 10,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 7,
+      "phase": "Dark Age",
+      "label": "Vill 15 → Second Boar",
+      "description": "1 gets the second boar.",
+      "sprites": [{ "key": "boar" }],
+      "villagerCount": 15,
+      "food": 11,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 8,
+      "phase": "Dark Age",
+      "label": "Vill 16 → Gold (no camp yet)",
+      "description": "1 collects 10 gold (no mining camp needed) and then goes to take food from the boar under the TC.",
+      "sprites": [{ "key": "gold" }],
+      "villagerCount": 16,
+      "food": 12,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 9,
+      "phase": "Dark Age",
+      "label": "Vill 17 → Mill near Berries",
+      "description": "1 builds the mill near the berries.",
+      "sprites": [{ "key": "mill" }, { "key": "berries" }],
+      "villagerCount": 17,
+      "food": 13,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 10,
+      "phase": "Dark Age",
+      "label": "Vill 18 → Berries",
+      "description": "1 builds a house then goes to the berries.",
+      "sprites": [{ "key": "berries" }, { "key": "house" }],
+      "villagerCount": 18,
+      "food": 14,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 11,
+      "phase": "Dark Age",
+      "label": "Vills 19-22 → Berries",
+      "description": "4 more villagers to the berries.",
+      "sprites": [{ "key": "berries" }],
+      "villagerCount": 22,
+      "food": 18,
+      "wood": 4,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 12,
+      "phase": "Dark Age",
+      "label": "Vill 23 → Wood",
+      "description": "1 more on wood.",
+      "sprites": [{ "key": "lumber_camp" }],
+      "villagerCount": 23,
+      "food": 18,
+      "wood": 5,
+      "gold": 0,
+      "stone": 0
+    },
+    {
+      "id": 13,
+      "phase": "Dark Age",
+      "label": "Vills 24-27 → Gold",
+      "description": "4 to gold (now make the mining camp).",
+      "sprites": [{ "key": "mining_camp" }, { "key": "gold" }],
+      "villagerCount": 27,
+      "food": 18,
+      "wood": 5,
+      "gold": 4,
+      "stone": 0
+    },
+    {
+      "id": 14,
+      "phase": "Dark Age",
+      "label": "Vill 28 → Protect Base",
+      "description": "1 takes your base. Try to protect your gold with those walls, ideally no ranged unit shouldn't be able to reach your gold miners.",
+      "sprites": [{ "key": "palisade_wall" }],
+      "villagerCount": 28,
+      "food": 18,
+      "wood": 5,
+      "gold": 4,
+      "stone": 1,
+      "notes": "This villager builds palisade walls to protect your gold miners."
+    },
+    {
+      "id": 15,
+      "phase": "Dark Age",
+      "label": "Loom + Click Feudal Age",
+      "description": "Make loom and click up to Feudal Age (target time: 10:50).",
+      "sprites": [{ "key": "loom" }, { "key": "feudal_age" }],
+      "villagerCount": 28,
+      "food": 5,
+      "wood": 18,
+      "gold": 4,
+      "stone": 1,
+      "notes": "Redistribute villagers as you click up: aim for 5 food / 18 wood / 4 gold / 1 stone."
+    },
+    {
+      "id": 16,
+      "phase": "Feudal Age",
+      "label": "Send 6 Vills → Deer",
+      "description": "While going up, seed 2 farms and send 6 villagers to take deer (3 villagers on each deer).",
+      "sprites": [{ "key": "deer" }, { "key": "farm" }],
+      "villagerCount": 28,
+      "food": 5,
+      "wood": 18,
+      "gold": 4,
+      "stone": 1,
+      "notes": "Arrival in Feudal Age at ~13:00. Build your two Feudal Age buildings immediately."
+    },
+    {
+      "id": 17,
+      "phase": "Feudal Age",
+      "label": "Horse Collar + Age Up buildings",
+      "description": "On arrival in Feudal Age, research Horse Collar immediately. Build your two required Feudal Age buildings (e.g. Blacksmith + Market or Stable + Blacksmith).",
+      "sprites": [{ "key": "horse_collar" }, { "key": "blacksmith" }],
+      "villagerCount": 30,
+      "food": 10,
+      "wood": 7,
+      "gold": 9,
+      "stone": 4,
+      "notes": "Don't build military in Feudal Age — save all resources for the Castle Age push."
+    },
+    {
+      "id": 18,
+      "phase": "Feudal Age",
+      "label": "Click Castle Age",
+      "description": "Click up to Castle Age (target time: 13:50). Arrival expected at ~16:30.",
+      "sprites": [{ "key": "castle_age" }],
+      "villagerCount": 30,
+      "food": 10,
+      "wood": 7,
+      "gold": 9,
+      "stone": 4
+    },
+    {
+      "id": 19,
+      "phase": "Castle Age",
+      "label": "Forward Siege Workshop",
+      "description": "Send 2-3 villagers forward and build a Siege Workshop as close to the opponent as possible.",
+      "sprites": [{ "key": "siege_workshop" }, { "key": "siege" }],
+      "villagerCount": 30,
+      "food": 10,
+      "wood": 7,
+      "gold": 9,
+      "stone": 4,
+      "notes": "The forward Siege Workshop is the key to this push. Use Celts' faster siege production."
+    },
+    {
+      "id": 20,
+      "phase": "Castle Age",
+      "label": "Knights + Spearmen + Monks",
+      "description": "Start producing knights from stable, spearmen from barracks, and train monks from monastery to heal your push.",
+      "sprites": [{ "key": "knight" }, { "key": "spearman" }, { "key": "monk" }],
+      "villagerCount": 30,
+      "food": 10,
+      "wood": 7,
+      "gold": 9,
+      "stone": 4,
+      "notes": "Celts' siege units attack and move faster — push hard with battering rams and mangonels."
+    }
+  ]
+}
