@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { builderStore } from '$lib/stores/builderStore';
 	import type { BuildOrder } from '@aegis/core';
+	import { t } from '$lib/i18n';
 
 	let { buildOrder }: { buildOrder: BuildOrder } = $props();
 
@@ -10,17 +11,17 @@
 		builderStore.updateStep(index, { [field]: next });
 	}
 
-	const resources: Array<{
+	const resources = $derived<Array<{
 		field: 'food' | 'wood' | 'gold' | 'stone';
 		label: string;
 		emoji: string;
 		text: string;
-	}> = [
-		{ field: 'food',  label: 'Nourriture', emoji: '🍖', text: 'text-green-400'  },
-		{ field: 'wood',  label: 'Bois',        emoji: '🪵', text: 'text-amber-400'  },
-		{ field: 'gold',  label: 'Or',           emoji: '🪙', text: 'text-yellow-300' },
-		{ field: 'stone', label: 'Pierre',       emoji: '🪨', text: 'text-slate-300'  },
-	];
+	}>>([
+		{ field: 'food',  label: $t('resource.food'),  emoji: '🍖', text: 'text-green-400'  },
+		{ field: 'wood',  label: $t('resource.wood'),  emoji: '🪵', text: 'text-amber-400'  },
+		{ field: 'gold',  label: $t('resource.gold'),  emoji: '🪙', text: 'text-yellow-300' },
+		{ field: 'stone', label: $t('resource.stone'), emoji: '🪨', text: 'text-slate-300'  },
+	]);
 </script>
 
 <div class="flex flex-col gap-4">
@@ -40,20 +41,20 @@
 					disabled={buildOrder.steps.length <= 1}
 					class="ml-auto text-stone-500 hover:text-red-400 transition-colors text-lg leading-none
 					       disabled:opacity-25 disabled:cursor-not-allowed"
-					aria-label="Supprimer l'étape"
+					aria-label={$t('guided.delete_step')}
 				>✕</button>
 			</div>
 
 			<!-- Trigger / label -->
 			<label class="flex flex-col gap-1">
 				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
-					Déclencheur
+					{$t('guided.trigger')}
 				</span>
 				<input
 					type="text"
 					value={step.label}
 					oninput={(e) => builderStore.updateStep(i, { label: (e.target as HTMLInputElement).value })}
-					placeholder="Ex : 6 moutons"
+					placeholder={$t('guided.trigger_placeholder')}
 					class="bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-stone-100
 					       text-sm focus:outline-none focus:border-amber-500 transition-colors"
 				/>
@@ -62,12 +63,12 @@
 			<!-- Instruction / description -->
 			<label class="flex flex-col gap-1">
 				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
-					Instruction
+					{$t('guided.instruction')}
 				</span>
 				<textarea
 					value={step.description}
 					oninput={(e) => builderStore.updateStep(i, { description: (e.target as HTMLTextAreaElement).value })}
-					placeholder="Détaillez l'action à effectuer…"
+					placeholder={$t('guided.instruction_placeholder')}
 					rows={2}
 					class="bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-stone-100
 					       text-sm resize-none focus:outline-none focus:border-amber-500 transition-colors"
@@ -77,7 +78,7 @@
 			<!-- Population / total villagers -->
 			<div class="flex flex-col gap-1">
 				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
-					👥 Population (total)
+					{$t('guided.population')}
 				</span>
 				<div class="flex items-center gap-2">
 					<button
@@ -130,6 +131,6 @@
 		class="w-full h-12 rounded-2xl border-2 border-dashed border-stone-700 text-stone-500
 		       hover:border-amber-500/60 hover:text-amber-400 transition-all text-sm font-semibold"
 	>
-		+ Ajouter une étape
+		{$t('guided.add_step')}
 	</button>
 </div>

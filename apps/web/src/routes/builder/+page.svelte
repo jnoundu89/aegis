@@ -6,6 +6,7 @@
 	import { builderStore } from '$lib/stores/builderStore';
 	import GuidedView from '$lib/components/GuidedView.svelte';
 	import TableView from '$lib/components/TableView.svelte';
+	import { t } from '$lib/i18n';
 
 	type ViewMode = 'guided' | 'table';
 	let viewMode = $state<ViewMode>('guided');
@@ -17,7 +18,7 @@
 	const allErrors = $derived(
 		buildOrder.steps.flatMap((step, i) => {
 			const msgs = validateStep(step);
-			return msgs.map((msg) => `Étape ${i + 1} — ${msg}`);
+			return msgs.map((msg) => `Step ${i + 1} — ${msg}`);
 		}),
 	);
 
@@ -55,13 +56,13 @@
 				const result = buildOrderSchema.safeParse(parsed);
 				if (!result.success) {
 					const details = result.error.issues.map((i) => i.message).join(' · ');
-					importError = `Fichier invalide : ${details}`;
+					importError = $t('builder.invalid_file', { details });
 					return;
 				}
 				builderStore.setBuildOrder(result.data);
 				shareUrl = null;
 			} catch {
-				importError = 'Erreur de lecture du fichier JSON.';
+				importError = $t('builder.file_read_error');
 			}
 		};
 		reader.readAsText(file);
@@ -75,7 +76,7 @@
 </script>
 
 <svelte:head>
-	<title>Aegis – Éditeur de Build Order</title>
+	<title>Aegis – Build Order Editor</title>
 </svelte:head>
 
 <main class="min-h-screen bg-stone-950 text-stone-100 flex flex-col items-center px-4 py-10 gap-6">
@@ -84,11 +85,11 @@
 		<a
 			href="{base}/"
 			class="text-stone-500 hover:text-amber-400 transition-colors text-xl leading-none"
-			aria-label="Retour à la bibliothèque"
+			aria-label={$t('builder.back_label')}
 		>←</a>
 		<div class="flex-1">
-			<h1 class="text-2xl font-extrabold tracking-tight">⚒️ Éditeur de Build Order</h1>
-			<p class="text-stone-500 text-xs mt-0.5">Les modifications sont sauvegardées automatiquement</p>
+			<h1 class="text-2xl font-extrabold tracking-tight">{$t('builder.title')}</h1>
+			<p class="text-stone-500 text-xs mt-0.5">{$t('builder.autosave')}</p>
 		</div>
 	</header>
 
@@ -96,7 +97,7 @@
 	<section class="w-full max-w-3xl">
 		<label class="flex flex-col gap-1">
 			<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
-				Nom du Build Order
+				{$t('builder.bo_name')}
 			</span>
 			<input
 				type="text"
@@ -110,7 +111,7 @@
 
 	<!-- View toggle -->
 	<section class="w-full max-w-3xl flex items-center gap-3">
-		<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">Vue :</span>
+		<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.view')}</span>
 		<div class="flex bg-stone-900 border border-stone-800 rounded-full p-1 gap-1">
 			<button
 				onclick={() => (viewMode = 'guided')}
@@ -119,7 +120,7 @@
 					? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
 					: 'text-stone-400 hover:text-stone-200'}"
 			>
-				🃏 Guidée
+				{$t('builder.view_guided')}
 			</button>
 			<button
 				onclick={() => (viewMode = 'table')}
@@ -128,7 +129,7 @@
 					? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
 					: 'text-stone-400 hover:text-stone-200'}"
 			>
-				📋 Tableau
+				{$t('builder.view_table')}
 			</button>
 		</div>
 	</section>
@@ -144,7 +145,7 @@
 
 	<!-- Import / Export section -->
 	<section class="w-full max-w-3xl space-y-3">
-		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">Import / Export</h2>
+		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.import_export')}</h2>
 		<div class="flex flex-wrap gap-3">
 			<!-- Export -->
 			<button
@@ -153,7 +154,7 @@
 				       bg-stone-800 hover:bg-stone-700 active:bg-stone-600 border border-stone-700
 				       hover:border-amber-600/60 text-stone-200"
 			>
-				📤 Exporter en JSON
+				{$t('builder.export_json')}
 			</button>
 
 			<!-- Import -->
@@ -162,7 +163,7 @@
 				       bg-stone-800 hover:bg-stone-700 active:bg-stone-600 border border-stone-700
 				       hover:border-amber-600/60 text-stone-200 flex items-center justify-center"
 			>
-				📥 Importer depuis JSON
+				{$t('builder.import_json')}
 				<input
 					type="file"
 					accept=".json,application/json"
@@ -190,13 +191,13 @@
 				? 'bg-amber-500 hover:bg-amber-400 active:bg-amber-300 text-stone-950 shadow-lg shadow-amber-500/30'
 				: 'bg-stone-800 text-stone-500 cursor-not-allowed opacity-50'}"
 		>
-			🔗 Partager ce Build Order
+			{$t('builder.share')}
 		</button>
 
 		{#if shareUrl}
 			<div class="bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 flex flex-col gap-1">
 				<span class="text-xs text-stone-500 font-semibold uppercase tracking-wider">
-					Lien de partage
+					{$t('builder.share_link')}
 				</span>
 				<a
 					href={shareUrl}
@@ -215,7 +216,7 @@
 			onclick={() => { builderStore.reset(); shareUrl = null; importError = null; }}
 			class="text-sm text-stone-600 hover:text-red-400 transition-colors font-medium"
 		>
-			↺ Réinitialiser le brouillon
+			{$t('builder.reset')}
 		</button>
 	</section>
 
@@ -227,7 +228,7 @@
 			role="alert"
 		>
 			<p class="text-red-200 font-bold text-sm flex items-center gap-2">
-				⚠️ Erreurs de validation ({allErrors.length})
+				{$t('builder.validation_errors', { count: allErrors.length })}
 			</p>
 			<ul class="list-disc list-inside space-y-0.5 max-h-24 overflow-y-auto">
 				{#each allErrors as error}
