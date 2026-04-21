@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { compressToEncodedURIComponent } from 'lz-string';
-	import { validateStep } from '@aegis/core';
+	import { validateStep, buildOrderSchema } from '@aegis/core';
 	import { base } from '$app/paths';
 	import { builderStore } from '$lib/stores/builderStore';
 	import GuidedView from '$lib/components/GuidedView.svelte';
@@ -24,11 +24,49 @@
 	const isValid = $derived(allErrors.length === 0);
 
 	let shareUrl = $state<string | null>(null);
+	let importError = $state<string | null>(null);
 
 	function handleShare() {
 		if (!isValid) return;
 		const compressed = compressToEncodedURIComponent(JSON.stringify(buildOrder));
 		shareUrl = `${window.location.origin}${base}/share?data=${compressed}`;
+	}
+
+	function handleExport() {
+		const json = JSON.stringify(buildOrder, null, 2);
+		const blob = new Blob([json], { type: 'application/json' });
+		const url = URL.createObjectURL(blob);
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = `${buildOrder.name.replace(/\s+/g, '_')}.json`;
+		a.click();
+		URL.revokeObjectURL(url);
+	}
+
+	function handleImport(event: Event) {
+		importError = null;
+		const input = event.target as HTMLInputElement;
+		const file = input.files?.[0];
+		if (!file) return;
+		const reader = new FileReader();
+		reader.onload = (e) => {
+			try {
+				const parsed = JSON.parse(e.target?.result as string);
+				const result = buildOrderSchema.safeParse(parsed);
+				if (!result.success) {
+					const details = result.error.issues.map((i) => i.message).join(' · ');
+					importError = `Fichier invalide : ${details}`;
+					return;
+				}
+				builderStore.setBuildOrder(result.data);
+				shareUrl = null;
+			} catch {
+				importError = 'Erreur de lecture du fichier JSON.';
+			}
+		};
+		reader.readAsText(file);
+		// Reset input so the same file can be re-selected
+		input.value = '';
 	}
 
 	onMount(() => {
@@ -104,6 +142,44 @@
 		{/if}
 	</section>
 
+	<!-- Import / Export section -->
+	<section class="w-full max-w-3xl space-y-3">
+		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">Import / Export</h2>
+		<div class="flex flex-wrap gap-3">
+			<!-- Export -->
+			<button
+				onclick={handleExport}
+				class="flex-1 h-12 rounded-2xl font-bold text-base transition-all
+				       bg-stone-800 hover:bg-stone-700 active:bg-stone-600 border border-stone-700
+				       hover:border-amber-600/60 text-stone-200"
+			>
+				📤 Exporter en JSON
+			</button>
+
+			<!-- Import -->
+			<label
+				class="flex-1 h-12 rounded-2xl font-bold text-base transition-all cursor-pointer
+				       bg-stone-800 hover:bg-stone-700 active:bg-stone-600 border border-stone-700
+				       hover:border-amber-600/60 text-stone-200 flex items-center justify-center"
+			>
+				📥 Importer depuis JSON
+				<input
+					type="file"
+					accept=".json,application/json"
+					onchange={handleImport}
+					class="sr-only"
+					data-testid="import-file-input"
+				/>
+			</label>
+		</div>
+
+		{#if importError}
+			<div class="bg-red-900/40 border border-red-700/50 rounded-xl px-4 py-3" role="alert">
+				<p class="text-red-300 text-sm">⚠️ {importError}</p>
+			</div>
+		{/if}
+	</section>
+
 	<!-- Share section -->
 	<section class="w-full max-w-3xl space-y-3">
 		<button
@@ -122,7 +198,13 @@
 				<span class="text-xs text-stone-500 font-semibold uppercase tracking-wider">
 					Lien de partage
 				</span>
-				<p class="text-amber-400 text-sm break-all font-mono">{shareUrl}</p>
+				<a
+					href={shareUrl}
+					data-testid="share-url"
+					class="text-amber-400 text-sm break-all font-mono hover:underline"
+				>
+					{shareUrl}
+				</a>
 			</div>
 		{/if}
 	</section>
@@ -130,7 +212,7 @@
 	<!-- Reset -->
 	<section class="w-full max-w-3xl">
 		<button
-			onclick={() => { builderStore.reset(); shareUrl = null; }}
+			onclick={() => { builderStore.reset(); shareUrl = null; importError = null; }}
 			class="text-sm text-stone-600 hover:text-red-400 transition-colors font-medium"
 		>
 			↺ Réinitialiser le brouillon
