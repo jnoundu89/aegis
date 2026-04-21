@@ -1,2 +1,5 @@
-/** BCP-47 language tag used for the Web Speech API narrator across the app. */
-export const TTS_LANG = 'fr-FR';
+/**
+ * @deprecated Use `ttsLang` from `$lib/i18n` instead.
+ * Kept temporarily so existing imports don't break during migration.
+ */
+export const TTS_LANG = 'en-US';

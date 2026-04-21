@@ -6,11 +6,11 @@ const STORAGE_KEY = 'aegis_draft_bo';
 const defaultBuildOrder: BuildOrder = {
 	id: 'draft',
 	gameId: 'aoe2',
-	name: 'Nouvel Ordre de Construction',
+	name: 'New Build Order',
 	steps: [
 		{
 			id: 1,
-			label: 'Étape 1',
+			label: 'Step 1',
 			description: '',
 			villagerCount: 0,
 			food: 0,
@@ -81,7 +81,7 @@ function createBuilderStore() {
 				const lastId = bo.steps.at(-1)?.id ?? 0;
 				const newStep: Step = {
 					id: lastId + 1,
-					label: `Étape ${lastId + 1}`,
+					label: `Step ${lastId + 1}`,
 					description: '',
 					villagerCount: 0,
 					food: 0,

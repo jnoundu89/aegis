@@ -4,7 +4,8 @@
 	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { customBuildsStore } from '$lib/stores/customBuildsStore';
-	import { TTS_LANG } from '$lib/config';
+	import { settingsStore } from '$lib/stores/settingsStore';
+	import { t, ttsLang } from '$lib/i18n';
 
 	let { data } = $props();
 
@@ -24,47 +25,47 @@
 	const hasNext = $derived(stepIndex < totalSteps - 1);
 
 	/** Resource display configuration: label, emoji, Tailwind colour classes */
-	const resourceConfig: Record<
+	const resourceConfig = $derived<Record<
 		ResourceKey | 'villagerCount',
 		{ label: string; emoji: string; text: string; bg: string }
-	> = {
+	>>({
 		villagerCount: {
-			label: 'Villageois',
+			label: $t('resource.villagers'),
 			emoji: '👥',
 			text: 'text-cyan-300',
 			bg: 'bg-cyan-900/40 border border-cyan-700/50',
 		},
 		food: {
-			label: 'Nourriture',
+			label: $t('resource.food'),
 			emoji: '🍖',
 			text: 'text-green-300',
 			bg: 'bg-green-900/40 border border-green-700/50',
 		},
 		wood: {
-			label: 'Bois',
+			label: $t('resource.wood'),
 			emoji: '🪵',
 			text: 'text-amber-400',
 			bg: 'bg-amber-900/40 border border-amber-700/50',
 		},
 		gold: {
-			label: 'Or',
+			label: $t('resource.gold'),
 			emoji: '🪙',
 			text: 'text-yellow-300',
 			bg: 'bg-yellow-900/40 border border-yellow-700/50',
 		},
 		stone: {
-			label: 'Pierre',
+			label: $t('resource.stone'),
 			emoji: '🪨',
 			text: 'text-slate-300',
 			bg: 'bg-slate-800/60 border border-slate-600/50',
 		},
 		favor: {
-			label: 'Faveur',
+			label: $t('resource.favor'),
 			emoji: '⚡',
 			text: 'text-purple-300',
 			bg: 'bg-purple-900/40 border border-purple-700/50',
 		},
-	};
+	});
 
 	/** Ordered resource keys to display (villagerCount always first, then game resources) */
 	const resourceKeys = $derived<(ResourceKey | 'villagerCount')[]>([
@@ -74,10 +75,11 @@
 
 	/** Speak a text string using the Web Speech API (fires-and-forgets) */
 	function speak(text: string) {
+		if (!$settingsStore.ttsEnabled) return;
 		if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
 		window.speechSynthesis.cancel();
 		const utterance = new SpeechSynthesisUtterance(text);
-		utterance.lang = TTS_LANG;
+		utterance.lang = $ttsLang;
 		utterance.rate = 1.0;
 		window.speechSynthesis.speak(utterance);
 	}
@@ -117,7 +119,7 @@
 </script>
 
 <svelte:head>
-	<title>Aegis – {buildOrder ? buildOrder.name : 'Lien de partage invalide'}</title>
+	<title>Aegis – {buildOrder ? buildOrder.name : 'Invalid share link'}</title>
 </svelte:head>
 
 <svelte:window
@@ -139,21 +141,20 @@
 		>
 			<div class="flex items-center gap-3">
 				<span class="text-3xl">⚠️</span>
-				<h1 class="text-xl font-extrabold text-red-300">Lien de partage invalide</h1>
+				<h1 class="text-xl font-extrabold text-red-300">{$t('share.invalid_link')}</h1>
 			</div>
 			<p class="text-red-200 text-sm leading-relaxed">
-			{data.errorMessage ?? "Ce lien est corrompu, incomplet ou incompatible avec la version actuelle d'Aegis."}
+			{data.errorMessage ?? $t('share.invalid_description')}
 			</p>
 			<p class="text-red-400 text-xs leading-relaxed">
-				Si vous pensez qu'il s'agit d'une erreur, contactez la personne qui vous a envoyé ce lien
-				et demandez-lui de régénérer un nouveau lien de partage.
+				{$t('share.invalid_contact')}
 			</p>
 			<a
 				href="{base}/"
 				class="mt-2 inline-flex items-center justify-center h-11 px-6 rounded-xl bg-red-600
 				       hover:bg-red-500 active:bg-red-400 text-white font-bold text-sm transition-colors"
 			>
-				← Retour à la bibliothèque
+				{$t('share.back_to_library')}
 			</a>
 		</div>
 	</main>
@@ -166,7 +167,7 @@
 			<a
 				href="{base}/"
 				class="mt-1 text-stone-500 hover:text-amber-400 transition-colors text-lg leading-none"
-				aria-label="Retour à la bibliothèque"
+				aria-label={$t('nav.back_to_library')}
 			>←</a>
 			<div class="flex-1 min-w-0">
 				<p class="text-xs text-stone-500 uppercase tracking-widest font-semibold">
@@ -189,7 +190,7 @@
 					class="w-full h-12 rounded-2xl font-bold text-base flex items-center justify-center gap-2
 					       bg-green-900/40 border border-green-700/50 text-green-300"
 				>
-					✅ Build Order sauvegardé dans vos BO locaux !
+					{$t('share.saved')}
 				</div>
 			{:else}
 				<button
@@ -198,7 +199,7 @@
 					       bg-stone-800 hover:bg-stone-700 active:bg-stone-600 border border-stone-700
 					       hover:border-amber-600/60 text-stone-200"
 				>
-					💾 Sauvegarder dans mes BO locaux
+					{$t('share.save_to_local')}
 				</button>
 			{/if}
 		</div>
@@ -216,7 +217,7 @@
 				>
 					<span class="flex items-center gap-2">
 						<span>📋</span>
-						<span>Notes Stratégiques</span>
+						<span>{$t('viewer.strategy_notes')}</span>
 					</span>
 					<span
 						class="text-stone-400 text-xs transition-transform duration-200 {strategyNotesOpen
@@ -252,7 +253,7 @@
 		<!-- Progress bar -->
 		<div class="w-full max-w-lg space-y-1">
 			<div class="flex justify-between text-xs text-stone-500 font-mono">
-				<span>ÉTAPE</span>
+				<span>{$t('viewer.step')}</span>
 				<span>{stepIndex + 1} / {totalSteps}</span>
 			</div>
 			<div class="h-1.5 w-full bg-stone-800 rounded-full overflow-hidden">
@@ -315,7 +316,7 @@
 				       disabled:opacity-25 disabled:cursor-not-allowed
 				       transition-all duration-150 shadow-md"
 			>
-				← Précédent
+				{$t('viewer.prev')}
 			</button>
 			<button
 				onclick={next}
@@ -325,15 +326,13 @@
 				       disabled:opacity-25 disabled:cursor-not-allowed
 				       transition-all duration-150 shadow-lg shadow-amber-500/30"
 			>
-				Suivant →
+				{$t('viewer.next')}
 			</button>
 		</nav>
 
 		<!-- Keyboard hint -->
 		<p class="text-xs text-stone-600">
-			← → touches fléchées ou <kbd class="bg-stone-800 px-1.5 py-0.5 rounded text-stone-400"
-				>F9</kbd
-			> pour naviguer
+			{$t('nav.arrow_keys_hint', { key: 'F9' })}
 		</p>
 	</main>
 {/if}

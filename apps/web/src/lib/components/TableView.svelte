@@ -1,21 +1,22 @@
 <script lang="ts">
 	import { builderStore } from '$lib/stores/builderStore';
 	import type { BuildOrder } from '@aegis/core';
+	import { t } from '$lib/i18n';
 
 	let { buildOrder }: { buildOrder: BuildOrder } = $props();
 
-	const columns: Array<{
+	const columns = $derived<Array<{
 		field: 'villagerCount' | 'food' | 'wood' | 'gold' | 'stone';
 		label: string;
 		emoji: string;
 		text: string;
-	}> = [
-		{ field: 'villagerCount', label: 'Pop',    emoji: '👥', text: 'text-cyan-300'   },
-		{ field: 'food',          label: 'Nourriture', emoji: '🍖', text: 'text-green-400'  },
-		{ field: 'wood',          label: 'Bois',    emoji: '🪵', text: 'text-amber-400'  },
-		{ field: 'gold',          label: 'Or',      emoji: '🪙', text: 'text-yellow-300' },
-		{ field: 'stone',         label: 'Pierre',  emoji: '🪨', text: 'text-slate-300'  },
-	];
+	}>>([
+		{ field: 'villagerCount', label: 'Pop',                emoji: '👥', text: 'text-cyan-300'   },
+		{ field: 'food',          label: $t('resource.food'),  emoji: '🍖', text: 'text-green-400'  },
+		{ field: 'wood',          label: $t('resource.wood'),  emoji: '🪵', text: 'text-amber-400'  },
+		{ field: 'gold',          label: $t('resource.gold'),  emoji: '🪙', text: 'text-yellow-300' },
+		{ field: 'stone',         label: $t('resource.stone'), emoji: '🪨', text: 'text-slate-300'  },
+	]);
 </script>
 
 <div class="overflow-x-auto rounded-2xl border border-stone-800">
@@ -26,10 +27,10 @@
 					#
 				</th>
 				<th class="text-left px-3 py-2 text-stone-500 font-semibold text-xs uppercase tracking-wider min-w-[120px]">
-					Déclencheur
+					{$t('table.trigger')}
 				</th>
 				<th class="text-left px-3 py-2 text-stone-500 font-semibold text-xs uppercase tracking-wider min-w-[160px]">
-					Instruction
+					{$t('table.instruction')}
 				</th>
 				{#each columns as col}
 					<th class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-center {col.text}">
@@ -56,7 +57,7 @@
 							type="text"
 							value={step.label}
 							oninput={(e) => builderStore.updateStep(i, { label: (e.target as HTMLInputElement).value })}
-							placeholder="Déclencheur…"
+							placeholder={$t('table.trigger_placeholder')}
 							class="w-full bg-transparent border border-transparent hover:border-stone-700
 							       focus:border-amber-500 rounded-lg px-2 py-1 text-stone-100 text-sm
 							       focus:outline-none transition-colors"
@@ -69,7 +70,7 @@
 							type="text"
 							value={step.description}
 							oninput={(e) => builderStore.updateStep(i, { description: (e.target as HTMLInputElement).value })}
-							placeholder="Instruction…"
+							placeholder={$t('table.instruction_placeholder')}
 							class="w-full bg-transparent border border-transparent hover:border-stone-700
 							       focus:border-amber-500 rounded-lg px-2 py-1 text-stone-100 text-sm
 							       focus:outline-none transition-colors"
@@ -101,7 +102,7 @@
 							disabled={buildOrder.steps.length <= 1}
 							class="text-stone-600 hover:text-red-400 transition-colors text-base
 							       disabled:opacity-25 disabled:cursor-not-allowed"
-							aria-label="Supprimer l'étape"
+							aria-label={$t('table.delete_step')}
 						>✕</button>
 					</td>
 				</tr>
@@ -115,7 +116,7 @@
 			onclick={() => builderStore.addStep()}
 			class="text-sm text-stone-500 hover:text-amber-400 transition-colors font-semibold"
 		>
-			+ Ajouter une étape
+			{$t('table.add_step')}
 		</button>
 	</div>
 </div>

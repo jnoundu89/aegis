@@ -4,7 +4,8 @@
 	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { listen } from '@tauri-apps/api/event';
-	import { TTS_LANG } from '$lib/config';
+	import { settingsStore } from '$lib/stores/settingsStore';
+	import { t, ttsLang } from '$lib/i18n';
 
 	let { data } = $props();
 
@@ -21,14 +22,14 @@
 	const hasNext = $derived(stepIndex < totalSteps - 1);
 
 	/** Resource display configuration: label, emoji, Tailwind colour classes */
-	const resourceConfig: Record<ResourceKey | 'villagerCount', { label: string; emoji: string; text: string; bg: string }> = {
-		villagerCount: { label: 'Villagers', emoji: '👥', text: 'text-cyan-300', bg: 'bg-cyan-900/40 border border-cyan-700/50' },
-		food:          { label: 'Food',      emoji: '🍖', text: 'text-green-300', bg: 'bg-green-900/40 border border-green-700/50' },
-		wood:          { label: 'Wood',      emoji: '🪵', text: 'text-amber-400', bg: 'bg-amber-900/40 border border-amber-700/50' },
-		gold:          { label: 'Gold',      emoji: '🪙', text: 'text-yellow-300', bg: 'bg-yellow-900/40 border border-yellow-700/50' },
-		stone:         { label: 'Stone',     emoji: '🪨', text: 'text-slate-300',  bg: 'bg-slate-800/60  border border-slate-600/50' },
-		favor:         { label: 'Favor',     emoji: '⚡', text: 'text-purple-300', bg: 'bg-purple-900/40 border border-purple-700/50' }
-	};
+	const resourceConfig = $derived<Record<ResourceKey | 'villagerCount', { label: string; emoji: string; text: string; bg: string }>>({
+		villagerCount: { label: $t('resource.villagers'), emoji: '👥', text: 'text-cyan-300', bg: 'bg-cyan-900/40 border border-cyan-700/50' },
+		food:          { label: $t('resource.food'),      emoji: '🍖', text: 'text-green-300', bg: 'bg-green-900/40 border border-green-700/50' },
+		wood:          { label: $t('resource.wood'),      emoji: '🪵', text: 'text-amber-400', bg: 'bg-amber-900/40 border border-amber-700/50' },
+		gold:          { label: $t('resource.gold'),      emoji: '🪙', text: 'text-yellow-300', bg: 'bg-yellow-900/40 border border-yellow-700/50' },
+		stone:         { label: $t('resource.stone'),     emoji: '🪨', text: 'text-slate-300',  bg: 'bg-slate-800/60  border border-slate-600/50' },
+		favor:         { label: $t('resource.favor'),     emoji: '⚡', text: 'text-purple-300', bg: 'bg-purple-900/40 border border-purple-700/50' }
+	});
 
 	/** Ordered resource keys to display (villagerCount always first, then game resources) */
 	const resourceKeys = $derived<(ResourceKey | 'villagerCount')[]>([
@@ -38,10 +39,11 @@
 
 	/** Speak a text string using the Web Speech API (fires-and-forgets) */
 	function speak(text: string) {
+		if (!$settingsStore.ttsEnabled) return;
 		if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
 		window.speechSynthesis.cancel();
 		const utterance = new SpeechSynthesisUtterance(text);
-		utterance.lang = TTS_LANG;
+		utterance.lang = $ttsLang;
 		utterance.rate = 1.0;
 		window.speechSynthesis.speak(utterance);
 	}
@@ -89,7 +91,7 @@
 		<a
 			href="{base}/"
 			class="mt-1 text-stone-500 hover:text-amber-400 transition-colors text-lg leading-none"
-			aria-label="Back to library"
+			aria-label={$t('nav.back_to_library')}
 		>←</a>
 		<div class="flex-1 min-w-0">
 			<p class="text-xs text-stone-500 uppercase tracking-widest font-semibold">
@@ -118,7 +120,7 @@
 			>
 				<span class="flex items-center gap-2">
 					<span>📋</span>
-					<span>Notes Stratégiques</span>
+					<span>{$t('viewer.strategy_notes')}</span>
 				</span>
 				<span class="text-stone-400 text-xs transition-transform duration-200 {strategyNotesOpen ? 'rotate-180' : ''}">▼</span>
 			</button>
@@ -146,7 +148,7 @@
 	<!-- Progress bar -->
 	<div class="w-full max-w-lg space-y-1">
 		<div class="flex justify-between text-xs text-stone-500 font-mono">
-			<span>ÉTAPE</span>
+			<span>{$t('viewer.step')}</span>
 			<span>{stepIndex + 1} / {totalSteps}</span>
 		</div>
 		<div class="h-1.5 w-full bg-stone-800 rounded-full overflow-hidden">
@@ -206,7 +208,7 @@
 				disabled:opacity-25 disabled:cursor-not-allowed
 				transition-all duration-150 shadow-md"
 		>
-			← Précédent
+			{$t('viewer.prev')}
 		</button>
 		<button
 			onclick={next}
@@ -216,12 +218,12 @@
 				disabled:opacity-25 disabled:cursor-not-allowed
 				transition-all duration-150 shadow-lg shadow-amber-500/30"
 		>
-			Suivant →
+			{$t('viewer.next')}
 		</button>
 	</nav>
 
 	<!-- Keyboard hint -->
 	<p class="text-xs text-stone-600">
-		← → touches fléchées ou <kbd class="bg-stone-800 px-1.5 py-0.5 rounded text-stone-400">F9</kbd> pour naviguer
+		{$t('nav.arrow_keys_hint', { key: 'F9' })}
 	</p>
 </main>

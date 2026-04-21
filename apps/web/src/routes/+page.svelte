@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { catalog } from '$lib/registry';
 	import { base } from '$app/paths';
+	import { t } from '$lib/i18n';
 
 	let selectedGameId = $state<string | null>(null);
 
@@ -23,18 +24,18 @@
 	<!-- Header -->
 	<header class="text-center space-y-4">
 		<h1 class="text-5xl font-extrabold tracking-tight">⚔️ Aegis</h1>
-		<p class="text-stone-400 text-base">Build Order Library — select a strategy to begin</p>
+		<p class="text-stone-400 text-base">{$t('home.tagline')}</p>
 		<a
 			href="{base}/builder"
 			class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 active:bg-amber-300 text-stone-950 font-bold text-sm shadow-lg shadow-amber-500/30 transition-all"
 		>
-			⚒️ Créer un Build Order
+			{$t('home.create_bo')}
 		</a>
 	</header>
 
 	<!-- Game filter pills -->
 	<section class="w-full max-w-2xl space-y-3">
-		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">Filter by Game</h2>
+		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('home.filter_by_game')}</h2>
 		<div class="flex flex-wrap gap-3">
 			<button
 				onclick={() => (selectedGameId = null)}
@@ -43,7 +44,7 @@
 					? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/30'
 					: 'bg-stone-800 text-stone-300 hover:bg-stone-700'}"
 			>
-				All Games
+				{$t('home.all_games')}
 			</button>
 			{#each catalog.games as game}
 				<button
@@ -62,7 +63,7 @@
 	<!-- Build order grid -->
 	<section class="w-full max-w-2xl space-y-3">
 		<h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
-			{filteredBOs.length} Build Order{filteredBOs.length !== 1 ? 's' : ''}
+			{filteredBOs.length} {$t('home.build_order')}{filteredBOs.length !== 1 ? 's' : ''}
 		</h2>
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 			{#each filteredBOs as bo (bo.id)}
