@@ -85,6 +85,14 @@ speak(currentStep.description);
 function next() { move('next'); }
 function prev() { move('prev'); }
 
+/** Hide the failed image and reveal its emoji fallback sibling. */
+function onSpriteError(e: Event) {
+const img = e.currentTarget as HTMLImageElement;
+img.classList.add('hidden');
+const fb = img.nextElementSibling as HTMLElement;
+if (fb) fb.classList.remove('hidden');
+}
+
 onMount(() => {
 if (typeof window === 'undefined' || !('__TAURI__' in window)) return;
 const unlistenPromise = listen('aegis-next-step', () => next()).catch(() => undefined);
@@ -307,11 +315,23 @@ class="w-full max-w-2xl bg-stone-900 border border-stone-800 rounded-2xl shadow-
 
 <!-- Sprites row -->
 {#if currentStep.sprites && currentStep.sprites.length > 0}
-<div class="flex gap-3">
+<div class="flex gap-3 flex-wrap">
 {#each currentStep.sprites as sprite}
 {@const entry = getSprite(sprite.key)}
 <div class="flex flex-col items-center gap-1 bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 min-w-[3.5rem]">
+{#if entry.url}
+<img
+	src={entry.url}
+	alt={sprite.label ?? entry.label}
+	width="40"
+	height="40"
+	class="object-contain rounded-md hover:scale-110 transition-transform duration-150"
+	onerror={onSpriteError}
+/>
+<span class="text-2xl leading-none hidden">{entry.emoji}</span>
+{:else}
 <span class="text-2xl leading-none">{entry.emoji}</span>
+{/if}
 <span class="text-xs text-stone-400 font-medium text-center">{sprite.label ?? entry.label}</span>
 </div>
 {/each}
@@ -423,9 +443,23 @@ onclick={() => { stepIndex = i; viewMode = 'guided'; }}
 <td class="px-2 py-2 text-stone-300 text-xs font-medium">{step.label}</td>
 <td class="px-2 py-2">
 {#if step.sprites && step.sprites.length > 0}
-<div class="flex gap-1">
+<div class="flex gap-1 flex-wrap">
 {#each step.sprites as sprite}
-<span class="text-base" title={getSprite(sprite.key).label}>{getSprite(sprite.key).emoji}</span>
+{@const entry = getSprite(sprite.key)}
+{#if entry.url}
+<img
+	src={entry.url}
+	alt={sprite.label ?? entry.label}
+	title={sprite.label ?? entry.label}
+	width="20"
+	height="20"
+	class="object-contain rounded"
+	onerror={onSpriteError}
+/>
+<span class="text-base hidden" title={sprite.label ?? entry.label}>{entry.emoji}</span>
+{:else}
+<span class="text-base" title={sprite.label ?? entry.label}>{entry.emoji}</span>
+{/if}
 {/each}
 </div>
 {/if}
