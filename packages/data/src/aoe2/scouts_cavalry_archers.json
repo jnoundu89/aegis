@@ -5,46 +5,106 @@
   "author": "Hera",
   "civilization": "Huns, Mongols, Magyars, Japanese, Tatars",
   "difficulty": "intermediate",
-  "description": "The objective of this build is to play safe with scouts in Feudal Age and secure full walls in a decent time. Then we look to switch into cavalry archers instead of more stable units. This can surprise the opponent as he won't see the ranges if made behind the walls. Going scouts and not straight fast castle or cavalry archers is to build up economy and stay safe early.",
+  "description": {
+    "en": "The objective of this build is to play safe with scouts in Feudal Age and secure full walls in a decent time. Then we look to switch into cavalry archers instead of more stable units. This can surprise the opponent as he won't see the ranges if made behind the walls. Going scouts and not straight fast castle or cavalry archers is to build up economy and stay safe early.",
+    "fr": "L'objectif de ce build est de jouer prudemment avec des éclaireurs en Âge Féodal et de se murer complètement rapidement. On cherche ensuite à passer aux archers à cheval plutôt qu'à plus d'unités d'écurie. Cela peut surprendre l'adversaire car il ne verra pas les Camps à l'Arc construits derrière les murs. Faire des éclaireurs plutôt que directement un Fast Castle ou des archers à cheval permet de construire l'économie et de rester en sécurité tôt dans la partie."
+  },
   "strategy_notes": [
     {
-      "phase": "DARK AGE",
+      "phase": { "en": "DARK AGE", "fr": "ÂGE SOMBRE" },
       "notes": [
-        "If you aren't able to fully wall in Feudal, I would abandon this build and simply make more scouts + bloodlines or switch to archers/skirms. Tower is always an option if needed. So is town watch to help explore.",
-        "In early Castle Age, you can decide whether to add TCs or go for monastery/ballistics/siege. Totally dependant on the game state and what you want to prioritize.",
-        "If you want to all in, do 3 ranges start of Castle Age. 2 is to scale and for light pressure.",
-        "As game goes on look to switch to ultimate comp using cav arch: Either CA + Hussar or CA + Halberdier. Both cases you add appropriate siege.",
-        "Those two comps win every late game if done correctly, they are the best Imperial compositions on Arabia."
+        {
+          "en": "If you aren't able to fully wall in Feudal, I would abandon this build and simply make more scouts + bloodlines or switch to archers/skirms. Tower is always an option if needed. So is town watch to help explore.",
+          "fr": "Si vous n'arrivez pas à vous murer complètement en Féodal, abandonnez ce build et faites simplement plus d'éclaireurs + Lignées ou passez aux archers/escarmoucheurs. La tour reste toujours une option si nécessaire. La Veille du Forum peut aussi aider à explorer."
+        },
+        {
+          "en": "In early Castle Age, you can decide whether to add TCs or go for monastery/ballistics/siege. Totally dependant on the game state and what you want to prioritize.",
+          "fr": "En début d'Âge Château, vous pouvez décider d'ajouter des Forums ou d'aller chercher monastère/balistique/siège. Cela dépend totalement de l'état du jeu et de vos priorités."
+        },
+        {
+          "en": "If you want to all in, do 3 ranges start of Castle Age. 2 is to scale and for light pressure.",
+          "fr": "Si vous voulez tout miser, faites 3 Camps à l'Arc en début d'Âge Château. 2 pour évoluer et exercer une pression légère."
+        },
+        {
+          "en": "As game goes on look to switch to ultimate comp using cav arch: Either CA + Hussar or CA + Halberdier. Both cases you add appropriate siege.",
+          "fr": "Au fil de la partie, cherchez à passer à la composition ultime avec les archers à cheval : soit AC + Hussard, soit AC + Hallebardier. Dans les deux cas, ajoutez du siège approprié."
+        },
+        {
+          "en": "Those two comps win every late game if done correctly, they are the best Imperial compositions on Arabia.",
+          "fr": "Ces deux compositions gagnent chaque fin de partie si bien exécutées, ce sont les meilleures compositions impériales sur Arabie."
+        }
       ]
     },
     {
-      "phase": "FEUDAL AGE",
+      "phase": { "en": "FEUDAL AGE", "fr": "ÂGE FÉODAL" },
       "notes": [
-        "As soon as you arrive in Feudal Age, make a stable and produce scouts continuously.",
-        "Research Double-Bit Axe first, then Horse Collar when berries are running out.",
-        "Start walling with palisades — use 2 villagers to wall opposite sides of your base from the stable.",
-        "Seed farms as soon as you have extra wood in the bank.",
-        "Keep adding scouts to attack or defend. [Optional] Make 1-4 spears if you are scared of enemy scouts.",
-        "Farm until you have around 15 farms (+/-2 depending on situation).",
-        "Send 5 villagers to gold and make a mining camp. Make a blacksmith.",
-        "Make sure to be fully walled by this point."
+        {
+          "en": "As soon as you arrive in Feudal Age, make a stable and produce scouts continuously.",
+          "fr": "Dès votre arrivée en Âge Féodal, construisez une Écurie et produisez des éclaireurs en continu."
+        },
+        {
+          "en": "Research Double-Bit Axe first, then Horse Collar when berries are running out.",
+          "fr": "Recherchez d'abord la Hache à double tranchant, puis le Collier de cheval quand les baies s'épuisent."
+        },
+        {
+          "en": "Start walling with palisades — use 2 villagers to wall opposite sides of your base from the stable.",
+          "fr": "Commencez à vous murer avec des palissades — utilisez 2 villageois pour murer les côtés opposés de votre base depuis l'Écurie."
+        },
+        {
+          "en": "Seed farms as soon as you have extra wood in the bank.",
+          "fr": "Construisez des fermes dès que vous avez du bois en surplus."
+        },
+        {
+          "en": "Keep adding scouts to attack or defend. [Optional] Make 1-4 spears if you are scared of enemy scouts.",
+          "fr": "Continuez à produire des éclaireurs pour attaquer ou défendre. [Optionnel] Faites 1 à 4 lanciers si vous avez peur des scouts ennemis."
+        },
+        {
+          "en": "Farm until you have around 15 farms (+/-2 depending on situation).",
+          "fr": "Faites des fermes jusqu'à en avoir environ 15 (±2 selon la situation)."
+        },
+        {
+          "en": "Send 5 villagers to gold and make a mining camp. Make a blacksmith.",
+          "fr": "Envoyez 5 villageois à l'or et construisez un Camp de Mineurs. Faites une Forge."
+        },
+        {
+          "en": "Make sure to be fully walled by this point.",
+          "fr": "Assurez-vous d'être entièrement muré à ce stade."
+        }
       ]
     },
     {
-      "phase": "CASTLE AGE",
+      "phase": { "en": "CASTLE AGE", "fr": "ÂGE CHÂTEAU" },
       "notes": [
-        "As soon as you hit Castle Age, get Fletching + Bloodlines + Bow Saw.",
-        "Make 2 ranges and start producing Cavalry Archers.",
-        "Research Gold Mining and Husbandry.",
-        "Redistribute your economy as needed to sustain cavalry archer production.",
-        "Get Bodkin Arrow and Husbandry to power up your cavalry archers.",
-        "Going cavalry archers isn't great before Castle Age because the opponent can be on skirms too early."
+        {
+          "en": "As soon as you hit Castle Age, get Fletching + Bloodlines + Bow Saw.",
+          "fr": "Dès que vous arrivez en Âge Château, obtenez Empennage + Lignées + Scie à Arc."
+        },
+        {
+          "en": "Make 2 ranges and start producing Cavalry Archers.",
+          "fr": "Construisez 2 Camps à l'Arc et commencez à produire des Archers à Cheval."
+        },
+        {
+          "en": "Research Gold Mining and Husbandry.",
+          "fr": "Recherchez Mine d'Or et Élevage."
+        },
+        {
+          "en": "Redistribute your economy as needed to sustain cavalry archer production.",
+          "fr": "Redistribuez votre économie selon les besoins pour soutenir la production d'archers à cheval."
+        },
+        {
+          "en": "Get Bodkin Arrow and Husbandry to power up your cavalry archers.",
+          "fr": "Obtenez Pointe Bodkin et Élevage pour renforcer vos archers à cheval."
+        },
+        {
+          "en": "Going cavalry archers isn't great before Castle Age because the opponent can be on skirms too early.",
+          "fr": "Les archers à cheval avant l'Âge Château n'est pas idéal car l'adversaire peut être sur des escarmoucheurs trop tôt."
+        }
       ]
     }
   ],
   "checkpoints": [
     {
-      "label": "Click up to Feudal Age",
+      "label": { "en": "Click up to Feudal Age", "fr": "Passer à l'Âge Féodal" },
       "clickTime": "8:50",
       "arrivalTime": "11:00",
       "villagerCount": 18,
@@ -54,7 +114,7 @@
       "stone": 0
     },
     {
-      "label": "Click up to Castle Age",
+      "label": { "en": "Click up to Castle Age", "fr": "Passer à l'Âge Château" },
       "clickTime": "17:00",
       "arrivalTime": "19:30",
       "villagerCount": 29,
@@ -68,8 +128,8 @@
     {
       "id": 1,
       "phase": "Dark Age",
-      "label": "Vills 1-6 → Sheep",
-      "description": "Send 6 villagers to sheep.",
+      "label": { "en": "Vills 1-6 → Sheep", "fr": "Vills 1-6 → Moutons" },
+      "description": { "en": "Send 6 villagers to sheep.", "fr": "Envoyez 6 villageois sur les moutons." },
       "sprites": [{ "key": "sheep" }],
       "villagerCount": 6,
       "food": 6,
@@ -80,8 +140,8 @@
     {
       "id": 2,
       "phase": "Dark Age",
-      "label": "Vills 7-8 → Wood",
-      "description": "Send 2 villagers to wood.",
+      "label": { "en": "Vills 7-8 → Wood", "fr": "Vills 7-8 → Bois" },
+      "description": { "en": "Send 2 villagers to wood.", "fr": "Envoyez 2 villageois au bois." },
       "sprites": [{ "key": "lumber_camp" }],
       "villagerCount": 8,
       "food": 6,
@@ -92,8 +152,8 @@
     {
       "id": 3,
       "phase": "Dark Age",
-      "label": "Vill 9 → Boar",
-      "description": "Send 1 villager to lure the boar.",
+      "label": { "en": "Vill 9 → Boar", "fr": "Vill 9 → Sanglier" },
+      "description": { "en": "Send 1 villager to lure the boar.", "fr": "Envoyez 1 villageois attirer le sanglier." },
       "sprites": [{ "key": "boar" }],
       "villagerCount": 9,
       "food": 7,
@@ -104,8 +164,11 @@
     {
       "id": 4,
       "phase": "Dark Age",
-      "label": "Vill 10 → House + Mill",
-      "description": "1 villager builds a house then a mill near the berries.",
+      "label": { "en": "Vill 10 → House + Mill", "fr": "Vill 10 → Maison + Moulin" },
+      "description": {
+        "en": "1 villager builds a house then a mill near the berries.",
+        "fr": "1 villageois construit une maison puis un moulin près des baies."
+      },
       "sprites": [{ "key": "house" }, { "key": "mill" }],
       "villagerCount": 10,
       "food": 8,
@@ -116,21 +179,30 @@
     {
       "id": 5,
       "phase": "Dark Age",
-      "label": "Scout: Lure Deer",
-      "description": "[Recommended] Lure deer with your scout once you've found all sheep.",
+      "label": { "en": "Scout: Lure Deer", "fr": "Scout : Attirer les Cerfs" },
+      "description": {
+        "en": "[Recommended] Lure deer with your scout once you've found all sheep.",
+        "fr": "[Recommandé] Attirez les cerfs avec votre scout une fois que vous avez trouvé tous les moutons."
+      },
       "sprites": [{ "key": "scout" }, { "key": "deer" }],
       "villagerCount": 10,
       "food": 8,
       "wood": 2,
       "gold": 0,
       "stone": 0,
-      "notes": "Skip Horse Collar if scared of aggression. Always get Horse Collar on closed maps."
+      "notes": {
+        "en": "Skip Horse Collar if scared of aggression. Always get Horse Collar on closed maps.",
+        "fr": "Ignorez le Collier de cheval si vous avez peur de l'agression. Prenez toujours le Collier de cheval sur les cartes fermées."
+      }
     },
     {
       "id": 6,
       "phase": "Dark Age",
-      "label": "Vills 11-16 → Hunt under TC",
-      "description": "Next 6 vils to hunt under TC (get the second boar when needed).",
+      "label": { "en": "Vills 11-16 → Hunt under TC", "fr": "Vills 11-16 → Chasse sous le Forum" },
+      "description": {
+        "en": "Next 6 vils to hunt under TC (get the second boar when needed).",
+        "fr": "Les 6 vills suivants à la chasse sous le Forum (prenez le deuxième sanglier quand nécessaire)."
+      },
       "sprites": [{ "key": "boar" }, { "key": "deer" }],
       "villagerCount": 16,
       "food": 14,
@@ -141,8 +213,8 @@
     {
       "id": 7,
       "phase": "Dark Age",
-      "label": "Vills 17-18 → Wood",
-      "description": "Send 2 villagers to wood.",
+      "label": { "en": "Vills 17-18 → Wood", "fr": "Vills 17-18 → Bois" },
+      "description": { "en": "Send 2 villagers to wood.", "fr": "Envoyez 2 villageois au bois." },
       "sprites": [{ "key": "lumber_camp" }],
       "villagerCount": 18,
       "food": 14,
@@ -153,8 +225,8 @@
     {
       "id": 8,
       "phase": "Dark Age",
-      "label": "Research Loom",
-      "description": "Research Loom.",
+      "label": { "en": "Research Loom", "fr": "Rechercher le Métier à tisser" },
+      "description": { "en": "Research Loom.", "fr": "Recherchez le Métier à tisser (Loom)." },
       "sprites": [{ "key": "loom" }],
       "villagerCount": 18,
       "food": 14,
@@ -165,21 +237,30 @@
     {
       "id": 9,
       "phase": "Dark Age",
-      "label": "Click Feudal Age",
-      "description": "Research Feudal Age (perfect landing time: 8:50).",
+      "label": { "en": "Click Feudal Age", "fr": "Cliquer l'Âge Féodal" },
+      "description": {
+        "en": "Research Feudal Age (perfect landing time: 8:50).",
+        "fr": "Recherchez l'Âge Féodal (temps d'arrivée idéal : 8:50)."
+      },
       "sprites": [{ "key": "feudal_age" }],
       "villagerCount": 18,
       "food": 4,
       "wood": 14,
       "gold": 0,
       "stone": 0,
-      "notes": "Move vils off food onto wood while clicking up: target 4 food / 14 wood."
+      "notes": {
+        "en": "Move vils off food onto wood while clicking up: target 4 food / 14 wood.",
+        "fr": "Déplacez des villageois de la nourriture vers le bois en cliquant : objectif 4 nourriture / 14 bois."
+      }
     },
     {
       "id": 10,
       "phase": "Feudal Age",
-      "label": "Transition: 2nd Lumber Camp",
-      "description": "Move 5 vils from hunt to wood, and make a second lumber camp.",
+      "label": { "en": "Transition: 2nd Lumber Camp", "fr": "Transition : 2ème Camp de Bûcherons" },
+      "description": {
+        "en": "Move 5 vils from hunt to wood, and make a second lumber camp.",
+        "fr": "Déplacez 5 vills de la chasse vers le bois et construisez un deuxième Camp de Bûcherons."
+      },
       "sprites": [{ "key": "lumber_camp" }],
       "villagerCount": 18,
       "food": 9,
@@ -190,8 +271,11 @@
     {
       "id": 11,
       "phase": "Feudal Age",
-      "label": "Transition: Berries",
-      "description": "Move 5 vils from hunt to berries.",
+      "label": { "en": "Transition: Berries", "fr": "Transition : Baies" },
+      "description": {
+        "en": "Move 5 vils from hunt to berries.",
+        "fr": "Déplacez 5 vills de la chasse vers les baies."
+      },
       "sprites": [{ "key": "berries" }],
       "villagerCount": 18,
       "food": 9,
@@ -202,8 +286,11 @@
     {
       "id": 12,
       "phase": "Feudal Age",
-      "label": "Build Barracks",
-      "description": "Move 1 vil from hunt to make barracks.",
+      "label": { "en": "Build Barracks", "fr": "Construire la Caserne" },
+      "description": {
+        "en": "Move 1 vil from hunt to make barracks.",
+        "fr": "Déplacez 1 vill de la chasse pour construire la Caserne."
+      },
       "sprites": [{ "key": "barracks" }],
       "villagerCount": 18,
       "food": 9,
@@ -214,34 +301,43 @@
     {
       "id": 13,
       "phase": "Feudal Age",
-      "label": "Build Stable",
-      "description": "Make a stable with 2 vils.",
+      "label": { "en": "Build Stable", "fr": "Construire l'Écurie" },
+      "description": { "en": "Make a stable with 2 vils.", "fr": "Construisez une Écurie avec 2 vills." },
       "sprites": [{ "key": "stable" }, { "key": "scout" }],
       "villagerCount": 18,
       "food": 9,
       "wood": 7,
       "gold": 0,
       "stone": 0,
-      "notes": "Use the 2 vils that build the stable to wall opposite sides of your base."
+      "notes": {
+        "en": "Use the 2 vils that build the stable to wall opposite sides of your base.",
+        "fr": "Utilisez les 2 vills qui construisent l'Écurie pour murer les côtés opposés de votre base."
+      }
     },
     {
       "id": 14,
       "phase": "Feudal Age",
-      "label": "Research Double-Bit Axe",
-      "description": "Research Double-Bit Axe.",
+      "label": { "en": "Research Double-Bit Axe", "fr": "Rechercher la Hache à double tranchant" },
+      "description": { "en": "Research Double-Bit Axe.", "fr": "Recherchez la Hache à double tranchant." },
       "sprites": [{ "key": "double_bit_axe" }],
       "villagerCount": 18,
       "food": 9,
       "wood": 7,
       "gold": 0,
       "stone": 0,
-      "notes": "Note: Skip Horse Collar if scared of aggression. Always get on closed maps."
+      "notes": {
+        "en": "Note: Skip Horse Collar if scared of aggression. Always get on closed maps.",
+        "fr": "Ignorez le Collier de cheval si vous avez peur de l'agression. Prenez-le toujours sur les cartes fermées."
+      }
     },
     {
       "id": 15,
       "phase": "Feudal Age",
-      "label": "Start Farms",
-      "description": "Start seeding farms as soon as you have extra wood in the bank.",
+      "label": { "en": "Start Farms", "fr": "Commencer les Fermes" },
+      "description": {
+        "en": "Start seeding farms as soon as you have extra wood in the bank.",
+        "fr": "Commencez à construire des fermes dès que vous avez du bois en stock."
+      },
       "sprites": [{ "key": "farm" }],
       "villagerCount": 18,
       "food": 9,
@@ -252,21 +348,30 @@
     {
       "id": 16,
       "phase": "Feudal Age",
-      "label": "Add Scouts",
-      "description": "Keep adding scouts and use them to attack your opponent or defend.",
+      "label": { "en": "Add Scouts", "fr": "Ajouter des Éclaireurs" },
+      "description": {
+        "en": "Keep adding scouts and use them to attack your opponent or defend.",
+        "fr": "Continuez à produire des éclaireurs et utilisez-les pour attaquer ou défendre."
+      },
       "sprites": [{ "key": "scout" }],
       "villagerCount": 18,
       "food": 9,
       "wood": 7,
       "gold": 0,
       "stone": 0,
-      "notes": "[Optional] Make 1-4 spears if you are scared of enemy scouts."
+      "notes": {
+        "en": "[Optional] Make 1-4 spears if you are scared of enemy scouts.",
+        "fr": "[Optionnel] Faites 1 à 4 lanciers si vous avez peur des scouts ennemis."
+      }
     },
     {
       "id": 17,
       "phase": "Feudal Age",
-      "label": "~15 Farms → Gold",
-      "description": "Farm until you have around 15 farms (+/-2 depending on situation), then send 5 vils to gold and make a mining camp.",
+      "label": { "en": "~15 Farms → Gold", "fr": "~15 Fermes → Or" },
+      "description": {
+        "en": "Farm until you have around 15 farms (+/-2 depending on situation), then send 5 vils to gold and make a mining camp.",
+        "fr": "Faites des fermes jusqu'à en avoir environ 15 (±2 selon la situation), puis envoyez 5 vills à l'or et construisez un Camp de Mineurs."
+      },
       "sprites": [{ "key": "farm" }, { "key": "mining_camp" }],
       "villagerCount": 29,
       "food": 12,
@@ -277,34 +382,46 @@
     {
       "id": 18,
       "phase": "Feudal Age",
-      "label": "Blacksmith + Wall",
-      "description": "Make a blacksmith. Make sure to be fully walled by this point.",
+      "label": { "en": "Blacksmith + Wall", "fr": "Forge + Murs" },
+      "description": {
+        "en": "Make a blacksmith. Make sure to be fully walled by this point.",
+        "fr": "Construisez une Forge. Assurez-vous d'être entièrement muré à ce stade."
+      },
       "sprites": [{ "key": "blacksmith" }, { "key": "palisade_wall" }],
       "villagerCount": 29,
       "food": 12,
       "wood": 10,
       "gold": 7,
       "stone": 0,
-      "notes": "When berries expire move to gold/wood/farms depending on your needs."
+      "notes": {
+        "en": "When berries expire move to gold/wood/farms depending on your needs.",
+        "fr": "Quand les baies s'épuisent, déplacez des vills vers l'or/bois/fermes selon vos besoins."
+      }
     },
     {
       "id": 19,
       "phase": "Feudal Age",
-      "label": "Click Castle Age",
-      "description": "Research Castle Age.",
+      "label": { "en": "Click Castle Age", "fr": "Cliquer l'Âge Château" },
+      "description": { "en": "Research Castle Age.", "fr": "Recherchez l'Âge Château." },
       "sprites": [{ "key": "castle_age" }],
       "villagerCount": 29,
       "food": 12,
       "wood": 10,
       "gold": 7,
       "stone": 0,
-      "notes": "Redistribute your economy before clicking up."
+      "notes": {
+        "en": "Redistribute your economy before clicking up.",
+        "fr": "Redistribuez votre économie avant de cliquer."
+      }
     },
     {
       "id": 20,
       "phase": "Castle Age",
-      "label": "2 Ranges + Gold Mining",
-      "description": "Make 2 ranges and research Gold Mining.",
+      "label": { "en": "2 Ranges + Gold Mining", "fr": "2 Camps à l'Arc + Mine d'Or" },
+      "description": {
+        "en": "Make 2 ranges and research Gold Mining.",
+        "fr": "Construisez 2 Camps à l'Arc et recherchez Mine d'Or."
+      },
       "sprites": [{ "key": "range" }, { "key": "gold_mining" }],
       "villagerCount": 29,
       "food": 12,
@@ -315,8 +432,8 @@
     {
       "id": 21,
       "phase": "Castle Age",
-      "label": "Fletching + Bloodlines",
-      "description": "Get Fletching and Bloodlines.",
+      "label": { "en": "Fletching + Bloodlines", "fr": "Empennage + Lignées" },
+      "description": { "en": "Get Fletching and Bloodlines.", "fr": "Obtenez Empennage et Lignées." },
       "sprites": [{ "key": "fletching" }, { "key": "bloodlines" }],
       "villagerCount": 29,
       "food": 12,
@@ -327,8 +444,11 @@
     {
       "id": 22,
       "phase": "Castle Age",
-      "label": "Cavalry Archers",
-      "description": "Start making cavalry archers.",
+      "label": { "en": "Cavalry Archers", "fr": "Archers à Cheval" },
+      "description": {
+        "en": "Start making cavalry archers.",
+        "fr": "Commencez à produire des Archers à Cheval."
+      },
       "sprites": [{ "key": "cavalry_archer" }],
       "villagerCount": 29,
       "food": 12,
@@ -339,8 +459,11 @@
     {
       "id": 23,
       "phase": "Castle Age",
-      "label": "Bow Saw + Bodkin + Husbandry",
-      "description": "Research Bow Saw, then Bodkin Arrow and Husbandry.",
+      "label": { "en": "Bow Saw + Bodkin + Husbandry", "fr": "Scie à Arc + Pointe Bodkin + Élevage" },
+      "description": {
+        "en": "Research Bow Saw, then Bodkin Arrow and Husbandry.",
+        "fr": "Recherchez Scie à Arc, puis Pointe Bodkin et Élevage."
+      },
       "sprites": [{ "key": "bow_saw" }, { "key": "bodkin_arrow" }, { "key": "husbandry" }],
       "villagerCount": 29,
       "food": 12,

@@ -4,6 +4,16 @@
  */
 export type ResourceKey = 'food' | 'wood' | 'gold' | 'stone' | 'favor';
 
+/**
+ * A string that can be either a plain string (single-language, used for
+ * user-created build orders) or a locale map with at least an English variant
+ * (used for built-in build orders that ship with translations).
+ *
+ * @example Plain string (backward-compatible):  "6 Sheep"
+ * @example Bilingual: { en: "6 Sheep", fr: "6 Moutons" }
+ */
+export type LocalizedString = string | { en: string; fr?: string };
+
 /** Difficulty rating for a build order. */
 export type Difficulty = 'beginner' | 'intermediate' | 'advanced';
 
@@ -25,7 +35,7 @@ export interface StepSprite {
  */
 export interface Checkpoint {
   /** Short label, e.g. "Click up to Feudal Age" */
-  label: string;
+  label: LocalizedString;
   /** Target game time when clicking the age-up button, e.g. "10:50" */
   clickTime?: string;
   /** Expected arrival time in the new age, e.g. "13:00" */
@@ -67,7 +77,7 @@ export interface CatalogEntry {
   /** Civilisation the strategy is optimised for */
   civilization?: string;
   /** One-line summary shown in the library */
-  description?: string;
+  description?: LocalizedString;
   /** Searchable tags, e.g. ["eco", "castle"] */
   tags?: string[];
   /** Author or content creator of the build order */
@@ -109,11 +119,11 @@ export interface Step {
   /** Unique numeric identifier (1-based) */
   id: number;
   /** Short human-readable label, e.g. "6 Sheep" */
-  label: string;
+  label: LocalizedString;
   /** Detailed instruction for this step */
-  description: string;
+  description: LocalizedString;
   /** Notes or tips for this step */
-  notes?: string;
+  notes?: LocalizedString;
   /**
    * Game phase this step belongs to, e.g. "Dark Age", "Feudal Age".
    * When the phase changes between consecutive steps, the viewer inserts a divider.
@@ -138,9 +148,9 @@ export interface Step {
  */
 export interface StrategyPhase {
   /** Phase label, e.g. "LATE FEUDAL" or "CASTLE AGE" */
-  phase: string;
+  phase: LocalizedString;
   /** Ordered list of notes for this phase */
-  notes: string[];
+  notes: LocalizedString[];
 }
 
 /**
@@ -158,7 +168,7 @@ export interface BuildOrder {
   /** Civilisation the build order is optimised for (empty = any) */
   civilization?: string;
   /** Short description of the strategy */
-  description?: string;
+  description?: LocalizedString;
   /** Skill level required */
   difficulty?: Difficulty;
   /** Strategic notes grouped by game phase (late feudal, castle age, etc.) */

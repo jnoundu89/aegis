@@ -3,84 +3,129 @@
   "gameId": "aom",
   "name": "Zeus Rush",
   "civilization": "Greek (Zeus)",
-  "description": "Leverage Zeus' passive favor generation and Bolt divine power for an early attack.",
+  "description": {
+    "en": "Leverage Zeus' passive favor generation and Bolt divine power for an early attack.",
+    "fr": "Exploitez la génération passive de faveur de Zeus et le pouvoir divin Foudre pour une attaque précoce."
+  },
   "steps": [
     {
       "id": 1,
-      "label": "3 Villagers on Food",
-      "description": "Send your 3 starting villagers onto the nearest herd of animals or berry bushes.",
+      "label": { "en": "3 Villagers on Food", "fr": "3 Villageois sur la Nourriture" },
+      "description": {
+        "en": "Send your 3 starting villagers onto the nearest herd of animals or berry bushes.",
+        "fr": "Envoyez vos 3 villageois de départ sur le troupeau d'animaux ou les buissons de baies le plus proche."
+      },
       "villagerCount": 3,
       "food": 150,
       "wood": 0,
       "gold": 0,
       "favor": 0,
-      "notes": "Zeus worshippers generate favor passively — no Temple needed in the early game."
+      "notes": {
+        "en": "Zeus worshippers generate favor passively — no Temple needed in the early game.",
+        "fr": "Les adorateurs de Zeus génèrent de la faveur passivement — pas besoin de Temple en début de partie."
+      }
     },
     {
       "id": 2,
-      "label": "2 Villagers on Wood",
-      "description": "Queue 2 more villagers. Task both on the nearest trees when they pop.",
+      "label": { "en": "2 Villagers on Wood", "fr": "2 Villageois sur le Bois" },
+      "description": {
+        "en": "Queue 2 more villagers. Task both on the nearest trees when they pop.",
+        "fr": "Mettez 2 villageois en file. Affectez-les aux arbres les plus proches dès qu'ils sortent."
+      },
       "villagerCount": 5,
       "food": 200,
       "wood": 75,
       "gold": 0,
       "favor": 5,
-      "notes": "Wood is critical for houses and a future Temple of Zeus."
+      "notes": {
+        "en": "Wood is critical for houses and a future Temple of Zeus.",
+        "fr": "Le bois est essentiel pour les maisons et un futur Temple de Zeus."
+      }
     },
     {
       "id": 3,
-      "label": "Build House & 2 more Food Villagers",
-      "description": "Build 1 House to raise your population cap, then queue 2 food villagers.",
+      "label": { "en": "Build House & 2 more Food Villagers", "fr": "Construire Maison & 2 Villageois Nourriture" },
+      "description": {
+        "en": "Build 1 House to raise your population cap, then queue 2 food villagers.",
+        "fr": "Construisez 1 Maison pour augmenter votre limite de population, puis mettez 2 villageois nourriture en file."
+      },
       "villagerCount": 7,
       "food": 250,
       "wood": 50,
       "gold": 0,
       "favor": 10,
-      "notes": "Each house gives +10 pop. Keep building houses proactively."
+      "notes": {
+        "en": "Each house gives +10 pop. Keep building houses proactively.",
+        "fr": "Chaque maison donne +10 de pop. Continuez à construire des maisons de manière proactive."
+      }
     },
     {
       "id": 4,
-      "label": "Research Hunting Dogs",
-      "description": "Research Hunting Dogs at your Town Center to speed up food gathering.",
+      "label": { "en": "Research Hunting Dogs", "fr": "Rechercher Chiens de Chasse" },
+      "description": {
+        "en": "Research Hunting Dogs at your Town Center to speed up food gathering.",
+        "fr": "Recherchez Chiens de Chasse à votre Forum pour accélérer la collecte de nourriture."
+      },
       "villagerCount": 9,
       "food": 100,
       "wood": 100,
       "gold": 0,
       "favor": 15,
-      "notes": "Hunting Dogs costs 100 food and dramatically increases hunt gather rate."
+      "notes": {
+        "en": "Hunting Dogs costs 100 food and dramatically increases hunt gather rate.",
+        "fr": "Chiens de Chasse coûte 100 de nourriture et augmente considérablement la vitesse de collecte à la chasse."
+      }
     },
     {
       "id": 5,
-      "label": "Advance to Heroic Age – Ares",
-      "description": "With 9–10 villagers and enough resources, click Classical Age, choosing Ares as your minor god.",
+      "label": { "en": "Advance to Classical Age – Ares", "fr": "Passer à l'Âge Classique – Arès" },
+      "description": {
+        "en": "With 9–10 villagers and enough resources, click Classical Age, choosing Ares as your minor god.",
+        "fr": "Avec 9-10 villageois et suffisamment de ressources, cliquez l'Âge Classique en choisissant Arès comme dieu mineur."
+      },
       "villagerCount": 10,
       "food": 400,
       "wood": 0,
       "gold": 0,
       "favor": 25,
-      "notes": "Ares provides Pestilence to weaken enemy eco and the powerful Cyclops myth unit."
+      "notes": {
+        "en": "Ares provides Pestilence to weaken enemy eco and the powerful Cyclops myth unit.",
+        "fr": "Arès fournit Pestilence pour affaiblir l'économie ennemie et le puissant Cyclope comme unité mythologique."
+      }
     },
     {
       "id": 6,
-      "label": "Produce Hoplites & Use Bolt",
-      "description": "Build a Military Academy and train Hoplites. Fire Zeus' Bolt divine power at an enemy building.",
+      "label": { "en": "Produce Hoplites & Use Bolt", "fr": "Produire des Hoplites & Utiliser Foudre" },
+      "description": {
+        "en": "Build a Military Academy and train Hoplites. Fire Zeus' Bolt divine power at an enemy building.",
+        "fr": "Construisez une Académie Militaire et entraînez des Hoplites. Utilisez la Foudre de Zeus sur un bâtiment ennemi."
+      },
       "villagerCount": 12,
       "food": 200,
       "wood": 100,
       "gold": 100,
       "favor": 20,
-      "notes": "Bolt deals 600 damage to any unit or building — use it on the Town Center for maximum disruption."
+      "notes": {
+        "en": "Bolt deals 600 damage to any unit or building — use it on the Town Center for maximum disruption.",
+        "fr": "La Foudre inflige 600 dégâts à n'importe quelle unité ou bâtiment — utilisez-la sur le Forum pour un maximum de perturbation."
+      }
     },
     {
       "id": 7,
-      "label": "Push with Hoplites + Myth Unit",
-      "description": "Combine Hoplites with a Cyclops myth unit and push the enemy base. Use Pestilence on key resource gatherers.",
+      "label": { "en": "Push with Hoplites + Myth Unit", "fr": "Attaquer avec Hoplites + Unité Mythologique" },
+      "description": {
+        "en": "Combine Hoplites with a Cyclops myth unit and push the enemy base. Use Pestilence on key resource gatherers.",
+        "fr": "Combinez des Hoplites avec un Cyclope et attaquez la base ennemie. Utilisez Pestilence sur les collecteurs de ressources clés."
+      },
       "villagerCount": 14,
       "food": 100,
       "wood": 50,
       "gold": 150,
       "favor": 30,
-      "notes": "Hoplites deal bonus damage to myth units — mix with Cyclops to counter enemy armies."
+      "notes": {
+        "en": "Hoplites deal bonus damage to myth units — mix with Cyclops to counter enemy armies.",
+        "fr": "Les Hoplites infligent des dégâts bonus aux unités mythologiques — mixez avec le Cyclope pour contrer les armées ennemies."
+      }
     }
   ]
 }

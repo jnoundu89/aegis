@@ -6,7 +6,7 @@ import { base } from '$app/paths';
 import { onMount } from 'svelte';
 import { listen } from '@tauri-apps/api/event';
 import { settingsStore } from '$lib/stores/settingsStore';
-import { t, ttsLang } from '$lib/i18n';
+import { t, ttsLang, localize, translatePhase } from '$lib/i18n';
 
 let { data } = $props();
 
@@ -33,7 +33,7 @@ return !!step.phase && step.phase !== steps[i - 1].phase;
 })
 );
 
-/** Phase colour mapping */
+/** Phase colour mapping — keyed by canonical English phase name */
 const phaseColorMap: Record<string, { bg: string; text: string; border: string }> = {
 'Dark Age':     { bg: 'bg-stone-800',   text: 'text-stone-300',  border: 'border-stone-600'  },
 'Feudal Age':   { bg: 'bg-amber-900/50', text: 'text-amber-300',  border: 'border-amber-700'  },
@@ -78,7 +78,7 @@ animating = true;
 setTimeout(() => {
 stepIndex += direction === 'next' ? 1 : -1;
 animating = false;
-speak(currentStep.description);
+speak(localize(currentStep.description, $settingsStore.lang));
 }, 180);
 }
 
@@ -148,7 +148,7 @@ aria-label={$t('nav.back_to_library')}
 </div>
 
 {#if data.buildOrder.description}
-<p class="text-sm text-stone-400 italic leading-relaxed">{data.buildOrder.description}</p>
+<p class="text-sm text-stone-400 italic leading-relaxed">{localize(data.buildOrder.description, $settingsStore.lang)}</p>
 {/if}
 </div>
 </header>
@@ -202,12 +202,12 @@ aria-expanded={strategyNotesOpen}
 <div class="mt-2 rounded-xl bg-stone-900 border border-stone-700 divide-y divide-stone-800 overflow-hidden">
 {#each data.buildOrder.strategy_notes as phase}
 <div class="px-4 py-3">
-<h3 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">{phase.phase}</h3>
+<h3 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">{localize(phase.phase, $settingsStore.lang)}</h3>
 <ul class="space-y-1.5">
 {#each phase.notes as note}
 <li class="text-sm text-stone-300 leading-relaxed flex gap-2">
 <span class="text-stone-600 shrink-0 mt-0.5">•</span>
-<span>{note}</span>
+<span>{localize(note, $settingsStore.lang)}</span>
 </li>
 {/each}
 </ul>
@@ -239,7 +239,7 @@ aria-expanded={checkpointsOpen}
 <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
 {#each data.buildOrder.checkpoints as cp}
 <div class="rounded-xl bg-stone-900 border border-amber-800/50 p-4 flex flex-col gap-2">
-<p class="text-xs font-bold uppercase tracking-widest text-amber-400">{cp.label}</p>
+<p class="text-xs font-bold uppercase tracking-widest text-amber-400">{localize(cp.label, $settingsStore.lang)}</p>
 {#if cp.clickTime || cp.arrivalTime}
 <div class="flex gap-4 text-xs">
 {#if cp.clickTime}
@@ -300,7 +300,7 @@ class="w-full max-w-2xl bg-stone-900 border border-stone-800 rounded-2xl shadow-
 {@const pc = phaseColor(currentStep.phase)}
 <div class="flex">
 <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border {pc.bg} {pc.text} {pc.border}">
-{currentStep.phase}
+{translatePhase(currentStep.phase, $settingsStore.lang)}
 </span>
 </div>
 {/if}
@@ -310,7 +310,7 @@ class="w-full max-w-2xl bg-stone-900 border border-stone-800 rounded-2xl shadow-
 <span class="bg-amber-500 text-stone-950 text-sm font-bold w-9 h-9 rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-amber-500/30">
 {currentStep.id}
 </span>
-<h2 class="text-xl font-bold leading-tight">{currentStep.label}</h2>
+<h2 class="text-xl font-bold leading-tight">{localize(currentStep.label, $settingsStore.lang)}</h2>
 </div>
 
 <!-- Sprites row -->
@@ -339,12 +339,12 @@ class="w-full max-w-2xl bg-stone-900 border border-stone-800 rounded-2xl shadow-
 {/if}
 
 <!-- Instruction -->
-<p class="text-stone-200 text-lg leading-relaxed">{currentStep.description}</p>
+<p class="text-stone-200 text-lg leading-relaxed">{localize(currentStep.description, $settingsStore.lang)}</p>
 
 <!-- Tip -->
 {#if currentStep.notes}
 <div class="bg-amber-900/30 border border-amber-700/40 rounded-xl px-4 py-3">
-<p class="text-amber-300 text-sm leading-relaxed">💡 {currentStep.notes}</p>
+<p class="text-amber-300 text-sm leading-relaxed">💡 {localize(currentStep.notes, $settingsStore.lang)}</p>
 </div>
 {/if}
 
@@ -419,7 +419,7 @@ transition-all duration-150 shadow-lg shadow-amber-500/30"
 {@const pc = phaseColor(step.phase)}
 <tr>
 <td colspan="99" class="px-4 py-2 {pc.bg} border-b border-t {pc.border}">
-<span class="text-xs font-bold uppercase tracking-widest {pc.text}">{step.phase}</span>
+<span class="text-xs font-bold uppercase tracking-widest {pc.text}">{translatePhase(step.phase, $settingsStore.lang)}</span>
 </td>
 </tr>
 {/if}
@@ -437,10 +437,10 @@ onclick={() => { stepIndex = i; viewMode = 'guided'; }}
 <td class="px-2 py-2">
 {#if step.phase}
 {@const pc = phaseColor(step.phase)}
-<span class="text-xs font-medium {pc.text}">{step.phase}</span>
+<span class="text-xs font-medium {pc.text}">{translatePhase(step.phase, $settingsStore.lang)}</span>
 {/if}
 </td>
-<td class="px-2 py-2 text-stone-300 text-xs font-medium">{step.label}</td>
+<td class="px-2 py-2 text-stone-300 text-xs font-medium">{localize(step.label, $settingsStore.lang)}</td>
 <td class="px-2 py-2">
 {#if step.sprites && step.sprites.length > 0}
 <div class="flex gap-1 flex-wrap">
@@ -464,7 +464,7 @@ onclick={() => { stepIndex = i; viewMode = 'guided'; }}
 </div>
 {/if}
 </td>
-<td class="px-2 py-2 text-stone-400 text-xs leading-relaxed">{step.description}</td>
+<td class="px-2 py-2 text-stone-400 text-xs leading-relaxed">{localize(step.description, $settingsStore.lang)}</td>
 {#each resourceKeys as key}
 {@const cfg = resourceConfig[key]}
 {@const value = key === 'villagerCount' ? step.villagerCount : step[key as ResourceKey]}
