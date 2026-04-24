@@ -121,7 +121,7 @@
         "en": "As soon as you finish your barracks, start adding militia while keeping your villager production going (try to not have idle TC). Don't make more than 3 militias.",
         "fr": "Dès que votre Caserne est finie, commencez à produire des miliciens tout en continuant la production de villageois (évitez le Forum inactif). Ne faites pas plus de 3 miliciens."
       },
-      "sprites": [{ "key": "militia" }, { "key": "barracks" }],
+      "sprites": [{ "key": "militia" }],
       "villagerCount": 12,
       "food": 8,
       "wood": 4,
@@ -188,16 +188,7 @@
       "phase": "Dark Age",
       "label": { "en": "Vill 18 → Berries", "fr": "Vill 18 → Baies" },
       "description": { "en": "1 builds a house then goes to the berries.", "fr": "1 construit une maison puis va aux baies." },
-      "sprites": [{ "key": "berries" }],
-      "villagerCount": 18,
-      "food": 14,
-      "wood": 4,
-      "gold": 1,
-      "stone": 0
-    },
-    {
-      "id": 11,
-      "phase": "Dark Age",
+      "sprites": [{ "key": "house" }, { "key": "berries" }],
       "label": { "en": "Vills 19-22 → Berries", "fr": "Vills 19-22 → Baies" },
       "description": { "en": "4 more villagers to the berries.", "fr": "4 villageois de plus aux baies." },
       "sprites": [{ "key": "berries" }],
@@ -349,7 +340,7 @@
         "en": "Start producing knights from stable, spearmen from barracks, and train monks from monastery to heal your push.",
         "fr": "Commencez à produire des chevaliers depuis l'Écurie, des lanciers depuis la Caserne et entraînez des moines depuis le Monastère pour soigner votre attaque."
       },
-      "sprites": [{ "key": "knight" }, { "key": "battering_ram" }, { "key": "mangonel" }],
+      "sprites": [{ "key": "knight" }, { "key": "spearman" }, { "key": "monk" }, { "key": "battering_ram" }, { "key": "mangonel" }],
       "villagerCount": 28,
       "food": 800,
       "wood": 200,
