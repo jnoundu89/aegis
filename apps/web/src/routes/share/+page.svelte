@@ -5,7 +5,7 @@
 	import { onMount } from 'svelte';
 	import { customBuildsStore } from '$lib/stores/customBuildsStore';
 	import { settingsStore } from '$lib/stores/settingsStore';
-	import { t, ttsLang } from '$lib/i18n';
+	import { t, ttsLang, localize } from '$lib/i18n';
 
 	let { data } = $props();
 
@@ -93,7 +93,7 @@
 		setTimeout(() => {
 			stepIndex += direction === 'next' ? 1 : -1;
 			animating = false;
-			speak(currentStep.description);
+			speak(localize(currentStep.description, $settingsStore.lang));
 		}, 180);
 	}
 
@@ -178,7 +178,7 @@
 				</p>
 				<h1 class="text-2xl font-extrabold tracking-tight">{buildOrder.name}</h1>
 				{#if buildOrder.description}
-					<p class="mt-1 text-sm text-stone-400 italic leading-relaxed">{buildOrder.description}</p>
+					<p class="mt-1 text-sm text-stone-400 italic leading-relaxed">{localize(buildOrder.description, $settingsStore.lang)}</p>
 				{/if}
 			</div>
 		</header>
@@ -233,13 +233,13 @@
 						{#each buildOrder.strategy_notes as phase}
 							<div class="px-4 py-3">
 								<h3 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
-									{phase.phase}
+									{localize(phase.phase, $settingsStore.lang)}
 								</h3>
 								<ul class="space-y-1.5">
 									{#each phase.notes as note}
 										<li class="text-sm text-stone-300 leading-relaxed flex gap-2">
 											<span class="text-stone-600 shrink-0 mt-0.5">•</span>
-											<span>{note}</span>
+											<span>{localize(note, $settingsStore.lang)}</span>
 										</li>
 									{/each}
 								</ul>
@@ -276,16 +276,16 @@
 				>
 					{currentStep.id}
 				</span>
-				<h2 class="text-2xl font-bold leading-tight">{currentStep.label}</h2>
+				<h2 class="text-2xl font-bold leading-tight">{localize(currentStep.label, $settingsStore.lang)}</h2>
 			</div>
 
 			<!-- Instruction -->
-			<p class="text-stone-200 text-lg leading-relaxed">{currentStep.description}</p>
+			<p class="text-stone-200 text-lg leading-relaxed">{localize(currentStep.description, $settingsStore.lang)}</p>
 
 			<!-- Tip -->
 			{#if currentStep.notes}
 				<div class="bg-amber-900/30 border border-amber-700/40 rounded-xl px-4 py-3">
-					<p class="text-amber-300 text-sm leading-relaxed">💡 {currentStep.notes}</p>
+					<p class="text-amber-300 text-sm leading-relaxed">💡 {localize(currentStep.notes, $settingsStore.lang)}</p>
 				</div>
 			{/if}
 

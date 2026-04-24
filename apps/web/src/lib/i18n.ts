@@ -1,5 +1,6 @@
 import { derived } from 'svelte/store';
 import { settingsStore, type Lang } from './stores/settingsStore';
+import type { LocalizedString } from '@aegis/core';
 
 type Translations = Record<string, string>;
 
@@ -107,6 +108,12 @@ const translations: Record<Lang, Translations> = {
 		'resource.gold': 'Gold',
 		'resource.stone': 'Stone',
 		'resource.favor': 'Favor',
+
+		// Game phases (used to translate step phase labels)
+		'phase.dark_age': 'Dark Age',
+		'phase.feudal_age': 'Feudal Age',
+		'phase.castle_age': 'Castle Age',
+		'phase.imperial_age': 'Imperial Age',
 
 		// Settings widget
 		'settings.tts_enable': 'Enable TTS',
@@ -218,6 +225,12 @@ const translations: Record<Lang, Translations> = {
 		'resource.stone': 'Pierre',
 		'resource.favor': 'Faveur',
 
+		// Game phases (used to translate step phase labels)
+		'phase.dark_age': 'Âge Sombre',
+		'phase.feudal_age': 'Âge Féodal',
+		'phase.castle_age': 'Âge Château',
+		'phase.imperial_age': 'Âge Impérial',
+
 		// Settings widget
 		'settings.tts_enable': 'Activer le TTS',
 		'settings.tts_disable': 'Désactiver le TTS',
@@ -254,3 +267,31 @@ export const ttsLang = derived(settingsStore, ($s): string => {
 	const map: Record<Lang, string> = { en: 'en-US', fr: 'fr-FR' };
 	return map[$s.lang];
 });
+
+/**
+ * Resolves a `LocalizedString` to a plain string for the given language.
+ * Falls back to the English variant (or the string itself) when no translation
+ * is available for the requested language.
+ *
+ * @example
+ *   localize("6 Sheep", "fr")               // → "6 Sheep"   (plain string passthrough)
+ *   localize({ en: "6 Sheep", fr: "6 Moutons" }, "fr")  // → "6 Moutons"
+ *   localize({ en: "6 Sheep" }, "fr")        // → "6 Sheep"  (fallback to en)
+ *   localize(undefined, "en")                // → ""
+ */
+export function localize(field: LocalizedString | undefined, lang: Lang): string {
+	if (!field) return '';
+	if (typeof field === 'string') return field;
+	if (lang === 'fr' && field.fr) return field.fr;
+	return field.en;
+}
+
+/**
+ * Translates well-known AoE2/AoM phase names (e.g. "Dark Age") to the
+ * current UI language.  Unknown phase strings are returned as-is.
+ */
+export function translatePhase(phase: string, lang: Lang): string {
+	const key = 'phase.' + phase.toLowerCase().replace(/\s+/g, '_');
+	const result = translations[lang][key];
+	return result ?? phase;
+}

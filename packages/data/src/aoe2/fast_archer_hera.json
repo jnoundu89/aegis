@@ -3,30 +3,51 @@
   "gameId": "aoe2",
   "name": "19 Vils 1-Range Archers",
   "civilization": "Britons, Mayans, Ethiopians, Tatars, Vikings",
-  "description": "The objective of this build is to go up rather quickly and start massing archers right away. We commit to just 1 range because we value the faster Fletching more than the second range and more army. This allows for a faster Castle time, or transition into scouts as a response to our opponent having a lot of skirms. This build is best executed with a civilization that has both Arbalest and Bracer because that is what we are scaling into.",
+  "description": {
+    "en": "The objective of this build is to go up rather quickly and start massing archers right away. We commit to just 1 range because we value the faster Fletching more than the second range and more army. This allows for a faster Castle time, or transition into scouts as a response to our opponent having a lot of skirms. This build is best executed with a civilization that has both Arbalest and Bracer because that is what we are scaling into.",
+    "fr": "L'objectif de ce build est de monter en Âge Féodal rapidement et de commencer immédiatement à masser des archers. On ne construit qu'1 seul Camp à l'Arc car on préfère obtenir Empennage plus vite plutôt qu'un deuxième Camp et plus d'armée. Cela permet un Âge Château plus rapide, ou une transition vers des éclaireurs si l'adversaire a beaucoup d'escarmoucheurs. Ce build est idéal avec une civilisation qui a à la fois l'Arbalétrier et le Brassard."
+  },
   "strategy_notes": [
     {
-      "phase": "LATE FEUDAL",
+      "phase": { "en": "LATE FEUDAL", "fr": "FÉODAL TARDIF" },
       "notes": [
-        "The goal from here is to get up to Castle Age with a healthy mass of 10-15 archers and simply get Crossbowman/Bodkin.",
-        "However, if your opponent is attacking you with many skirms and your walls aren't up yet, you can add a stable and use a few scouts to defend alongside your archers.",
-        "When you click up to Castle Age, you can add another production building (either a 2nd range or a stable)."
+        {
+          "en": "The goal from here is to get up to Castle Age with a healthy mass of 10-15 archers and simply get Crossbowman/Bodkin.",
+          "fr": "L'objectif est de monter en Âge Château avec une masse de 10-15 archers et d'obtenir simplement Arbalétrier/Pointe bodkin."
+        },
+        {
+          "en": "However, if your opponent is attacking you with many skirms and your walls aren't up yet, you can add a stable and use a few scouts to defend alongside your archers.",
+          "fr": "Si votre adversaire vous attaque avec beaucoup d'escarmoucheurs et que vos murs ne sont pas encore posés, vous pouvez ajouter une Écurie et utiliser quelques éclaireurs pour défendre aux côtés de vos archers."
+        },
+        {
+          "en": "When you click up to Castle Age, you can add another production building (either a 2nd range or a stable).",
+          "fr": "Lorsque vous cliquez pour monter en Âge Château, vous pouvez ajouter un autre bâtiment de production (une 2ème Range ou une Écurie)."
+        }
       ]
     },
     {
-      "phase": "CASTLE AGE",
+      "phase": { "en": "CASTLE AGE", "fr": "ÂGE CHÂTEAU" },
       "notes": [
-        "When you get to Castle Age you have a ton of options, you start by getting Bow Saw/Bodkin/Crossbowman.",
-        "Then you can either add TCs for your economy, or invest more into military by adding a monastery/university/siege workshop.",
-        "The choices are many and depend a lot on your personal style, on the civ matchup, and on the position in the game. Try to be flexible and really consider your options to find the best approach."
+        {
+          "en": "When you get to Castle Age you have a ton of options, you start by getting Bow Saw/Bodkin/Crossbowman.",
+          "fr": "Quand vous arrivez en Âge Château, vous avez beaucoup d'options — commencez par Scie à Arc/Pointe Bodkin/Arbalétrier."
+        },
+        {
+          "en": "Then you can either add TCs for your economy, or invest more into military by adding a monastery/university/siege workshop.",
+          "fr": "Ensuite, vous pouvez soit ajouter des Forums pour votre économie, soit investir davantage dans le militaire avec un monastère/université/atelier de siège."
+        },
+        {
+          "en": "The choices are many and depend a lot on your personal style, on the civ matchup, and on the position in the game. Try to be flexible and really consider your options to find the best approach.",
+          "fr": "Les choix sont nombreux et dépendent beaucoup de votre style, du match-up de civilisations et de la situation dans la partie. Soyez flexible et pesez bien vos options pour trouver la meilleure approche."
+        }
       ]
     }
   ],
   "steps": [
     {
       "id": 1,
-      "label": "Début de partie",
-      "description": "Envoyer 6 villageois sur les moutons.",
+      "label": { "en": "Start of game", "fr": "Début de partie" },
+      "description": { "en": "Send 6 villagers to the sheep.", "fr": "Envoyer 6 villageois sur les moutons." },
       "villagerCount": 6,
       "food": 6,
       "wood": 0,
@@ -35,8 +56,8 @@
     },
     {
       "id": 2,
-      "label": "Création Vills 7 à 9",
-      "description": "Envoyer 3 villageois au bois.",
+      "label": { "en": "Create Vills 7 to 9", "fr": "Création Vills 7 à 9" },
+      "description": { "en": "Send 3 villagers to wood.", "fr": "Envoyer 3 villageois au bois." },
       "villagerCount": 9,
       "food": 6,
       "wood": 3,
@@ -45,8 +66,8 @@
     },
     {
       "id": 3,
-      "label": "Création Vill 10",
-      "description": "Envoyer 1 villageois attirer le sanglier.",
+      "label": { "en": "Create Vill 10", "fr": "Création Vill 10" },
+      "description": { "en": "Send 1 villager to lure the boar.", "fr": "Envoyer 1 villageois attirer le sanglier." },
       "villagerCount": 10,
       "food": 7,
       "wood": 3,
@@ -55,8 +76,11 @@
     },
     {
       "id": 4,
-      "label": "Création Vill 11",
-      "description": "Envoyer 1 villageois construire une maison puis un moulin sur les baies.",
+      "label": { "en": "Create Vill 11", "fr": "Création Vill 11" },
+      "description": {
+        "en": "Send 1 villager to build a house then a mill near the berries.",
+        "fr": "Envoyer 1 villageois construire une maison puis un moulin sur les baies."
+      },
       "villagerCount": 11,
       "food": 8,
       "wood": 3,
@@ -65,8 +89,11 @@
     },
     {
       "id": 5,
-      "label": "Exploration",
-      "description": "[Recommandé] Attirer les cerfs avec le scout une fois les moutons trouvés.",
+      "label": { "en": "Scouting", "fr": "Exploration" },
+      "description": {
+        "en": "[Recommended] Lure deer with your scout once you've found all sheep.",
+        "fr": "[Recommandé] Attirer les cerfs avec le scout une fois les moutons trouvés."
+      },
       "villagerCount": 11,
       "food": 8,
       "wood": 3,
@@ -75,8 +102,11 @@
     },
     {
       "id": 6,
-      "label": "Création Vills 12 à 17",
-      "description": "Les 6 prochains villageois sur la chasse sous le Forum (prendre le deuxième sanglier pendant ce temps).",
+      "label": { "en": "Create Vills 12 to 17", "fr": "Création Vills 12 à 17" },
+      "description": {
+        "en": "Next 6 villagers to hunt under TC (take the second boar during this time).",
+        "fr": "Les 6 prochains villageois sur la chasse sous le Forum (prendre le deuxième sanglier pendant ce temps)."
+      },
       "villagerCount": 17,
       "food": 14,
       "wood": 3,
@@ -85,8 +115,8 @@
     },
     {
       "id": 7,
-      "label": "Création Vills 18 à 19",
-      "description": "Envoyer 2 villageois au bois.",
+      "label": { "en": "Create Vills 18 to 19", "fr": "Création Vills 18 à 19" },
+      "description": { "en": "Send 2 villagers to wood.", "fr": "Envoyer 2 villageois au bois." },
       "villagerCount": 19,
       "food": 14,
       "wood": 5,
@@ -95,19 +125,25 @@
     },
     {
       "id": 8,
-      "label": "Pop 19",
-      "description": "Rechercher le Métier à tisser (Loom).",
+      "label": { "en": "Pop 19", "fr": "Pop 19" },
+      "description": { "en": "Research Loom.", "fr": "Rechercher le Métier à tisser (Loom)." },
       "villagerCount": 19,
       "food": 14,
       "wood": 5,
       "gold": 0,
       "stone": 0,
-      "notes": "N'oubliez pas de rechercher Loom avant de cliquer l'Âge Féodal."
+      "notes": {
+        "en": "Don't forget to research Loom before clicking up to Feudal Age.",
+        "fr": "N'oubliez pas de rechercher Loom avant de cliquer l'Âge Féodal."
+      }
     },
     {
       "id": 9,
-      "label": "Fin Métier à tisser",
-      "description": "Cliquer l'Âge Féodal (temps d'arrivée idéal : 9:15).",
+      "label": { "en": "Loom complete", "fr": "Fin Métier à tisser" },
+      "description": {
+        "en": "Click Feudal Age (ideal landing time: 9:15).",
+        "fr": "Cliquer l'Âge Féodal (temps d'arrivée idéal : 9:15)."
+      },
       "villagerCount": 19,
       "food": 14,
       "wood": 5,
@@ -116,8 +152,11 @@
     },
     {
       "id": 10,
-      "label": "Transition Féodal (Bois)",
-      "description": "Déplacer 5 villageois du Forum pour construire un Camp de Bûcherons sur une deuxième ligne de bois.",
+      "label": { "en": "Feudal Transition (Wood)", "fr": "Transition Féodal (Bois)" },
+      "description": {
+        "en": "Move 5 villagers from TC to wood and build a second Lumber Camp.",
+        "fr": "Déplacer 5 villageois du Forum pour construire un Camp de Bûcherons sur une deuxième ligne de bois."
+      },
       "villagerCount": 19,
       "food": 9,
       "wood": 10,
@@ -126,8 +165,11 @@
     },
     {
       "id": 11,
-      "label": "Transition Féodal (Stragglers)",
-      "description": "Déplacer 2 villageois du Forum vers les arbres isolés (stragglers).",
+      "label": { "en": "Feudal Transition (Stragglers)", "fr": "Transition Féodal (Stragglers)" },
+      "description": {
+        "en": "Move 2 villagers from TC to straggler trees.",
+        "fr": "Déplacer 2 villageois du Forum vers les arbres isolés (stragglers)."
+      },
       "villagerCount": 19,
       "food": 7,
       "wood": 12,
@@ -136,8 +178,11 @@
     },
     {
       "id": 12,
-      "label": "Transition Féodal (Caserne)",
-      "description": "Déplacer 1 villageois du Forum : construire Maison > Caserne > retour à la nourriture.",
+      "label": { "en": "Feudal Transition (Barracks)", "fr": "Transition Féodal (Caserne)" },
+      "description": {
+        "en": "Move 1 villager from TC: build House → Barracks → return to food.",
+        "fr": "Déplacer 1 villageois du Forum : construire Maison > Caserne > retour à la nourriture."
+      },
       "villagerCount": 19,
       "food": 7,
       "wood": 12,
@@ -146,8 +191,11 @@
     },
     {
       "id": 13,
-      "label": "Transition Féodal (Or)",
-      "description": "Déplacer 2 villageois du Forum pour construire un Camp de Mineurs sur l'or.",
+      "label": { "en": "Feudal Transition (Gold)", "fr": "Transition Féodal (Or)" },
+      "description": {
+        "en": "Move 2 villagers from TC to build a Mining Camp on gold.",
+        "fr": "Déplacer 2 villageois du Forum pour construire un Camp de Mineurs sur l'or."
+      },
       "villagerCount": 19,
       "food": 5,
       "wood": 12,
@@ -156,8 +204,11 @@
     },
     {
       "id": 14,
-      "label": "Arrivée Âge Féodal (Double-Bit Axe)",
-      "description": "Rechercher la Hache à double tranchant (Double-Bit Axe). Ignorer le Collier de cheval pour l'instant.",
+      "label": { "en": "Feudal Age Arrival (Double-Bit Axe)", "fr": "Arrivée Âge Féodal (Double-Bit Axe)" },
+      "description": {
+        "en": "Research Double-Bit Axe. Skip Horse Collar for now.",
+        "fr": "Rechercher la Hache à double tranchant (Double-Bit Axe). Ignorer le Collier de cheval pour l'instant."
+      },
       "villagerCount": 19,
       "food": 5,
       "wood": 12,
@@ -166,8 +217,11 @@
     },
     {
       "id": 15,
-      "label": "Arrivée Âge Féodal (Range)",
-      "description": "Construire un Camp à l'arc (Range) et produire des archers en continu.",
+      "label": { "en": "Feudal Age Arrival (Range)", "fr": "Arrivée Âge Féodal (Range)" },
+      "description": {
+        "en": "Build a Range and produce archers continuously.",
+        "fr": "Construire un Camp à l'Arc (Range) et produire des archers en continu."
+      },
       "villagerCount": 19,
       "food": 5,
       "wood": 12,
@@ -176,8 +230,8 @@
     },
     {
       "id": 16,
-      "label": "Création Vills 20 à 21",
-      "description": "Envoyer 2 nouveaux villageois à l'or.",
+      "label": { "en": "Create Vills 20 to 21", "fr": "Création Vills 20 à 21" },
+      "description": { "en": "Send 2 new villagers to gold.", "fr": "Envoyer 2 nouveaux villageois à l'or." },
       "villagerCount": 21,
       "food": 5,
       "wood": 12,
@@ -186,19 +240,28 @@
     },
     {
       "id": 17,
-      "label": "Dès que possible (Fletching)",
-      "description": "Construire une Forge et rechercher Empennage (Fletching) dès que possible.",
+      "label": { "en": "ASAP (Fletching)", "fr": "Dès que possible (Fletching)" },
+      "description": {
+        "en": "Build a Blacksmith and research Fletching as soon as possible.",
+        "fr": "Construire une Forge et rechercher Empennage (Fletching) dès que possible."
+      },
       "villagerCount": 21,
       "food": 5,
       "wood": 12,
       "gold": 4,
       "stone": 0,
-      "notes": "Fletching est la priorité absolue — ne pas retarder pour une 2ème Range."
+      "notes": {
+        "en": "Fletching is the absolute priority — don't delay it for a 2nd Range.",
+        "fr": "Fletching est la priorité absolue — ne pas retarder pour une 2ème Range."
+      }
     },
     {
       "id": 18,
-      "label": "Optionnel (Défense)",
-      "description": "Créer 1 à 4 lanciers si vous craignez des scouts ennemis.",
+      "label": { "en": "Optional (Defense)", "fr": "Optionnel (Défense)" },
+      "description": {
+        "en": "Make 1–4 spearmen if scared of enemy scouts.",
+        "fr": "Créer 1 à 4 lanciers si vous craignez des scouts ennemis."
+      },
       "villagerCount": 21,
       "food": 5,
       "wood": 12,
@@ -207,8 +270,11 @@
     },
     {
       "id": 19,
-      "label": "Ajustement éco (Baies)",
-      "description": "Déplacer 4 villageois supplémentaires du Forum vers les baies (5 au total sur les baies).",
+      "label": { "en": "Eco Adjustment (Berries)", "fr": "Ajustement éco (Baies)" },
+      "description": {
+        "en": "Move 4 more villagers from TC to berries (5 total on berries).",
+        "fr": "Déplacer 4 villageois supplémentaires du Forum vers les baies (5 au total sur les baies)."
+      },
       "villagerCount": 21,
       "food": 5,
       "wood": 12,
@@ -217,8 +283,11 @@
     },
     {
       "id": 20,
-      "label": "Ajustement éco (Fermes)",
-      "description": "Commencer à construire des fermes dès que le bois le permet.",
+      "label": { "en": "Eco Adjustment (Farms)", "fr": "Ajustement éco (Fermes)" },
+      "description": {
+        "en": "Start building farms as soon as wood allows.",
+        "fr": "Commencer à construire des fermes dès que le bois le permet."
+      },
       "villagerCount": 21,
       "food": 5,
       "wood": 12,
@@ -227,14 +296,20 @@
     },
     {
       "id": 21,
-      "label": "Murs défensifs",
-      "description": "Commencer à faire des murs avec 2-3 villageois (mixte maisons/palissades).",
+      "label": { "en": "Defensive Walls", "fr": "Murs défensifs" },
+      "description": {
+        "en": "Start walling with 2–3 villagers (mix of houses and palisades).",
+        "fr": "Commencer à faire des murs avec 2-3 villageois (mixte maisons/palissades)."
+      },
       "villagerCount": 21,
       "food": 5,
       "wood": 12,
       "gold": 4,
       "stone": 0,
-      "notes": "Montez en Âge Château dès que vous avez 10-15 archers et Fletching."
+      "notes": {
+        "en": "Click up to Castle Age as soon as you have 10–15 archers and Fletching.",
+        "fr": "Montez en Âge Château dès que vous avez 10-15 archers et Fletching."
+      }
     }
   ]
 }

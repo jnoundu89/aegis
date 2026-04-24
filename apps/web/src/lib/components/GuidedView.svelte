@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { builderStore } from '$lib/stores/builderStore';
+	import { settingsStore } from '$lib/stores/settingsStore';
 	import type { BuildOrder } from '@aegis/core';
-	import { t } from '$lib/i18n';
+	import { t, localize } from '$lib/i18n';
 
 	let { buildOrder }: { buildOrder: BuildOrder } = $props();
 
@@ -67,7 +68,7 @@
 				</span>
 				<input
 					type="text"
-					value={step.label}
+					value={localize(step.label, $settingsStore.lang)}
 					oninput={(e) => builderStore.updateStep(i, { label: (e.target as HTMLInputElement).value })}
 					placeholder={$t('guided.trigger_placeholder')}
 					class="bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-stone-100
@@ -81,7 +82,7 @@
 					{$t('guided.instruction')}
 				</span>
 				<textarea
-					value={step.description}
+					value={localize(step.description, $settingsStore.lang)}
 					oninput={(e) => builderStore.updateStep(i, { description: (e.target as HTMLTextAreaElement).value })}
 					placeholder={$t('guided.instruction_placeholder')}
 					rows={2}
@@ -97,7 +98,7 @@
 				</span>
 				<input
 					type="text"
-					value={step.notes ?? ''}
+					value={localize(step.notes, $settingsStore.lang)}
 					oninput={(e) => builderStore.updateStep(i, { notes: (e.target as HTMLInputElement).value || undefined })}
 					placeholder={$t('guided.notes_placeholder')}
 					class="bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-stone-100

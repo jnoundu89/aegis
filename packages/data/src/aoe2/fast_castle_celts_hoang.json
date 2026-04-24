@@ -5,40 +5,43 @@
   "author": "Capoch",
   "civilization": "Celts",
   "difficulty": "advanced",
-  "description": "Hoang is a very popular player who invented a unique strategy based on being super aggressive in early Castle Age. His push is feared by anyone he plays, and to stop it, you must be well prepared. This build starts in the same way as the Pre Mill Drush but deviates by hitting Feudal Age a bit faster with 28 vills instead of 29 like common Pre Mill Drush + FC. The push begins in Castle Age with a forward Siege Workshop and a heavy siege push with knights, spearman, siege and monks. Celts are good with this strategy because of their wood bonus, and in Castle Age, their siege attacks & produces units faster. This can be really hard to stop if the enemy doesn't scout well and prepares defenses.",
+  "description": {
+    "en": "Hoang is a very popular player who invented a unique strategy based on being super aggressive in early Castle Age. His push is feared by anyone he plays, and to stop it, you must be well prepared. This build starts in the same way as the Pre Mill Drush but deviates by hitting Feudal Age a bit faster with 28 vills instead of 29 like common Pre Mill Drush + FC. The push begins in Castle Age with a forward Siege Workshop and a heavy siege push with knights, spearman, siege and monks. Celts are good with this strategy because of their wood bonus, and in Castle Age, their siege attacks & produces units faster.",
+    "fr": "Hoang est un joueur très populaire qui a inventé une stratégie unique basée sur une agressivité extrême en début d'Âge Château. Son attaque est redoutée par tous ses adversaires. Ce build démarre comme le Pre Mill Drush mais passe en Âge Féodal un peu plus vite avec 28 villageois au lieu de 29. L'attaque commence en Âge Château avec un Atelier de Siège avancé et une poussée lourde avec chevaliers, lanciers, siège et moines. Les Celtes conviennent bien à cette stratégie grâce à leur bonus de bois et, en Âge Château, leur siège attaque et produit des unités plus rapidement."
+  },
   "strategy_notes": [
     {
-      "phase": "DARK AGE",
+      "phase": { "en": "DARK AGE", "fr": "ÂGE SOMBRE" },
       "notes": [
-        "The Pre-Mill Drush portion (3 militia from barracks built before mill) is designed to disrupt the enemy economy early.",
-        "Keep your TC producing villagers at all times. Don't make more than 3 militias.",
-        "Build the mill near the berries once you have enough wood.",
-        "Send villagers to deer under the TC for efficient food collection."
+        { "en": "The Pre-Mill Drush portion (3 militia from barracks built before mill) is designed to disrupt the enemy economy early.", "fr": "La partie Pre-Mill Drush (3 miliciens depuis une Caserne construite avant le Moulin) vise à perturber l'économie ennemie tôt dans la partie." },
+        { "en": "Keep your TC producing villagers at all times. Don't make more than 3 militias.", "fr": "Maintenez votre Forum en production de villageois en permanence. Ne faites pas plus de 3 miliciens." },
+        { "en": "Build the mill near the berries once you have enough wood.", "fr": "Construisez le moulin près des baies dès que vous avez suffisamment de bois." },
+        { "en": "Send villagers to deer under the TC for efficient food collection.", "fr": "Envoyez des villageois sur les cerfs sous le Forum pour une collecte de nourriture efficace." }
       ]
     },
     {
-      "phase": "FEUDAL AGE",
+      "phase": { "en": "FEUDAL AGE", "fr": "ÂGE FÉODAL" },
       "notes": [
-        "Hit Feudal Age faster than the standard Pre Mill Drush + FC — aim for Feudal at 13:00.",
-        "Don't build any military in Feudal — go straight to Castle Age.",
-        "Get Horse Collar immediately on arrival in Feudal. Place your two Feudal Age buildings (e.g. Blacksmith + Market or Stable + Blacksmith).",
-        "Send 6 villagers to take deer (3 villagers on each deer) while going up to Feudal."
+        { "en": "Hit Feudal Age faster than the standard Pre Mill Drush + FC — aim for Feudal at 13:00.", "fr": "Passez à l'Âge Féodal plus vite que le Pre Mill Drush + FC standard — visez le Féodal à 13:00." },
+        { "en": "Don't build any military in Feudal — go straight to Castle Age.", "fr": "Ne construisez pas de militaire en Féodal — montez directement en Âge Château." },
+        { "en": "Get Horse Collar immediately on arrival in Feudal. Place your two Feudal Age buildings (e.g. Blacksmith + Market or Stable + Blacksmith).", "fr": "Prenez le Collier de cheval immédiatement à l'arrivée en Féodal. Placez vos deux bâtiments de l'Âge Féodal (ex. Forge + Marché ou Écurie + Forge)." },
+        { "en": "Send 6 villagers to take deer (3 villagers on each deer) while going up to Feudal.", "fr": "Envoyez 6 villageois prendre les cerfs (3 villageois par cerf) pendant la montée en Féodal." }
       ]
     },
     {
-      "phase": "CASTLE AGE",
+      "phase": { "en": "CASTLE AGE", "fr": "ÂGE CHÂTEAU" },
       "notes": [
-        "The moment you hit Castle Age, build a forward Siege Workshop with 2-3 villagers as close to the opponent as possible.",
-        "Start producing knights, siege (battering rams / mangonels) and a few spearmen.",
-        "Add a monastery and train monks to heal your units during the push.",
-        "Celts' faster siege production and movement speed makes this particularly devastating.",
-        "If the push fails or is heavily defended, don't throw away your units — fall back, add TCs, and boom."
+        { "en": "The moment you hit Castle Age, build a forward Siege Workshop with 2-3 villagers as close to the opponent as possible.", "fr": "Dès que vous passez en Âge Château, construisez un Atelier de Siège avancé avec 2-3 villageois le plus près possible de l'adversaire." },
+        { "en": "Start producing knights, siege (battering rams / mangonels) and a few spearmen.", "fr": "Commencez à produire des chevaliers, du siège (béliers/mangonneaux) et quelques lanciers." },
+        { "en": "Add a monastery and train monks to heal your units during the push.", "fr": "Ajoutez un Monastère et entraînez des moines pour soigner vos unités pendant l'attaque." },
+        { "en": "Celts' faster siege production and movement speed makes this particularly devastating.", "fr": "La production de siège plus rapide et la vitesse de déplacement des Celtes rendent cette attaque particulièrement dévastatrice." },
+        { "en": "If the push fails or is heavily defended, don't throw away your units — fall back, add TCs, and boom.", "fr": "Si l'attaque échoue ou est fortement défendue, ne gaspillez pas vos unités — repliez-vous, ajoutez des Forums et boostez votre économie." }
       ]
     }
   ],
   "checkpoints": [
     {
-      "label": "Click up to Feudal Age",
+      "label": { "en": "Click up to Feudal Age", "fr": "Passer à l'Âge Féodal" },
       "clickTime": "10:50",
       "arrivalTime": "13:00",
       "villagerCount": 28,
@@ -48,22 +51,22 @@
       "stone": 1
     },
     {
-      "label": "Click up to Castle Age",
+      "label": { "en": "Click up to Castle Age", "fr": "Passer à l'Âge Château" },
       "clickTime": "13:50",
       "arrivalTime": "16:30",
-      "villagerCount": 30,
-      "food": 10,
-      "wood": 7,
-      "gold": 9,
-      "stone": 4
+      "villagerCount": 28,
+      "food": 800,
+      "wood": 200,
+      "gold": 200,
+      "stone": 0
     }
   ],
   "steps": [
     {
       "id": 1,
       "phase": "Dark Age",
-      "label": "Vills 1-6 → Sheep",
-      "description": "6 villagers on sheep.",
+      "label": { "en": "Vills 1-6 → Sheep", "fr": "Vills 1-6 → Moutons" },
+      "description": { "en": "6 villagers on sheep.", "fr": "6 villageois sur les moutons." },
       "sprites": [{ "key": "sheep" }],
       "villagerCount": 6,
       "food": 6,
@@ -74,8 +77,8 @@
     {
       "id": 2,
       "phase": "Dark Age",
-      "label": "Vills 7-10 → Wood",
-      "description": "4 on wood.",
+      "label": { "en": "Vills 7-10 → Wood", "fr": "Vills 7-10 → Bois" },
+      "description": { "en": "4 on wood.", "fr": "4 au bois." },
       "sprites": [{ "key": "lumber_camp" }],
       "villagerCount": 10,
       "food": 6,
@@ -86,8 +89,8 @@
     {
       "id": 3,
       "phase": "Dark Age",
-      "label": "Vill 11 → First Boar",
-      "description": "1 gets the first boar.",
+      "label": { "en": "Vill 11 → First Boar", "fr": "Vill 11 → Premier Sanglier" },
+      "description": { "en": "1 gets the first boar.", "fr": "1 prend le premier sanglier." },
       "sprites": [{ "key": "boar" }],
       "villagerCount": 11,
       "food": 7,
@@ -98,8 +101,11 @@
     {
       "id": 4,
       "phase": "Dark Age",
-      "label": "Vill 12 → House + Barracks",
-      "description": "1 builds the third house, then as soon as you have 175 wood, build the barracks. Then add another house and send that villager to take food.",
+      "label": { "en": "Vill 12 → House + Barracks", "fr": "Vill 12 → Maison + Caserne" },
+      "description": {
+        "en": "1 builds the third house, then as soon as you have 175 wood, build the barracks. Then add another house and send that villager to take food.",
+        "fr": "1 construit la troisième maison, puis dès que vous avez 175 bois, construisez la Caserne. Ajoutez ensuite une autre maison et envoyez ce villageois prendre de la nourriture."
+      },
       "sprites": [{ "key": "house" }, { "key": "barracks" }],
       "villagerCount": 12,
       "food": 8,
@@ -110,21 +116,27 @@
     {
       "id": 5,
       "phase": "Dark Age",
-      "label": "Make Militia (max 3)",
-      "description": "As soon as you finish your barracks, start adding militia while keeping your villager production going (try to not have idle TC). Don't make more than 3 militias.",
+      "label": { "en": "Make Militia (max 3)", "fr": "Faire des Miliciens (max 3)" },
+      "description": {
+        "en": "As soon as you finish your barracks, start adding militia while keeping your villager production going (try to not have idle TC). Don't make more than 3 militias.",
+        "fr": "Dès que votre Caserne est finie, commencez à produire des miliciens tout en continuant la production de villageois (évitez le Forum inactif). Ne faites pas plus de 3 miliciens."
+      },
       "sprites": [{ "key": "militia" }],
       "villagerCount": 12,
       "food": 8,
       "wood": 4,
       "gold": 0,
       "stone": 0,
-      "notes": "These 3 militia are your Pre-Mill Drush units. Use them to disrupt the opponent's economy."
+      "notes": {
+        "en": "These 3 militia are your Pre-Mill Drush units. Use them to disrupt the opponent's economy.",
+        "fr": "Ces 3 miliciens sont vos unités de Pre-Mill Drush. Utilisez-les pour perturber l'économie adverse."
+      }
     },
     {
       "id": 6,
       "phase": "Dark Age",
-      "label": "Vills 13-14 → Boar",
-      "description": "2 more to the boar.",
+      "label": { "en": "Vills 13-14 → Boar", "fr": "Vills 13-14 → Sanglier" },
+      "description": { "en": "2 more to the boar.", "fr": "2 de plus au sanglier." },
       "sprites": [{ "key": "boar" }],
       "villagerCount": 14,
       "food": 10,
@@ -135,8 +147,8 @@
     {
       "id": 7,
       "phase": "Dark Age",
-      "label": "Vill 15 → Second Boar",
-      "description": "1 gets the second boar.",
+      "label": { "en": "Vill 15 → Second Boar", "fr": "Vill 15 → Deuxième Sanglier" },
+      "description": { "en": "1 gets the second boar.", "fr": "1 prend le deuxième sanglier." },
       "sprites": [{ "key": "boar" }],
       "villagerCount": 15,
       "food": 11,
@@ -147,68 +159,62 @@
     {
       "id": 8,
       "phase": "Dark Age",
-      "label": "Vill 16 → Gold (no camp yet)",
-      "description": "1 collects 10 gold (no mining camp needed) and then goes to take food from the boar under the TC.",
+      "label": { "en": "Vill 16 → Gold (no camp yet)", "fr": "Vill 16 → Or (sans camp pour l'instant)" },
+      "description": {
+        "en": "1 collects 10 gold (no mining camp needed) and then goes to take food from the boar under the TC.",
+        "fr": "1 collecte 10 d'or (sans camp de mineurs) puis va prendre de la nourriture sur le sanglier sous le Forum."
+      },
       "sprites": [{ "key": "gold" }],
       "villagerCount": 16,
       "food": 12,
       "wood": 4,
-      "gold": 0,
+      "gold": 1,
       "stone": 0
     },
     {
       "id": 9,
       "phase": "Dark Age",
-      "label": "Vill 17 → Mill near Berries",
-      "description": "1 builds the mill near the berries.",
+      "label": { "en": "Vill 17 → Mill near Berries", "fr": "Vill 17 → Moulin près des Baies" },
+      "description": { "en": "1 builds the mill near the berries.", "fr": "1 construit le moulin près des baies." },
       "sprites": [{ "key": "mill" }, { "key": "berries" }],
       "villagerCount": 17,
       "food": 13,
       "wood": 4,
-      "gold": 0,
+      "gold": 1,
       "stone": 0
     },
     {
       "id": 10,
       "phase": "Dark Age",
-      "label": "Vill 18 → Berries",
-      "description": "1 builds a house then goes to the berries.",
-      "sprites": [{ "key": "berries" }, { "key": "house" }],
-      "villagerCount": 18,
-      "food": 14,
-      "wood": 4,
-      "gold": 0,
-      "stone": 0
-    },
-    {
-      "id": 11,
-      "phase": "Dark Age",
-      "label": "Vills 19-22 → Berries",
-      "description": "4 more villagers to the berries.",
+      "label": { "en": "Vill 18 → Berries", "fr": "Vill 18 → Baies" },
+      "description": { "en": "1 builds a house then goes to the berries.", "fr": "1 construit une maison puis va aux baies." },
+      "sprites": [{ "key": "house" }, { "key": "berries" }],
+      "label": { "en": "Vills 19-22 → Berries", "fr": "Vills 19-22 → Baies" },
+      "description": { "en": "4 more villagers to the berries.", "fr": "4 villageois de plus aux baies." },
       "sprites": [{ "key": "berries" }],
       "villagerCount": 22,
       "food": 18,
       "wood": 4,
-      "gold": 0,
+      "gold": 1,
       "stone": 0
     },
     {
       "id": 12,
       "phase": "Dark Age",
-      "label": "Vill 23 → Wood",
-      "description": "1 more on wood.",
+      "label": { "en": "Vill 23 → Wood", "fr": "Vill 23 → Bois" },
+      "description": { "en": "1 more on wood.", "fr": "1 de plus au bois." },
       "sprites": [{ "key": "lumber_camp" }],
       "villagerCount": 23,
       "food": 18,
       "wood": 5,
-      "gold": 0,
+      "gold": 1,
       "stone": 0
     },
     {
       "id": 13,
       "phase": "Dark Age",
-      "label": "Vills 24-27 → Gold",
-      "description": "4 to gold (now make the mining camp).",
+      "label": { "en": "Vills 24-27 → Gold", "fr": "Vills 24-27 → Or" },
+      "description": { "en": "4 to gold (now make the mining camp).", "fr": "4 à l'or (construisez maintenant le Camp de Mineurs)." },
       "sprites": [{ "key": "mining_camp" }, { "key": "gold" }],
       "villagerCount": 27,
       "food": 18,
@@ -219,92 +225,131 @@
     {
       "id": 14,
       "phase": "Dark Age",
-      "label": "Vill 28 → Protect Base",
-      "description": "1 takes your base. Try to protect your gold with those walls, ideally no ranged unit should be able to reach your gold miners.",
+      "label": { "en": "Vill 28 → Protect Base", "fr": "Vill 28 → Protéger la Base" },
+      "description": {
+        "en": "1 takes your base. Try to protect your gold with those walls, ideally no ranged unit should be able to reach your gold miners.",
+        "fr": "1 protège votre base. Essayez de protéger votre or avec ces murs — idéalement aucune unité à distance ne devrait atteindre vos mineurs d'or."
+      },
       "sprites": [{ "key": "palisade_wall" }],
       "villagerCount": 28,
       "food": 18,
       "wood": 5,
       "gold": 4,
       "stone": 1,
-      "notes": "This villager builds palisade walls to protect your gold miners."
+      "notes": {
+        "en": "This villager builds palisade walls to protect your gold miners.",
+        "fr": "Ce villageois construit des palissades pour protéger vos mineurs d'or."
+      }
     },
     {
       "id": 15,
       "phase": "Dark Age",
-      "label": "Loom + Click Feudal Age",
-      "description": "Make loom and click up to Feudal Age (target time: 10:50).",
+      "label": { "en": "Loom + Click Feudal Age", "fr": "Métier à tisser + Cliquer l'Âge Féodal" },
+      "description": {
+        "en": "Make loom and click up to Feudal Age (target time: 10:50).",
+        "fr": "Faites le Métier à tisser et cliquez l'Âge Féodal (temps visé : 10:50)."
+      },
       "sprites": [{ "key": "loom" }, { "key": "feudal_age" }],
       "villagerCount": 28,
       "food": 5,
       "wood": 18,
       "gold": 4,
       "stone": 1,
-      "notes": "Redistribute villagers as you click up: aim for 5 food / 18 wood / 4 gold / 1 stone."
+      "notes": {
+        "en": "Redistribute villagers as you click up: aim for 5 food / 18 wood / 4 gold / 1 stone.",
+        "fr": "Redistribuez les villageois en cliquant : visez 5 nourriture / 18 bois / 4 or / 1 pierre."
+      }
     },
     {
       "id": 16,
-      "phase": "Feudal Age",
-      "label": "Send 6 Vills → Deer",
-      "description": "While going up, seed 2 farms and send 6 villagers to take deer (3 villagers on each deer).",
+      "phase": "Dark Age",
+      "label": { "en": "Send 6 Vills → Deer", "fr": "Envoyer 6 Vills → Cerfs" },
+      "description": {
+        "en": "While going up, seed 2 farms and send 6 villagers to take deer (3 villagers on each deer).",
+        "fr": "En montant, construisez 2 fermes et envoyez 6 villageois prendre les cerfs (3 villageois par cerf)."
+      },
       "sprites": [{ "key": "deer" }, { "key": "farm" }],
       "villagerCount": 28,
       "food": 5,
       "wood": 18,
       "gold": 4,
       "stone": 1,
-      "notes": "Arrival in Feudal Age at ~13:00. Build your two Feudal Age buildings immediately."
+      "notes": {
+        "en": "Arrival in Feudal Age at ~13:00. Build your two Feudal Age buildings immediately.",
+        "fr": "Arrivée en Âge Féodal vers ~13:00. Construisez immédiatement vos deux bâtiments de l'Âge Féodal."
+      }
     },
     {
       "id": 17,
       "phase": "Feudal Age",
-      "label": "Horse Collar + Age Up buildings",
-      "description": "On arrival in Feudal Age, research Horse Collar immediately. Build your two required Feudal Age buildings (e.g. Blacksmith + Market or Stable + Blacksmith).",
+      "label": { "en": "Horse Collar + Age Up buildings", "fr": "Collier de cheval + Bâtiments Féodaux" },
+      "description": {
+        "en": "On arrival in Feudal Age, research Horse Collar immediately. Build your two required Feudal Age buildings (e.g. Blacksmith + Market or Stable + Blacksmith).",
+        "fr": "À l'arrivée en Âge Féodal, recherchez immédiatement le Collier de cheval. Construisez vos deux bâtiments obligatoires de l'Âge Féodal (ex. Forge + Marché ou Écurie + Forge)."
+      },
       "sprites": [{ "key": "horse_collar" }, { "key": "blacksmith" }],
-      "villagerCount": 30,
-      "food": 10,
-      "wood": 7,
-      "gold": 9,
-      "stone": 4,
-      "notes": "Don't build military in Feudal Age — save all resources for the Castle Age push."
+      "villagerCount": 28,
+      "food": 800,
+      "wood": 200,
+      "gold": 200,
+      "stone": 0,
+      "notes": {
+        "en": "Don't build military in Feudal Age — save all resources for the Castle Age push.",
+        "fr": "Ne construisez pas de militaire en Âge Féodal — économisez toutes les ressources pour l'attaque de l'Âge Château."
+      }
     },
     {
       "id": 18,
       "phase": "Feudal Age",
-      "label": "Click Castle Age",
-      "description": "Click up to Castle Age (target time: 13:50). Arrival expected at ~16:30.",
+      "label": { "en": "Click Castle Age", "fr": "Cliquer l'Âge Château" },
+      "description": {
+        "en": "Click up to Castle Age (target time: 13:50). Arrival expected at ~16:30.",
+        "fr": "Cliquez l'Âge Château (temps visé : 13:50). Arrivée prévue vers ~16:30."
+      },
       "sprites": [{ "key": "castle_age" }],
-      "villagerCount": 30,
-      "food": 10,
-      "wood": 7,
-      "gold": 9,
-      "stone": 4
+      "villagerCount": 28,
+      "food": 800,
+      "wood": 200,
+      "gold": 200,
+      "stone": 0
     },
     {
       "id": 19,
       "phase": "Castle Age",
-      "label": "Forward Siege Workshop",
-      "description": "Send 2-3 villagers forward and build a Siege Workshop as close to the opponent as possible.",
-      "sprites": [{ "key": "siege_workshop" }, { "key": "siege" }],
-      "villagerCount": 30,
-      "food": 10,
-      "wood": 7,
-      "gold": 9,
-      "stone": 4,
-      "notes": "The forward Siege Workshop is the key to this push. Use Celts' faster siege production."
+      "label": { "en": "Forward Siege Workshop", "fr": "Atelier de Siège Avancé" },
+      "description": {
+        "en": "Send 2-3 villagers forward and build a Siege Workshop as close to the opponent as possible.",
+        "fr": "Envoyez 2-3 villageois en avant et construisez un Atelier de Siège le plus près possible de l'adversaire."
+      },
+      "sprites": [{ "key": "siege_workshop" }],
+      "villagerCount": 28,
+      "food": 800,
+      "wood": 200,
+      "gold": 200,
+      "stone": 0,
+      "notes": {
+        "en": "The forward Siege Workshop is the key to this push. Use Celts' faster siege production.",
+        "fr": "L'Atelier de Siège avancé est la clé de cette attaque. Exploitez la production de siège plus rapide des Celtes."
+      }
     },
     {
       "id": 20,
       "phase": "Castle Age",
-      "label": "Knights + Spearmen + Monks",
-      "description": "Start producing knights from stable, spearmen from barracks, and train monks from monastery to heal your push.",
-      "sprites": [{ "key": "knight" }, { "key": "spearman" }, { "key": "monk" }],
-      "villagerCount": 30,
-      "food": 10,
-      "wood": 7,
-      "gold": 9,
-      "stone": 4,
-      "notes": "Celts' siege units attack and move faster — push hard with battering rams and mangonels."
+      "label": { "en": "Knights + Spearmen + Monks", "fr": "Chevaliers + Lanciers + Moines" },
+      "description": {
+        "en": "Start producing knights from stable, spearmen from barracks, and train monks from monastery to heal your push.",
+        "fr": "Commencez à produire des chevaliers depuis l'Écurie, des lanciers depuis la Caserne et entraînez des moines depuis le Monastère pour soigner votre attaque."
+      },
+      "sprites": [{ "key": "knight" }, { "key": "spearman" }, { "key": "monk" }, { "key": "battering_ram" }, { "key": "mangonel" }],
+      "villagerCount": 28,
+      "food": 800,
+      "wood": 200,
+      "gold": 200,
+      "stone": 0,
+      "notes": {
+        "en": "Celts' siege units attack and move faster — push hard with battering rams and mangonels.",
+        "fr": "Les unités de siège des Celtes attaquent et se déplacent plus vite — attaquez fort avec des béliers et des mangonneaux."
+      }
     }
   ]
 }

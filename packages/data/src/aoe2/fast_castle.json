@@ -3,84 +3,129 @@
   "gameId": "aoe2",
   "name": "Fast Castle",
   "civilization": "Any",
-  "description": "Rush to Castle Age with ~21 villagers, skipping military investment in Feudal Age.",
+  "description": {
+    "en": "Rush to Castle Age with ~21 villagers, skipping military investment in Feudal Age.",
+    "fr": "Montez en Âge Château avec ~21 villageois en évitant tout investissement militaire en Âge Féodal."
+  },
   "steps": [
     {
       "id": 1,
-      "label": "6 Sheep",
-      "description": "Send your 3 starting villagers to the 6 sheep near your Town Center.",
+      "label": { "en": "6 Sheep", "fr": "6 Moutons" },
+      "description": {
+        "en": "Send your 3 starting villagers to the 6 sheep near your Town Center.",
+        "fr": "Envoyez vos 3 villageois de départ sur les 6 moutons près de votre Forum."
+      },
       "villagerCount": 3,
       "food": 200,
       "wood": 0,
       "gold": 0,
       "stone": 0,
-      "notes": "Keep sheep under the Town Center to avoid scout attacks."
+      "notes": {
+        "en": "Keep sheep under the Town Center to avoid scout attacks.",
+        "fr": "Gardez les moutons sous le Forum pour éviter les attaques du scout adverse."
+      }
     },
     {
       "id": 2,
-      "label": "3 Wood",
-      "description": "Queue 3 more villagers and send the next 3 to the nearest wood line.",
+      "label": { "en": "3 Wood", "fr": "3 Bois" },
+      "description": {
+        "en": "Queue 3 more villagers and send the next 3 to the nearest wood line.",
+        "fr": "Mettez 3 villageois en file et envoyez les 3 suivants sur la ligne de bois la plus proche."
+      },
       "villagerCount": 6,
       "food": 200,
       "wood": 50,
       "gold": 0,
       "stone": 0,
-      "notes": "Lure the boar as soon as you have 8 villagers."
+      "notes": {
+        "en": "Lure the boar as soon as you have 8 villagers.",
+        "fr": "Attirez le sanglier dès que vous avez 8 villageois."
+      }
     },
     {
       "id": 3,
-      "label": "1 Boar",
-      "description": "Lure the first boar with a villager and task 3–4 villagers on it.",
+      "label": { "en": "1 Boar", "fr": "1 Sanglier" },
+      "description": {
+        "en": "Lure the first boar with a villager and task 3–4 villagers on it.",
+        "fr": "Attirez le premier sanglier avec un villageois et affectez 3 à 4 villageois dessus."
+      },
       "villagerCount": 10,
       "food": 400,
       "wood": 100,
       "gold": 0,
       "stone": 0,
-      "notes": "Pull 1 sheep villager onto the boar to speed up food collection."
+      "notes": {
+        "en": "Pull 1 sheep villager onto the boar to speed up food collection.",
+        "fr": "Retirez 1 villageois des moutons pour l'affecter au sanglier et accélérer la collecte de nourriture."
+      }
     },
     {
       "id": 4,
-      "label": "Build Barracks & 2nd Boar",
-      "description": "Build a Barracks with a wood villager, then lure the 2nd boar.",
+      "label": { "en": "Build Barracks & 2nd Boar", "fr": "Construire Caserne & 2ème Sanglier" },
+      "description": {
+        "en": "Build a Barracks with a wood villager, then lure the 2nd boar.",
+        "fr": "Construisez une Caserne avec un villageois du bois, puis attirez le 2ème sanglier."
+      },
       "villagerCount": 14,
       "food": 500,
       "wood": 175,
       "gold": 0,
       "stone": 0,
-      "notes": "The Barracks is required to advance to Feudal Age."
+      "notes": {
+        "en": "The Barracks is required to advance to Feudal Age.",
+        "fr": "La Caserne est obligatoire pour passer à l'Âge Féodal."
+      }
     },
     {
       "id": 5,
-      "label": "Advance to Feudal Age",
-      "description": "With 14–15 villagers, click Feudal Age and task 2 villagers to build a Lumber Camp.",
+      "label": { "en": "Advance to Feudal Age", "fr": "Passer à l'Âge Féodal" },
+      "description": {
+        "en": "With 14–15 villagers, click Feudal Age and task 2 villagers to build a Lumber Camp.",
+        "fr": "Avec 14-15 villageois, cliquez l'Âge Féodal et envoyez 2 villageois construire un Camp de Bûcherons."
+      },
       "villagerCount": 15,
       "food": 500,
       "wood": 250,
       "gold": 0,
       "stone": 0,
-      "notes": "Feudal Age costs 500 food."
+      "notes": {
+        "en": "Feudal Age costs 500 food.",
+        "fr": "L'Âge Féodal coûte 500 de nourriture."
+      }
     },
     {
       "id": 6,
-      "label": "Build Blacksmith & Market",
-      "description": "In Feudal Age, build a Blacksmith and Market to unlock Castle Age.",
+      "label": { "en": "Build Blacksmith & Market", "fr": "Construire Forge & Marché" },
+      "description": {
+        "en": "In Feudal Age, build a Blacksmith and Market to unlock Castle Age.",
+        "fr": "En Âge Féodal, construisez une Forge et un Marché pour débloquer l'Âge Château."
+      },
       "villagerCount": 17,
       "food": 800,
       "wood": 200,
       "gold": 100,
       "stone": 0,
-      "notes": "Castle Age costs 800 food and 200 gold."
+      "notes": {
+        "en": "Castle Age costs 800 food and 200 gold.",
+        "fr": "L'Âge Château coûte 800 de nourriture et 200 d'or."
+      }
     },
     {
       "id": 7,
-      "label": "Advance to Castle Age",
-      "description": "Click Castle Age with ~21 villagers.",
+      "label": { "en": "Advance to Castle Age", "fr": "Passer à l'Âge Château" },
+      "description": {
+        "en": "Click Castle Age with ~21 villagers.",
+        "fr": "Cliquez l'Âge Château avec ~21 villageois."
+      },
       "villagerCount": 21,
       "food": 800,
       "wood": 300,
       "gold": 200,
       "stone": 0,
-      "notes": "You have reached the Fast Castle! Build a Castle or boom from here."
+      "notes": {
+        "en": "You have reached the Fast Castle! Build a Castle or boom from here.",
+        "fr": "Vous avez atteint le Fast Castle ! Construisez un Château ou boostez votre économie depuis ici."
+      }
     }
   ]
 }

@@ -2,6 +2,15 @@ import { z } from 'zod';
 import type { Step } from './index.js';
 
 /**
+ * Accepts either a plain non-empty string or a locale object with at least
+ * an English variant and an optional French variant.
+ */
+const localizedStringSchema = z.union([
+  z.string().min(1),
+  z.object({ en: z.string().min(1), fr: z.string().optional() }),
+]);
+
+/**
  * Validates the economic state of a build-order step.
  * The sum of resource villagers (food + wood + gold + stone) must equal
  * the total population count (pop). Stone is optional (defaults to 0 in the
@@ -28,9 +37,15 @@ export const stepSpriteSchema = z.object({
 /** Validates a single build-order step. */
 export const stepSchema = z.object({
   id: z.number().int().positive(),
-  label: z.string().min(1, 'Le déclencheur est requis'),
-  description: z.string().min(1, "L'instruction est requise"),
-  notes: z.string().optional(),
+  label: localizedStringSchema.refine(
+    (v) => (typeof v === 'string' ? v.length > 0 : v.en.length > 0),
+    { message: 'Trigger is required' },
+  ),
+  description: localizedStringSchema.refine(
+    (v) => (typeof v === 'string' ? v.length > 0 : v.en.length > 0),
+    { message: 'Instruction is required' },
+  ),
+  notes: localizedStringSchema.optional(),
   phase: z.string().optional(),
   sprites: z.array(stepSpriteSchema).optional(),
   villagerCount: z.number().min(0),
@@ -43,7 +58,7 @@ export const stepSchema = z.object({
 
 /** Validates a milestone checkpoint. */
 export const checkpointSchema = z.object({
-  label: z.string().min(1),
+  label: localizedStringSchema,
   clickTime: z.string().optional(),
   arrivalTime: z.string().optional(),
   villagerCount: z.number().min(0).optional(),
@@ -58,21 +73,24 @@ export const checkpointSchema = z.object({
 export const buildOrderSchema = z.object({
   id: z.string().min(1),
   gameId: z.string().min(1),
-  name: z.string().min(1, 'Le nom est requis'),
+  name: z.string().min(1, 'Name is required'),
   author: z.string().optional(),
   civilization: z.string().optional(),
-  description: z.string().optional(),
+  description: localizedStringSchema.optional(),
   difficulty: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
   strategy_notes: z
     .array(
       z.object({
-        phase: z.string().min(1),
-        notes: z.array(z.string().min(1)).min(1),
+        phase: localizedStringSchema,
+        notes: z.array(localizedStringSchema.refine(
+          (v) => (typeof v === 'string' ? v.length > 0 : v.en.length > 0),
+          { message: 'Note is required' },
+        )).min(1),
       })
     )
     .optional(),
   checkpoints: z.array(checkpointSchema).optional(),
-  steps: z.array(stepSchema).min(1, 'Au moins une étape est requise'),
+  steps: z.array(stepSchema).min(1, 'At least one step is required'),
 });
 
 /**

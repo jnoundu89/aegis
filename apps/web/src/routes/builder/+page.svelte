@@ -6,9 +6,10 @@
 	import { base } from '$app/paths';
 	import { catalog } from '$lib/registry';
 	import { builderStore } from '$lib/stores/builderStore';
+	import { settingsStore } from '$lib/stores/settingsStore';
 	import GuidedView from '$lib/components/GuidedView.svelte';
 	import TableView from '$lib/components/TableView.svelte';
-	import { t } from '$lib/i18n';
+	import { t, localize } from '$lib/i18n';
 
 	type ViewMode = 'guided' | 'table';
 	let viewMode = $state<ViewMode>('guided');
@@ -160,7 +161,7 @@
 				<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{$t('builder.description')}</span>
 				<input
 					type="text"
-					value={buildOrder.description ?? ''}
+					value={localize(buildOrder.description, $settingsStore.lang)}
 					oninput={(e) => builderStore.updateMeta('description', (e.target as HTMLInputElement).value)}
 					placeholder="Brief strategy overview…"
 					class="bg-stone-900 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100

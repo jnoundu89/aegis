@@ -3,32 +3,59 @@
   "gameId": "aoe2",
   "name": "Fast Archer Opening",
   "civilization": "Britons, Ethiopians, Mayans, Malay, Saracens, Vietnamese",
-  "description": "In generated land maps that you can wall easily, this is a good opening, especially if your opponent doesn't fully wall so you can do some damage early on. Best civs for this opening are archer civs such as Britons, Ethiopians, Mayans, Malay, Saracens, Vietnamese, and any civilization that has a good ranged tech tree.",
+  "description": {
+    "en": "In generated land maps that you can wall easily, this is a good opening, especially if your opponent doesn't fully wall so you can do some damage early on. Best civs for this opening are archer civs such as Britons, Ethiopians, Mayans, Malay, Saracens, Vietnamese, and any civilization that has a good ranged tech tree.",
+    "fr": "Sur les cartes terrestres générées où vous pouvez facilement vous murer, c'est une bonne ouverture, surtout si votre adversaire ne se mure pas complètement et que vous pouvez faire des dégâts tôt. Les meilleures civilisations pour cette ouverture sont les civilisations d'archers : Britanniques, Éthiopiens, Mayas, Malais, Sarrasins, Vietnamiens, et toute civilisation avec un bon arbre technologique à distance."
+  },
   "strategy_notes": [
     {
-      "phase": "FEUDAL AGE",
+      "phase": { "en": "FEUDAL AGE", "fr": "ÂGE FÉODAL" },
       "notes": [
-        "As soon as you hit Feudal Age, you should get wood upgrade and 1 or 2 ranges (depending if your opponent is already fully walled or not). If he's fully walled, open 1 range, get horse collar and start walling yourself.",
-        "If he's still open, go for 2 ranges (delay horse collar for late feudal or while upping to castle) and make a blacksmith for fletching. Start walling slowly with palisades/houses.",
-        "While researching fletching or when you just got it, move out with archers and look for opponent's weak spots.",
-        "Keep farming a lot (probably have 14-16 farms before upping), and once you have around 400-500 food, at around 17 minutes into the game and unless the enemy comes forward and the game gets messy, you should get wheelbarrow.",
-        "After that, try to click up to Castle Age as soon as you can. You should have around 8 villagers on gold to support double range and future Castle Age upgrades. While upping, make gold upgrade and archer armor."
+        {
+          "en": "As soon as you hit Feudal Age, you should get wood upgrade and 1 or 2 ranges (depending if your opponent is already fully walled or not). If he's fully walled, open 1 range, get horse collar and start walling yourself.",
+          "fr": "Dès que vous passez en Âge Féodal, prenez l'amélioration du bois et 1 ou 2 Camps à l'Arc (selon que votre adversaire soit entièrement muré ou non). S'il est entièrement muré, ouvrez 1 Range, prenez le Collier de cheval et commencez à vous murer."
+        },
+        {
+          "en": "If he's still open, go for 2 ranges (delay horse collar for late feudal or while upping to castle) and make a blacksmith for fletching. Start walling slowly with palisades/houses.",
+          "fr": "S'il est encore ouvert, allez pour 2 Ranges (retardez le Collier de cheval pour la fin du Féodal ou pendant la montée en Château) et faites une Forge pour Empennage. Commencez à vous murer lentement avec des palissades/maisons."
+        },
+        {
+          "en": "While researching fletching or when you just got it, move out with archers and look for opponent's weak spots.",
+          "fr": "Pendant la recherche d'Empennage ou juste après l'avoir obtenu, sortez avec vos archers et cherchez les points faibles de l'adversaire."
+        },
+        {
+          "en": "Keep farming a lot (probably have 14-16 farms before upping), and once you have around 400-500 food, at around 17 minutes into the game and unless the enemy comes forward and the game gets messy, you should get wheelbarrow.",
+          "fr": "Faites beaucoup de fermes (probablement 14-16 avant de monter) et une fois que vous avez environ 400-500 de nourriture, vers 17 minutes de jeu et sauf si l'ennemi attaque et la partie devient chaotique, prenez la Brouette."
+        },
+        {
+          "en": "After that, try to click up to Castle Age as soon as you can. You should have around 8 villagers on gold to support double range and future Castle Age upgrades. While upping, make gold upgrade and archer armor.",
+          "fr": "Après cela, essayez de monter en Âge Château dès que possible. Vous devriez avoir environ 8 villageois à l'or pour supporter double Range et les futures améliorations de l'Âge Château. Pendant la montée, faites l'amélioration de l'or et l'armure des archers."
+        }
       ]
     },
     {
-      "phase": "CASTLE AGE",
+      "phase": { "en": "CASTLE AGE", "fr": "ÂGE CHÂTEAU" },
       "notes": [
-        "As soon as you hit Castle Age, you must get crossbow upgrade, bodkin arrow and bow saw.",
-        "Next most common thing while harassing with crossbow is setting a good eco with 2 or 3 TCs and then doing what suits the game and your play style (ballistics, siege, monks, etc).",
-        "With this opening, fast ballistics is really good if you feel that there's going to be a fight in early castle or if you think you can do some damage, so doing fast university even before the new TCs can be a good thing."
+        {
+          "en": "As soon as you hit Castle Age, you must get crossbow upgrade, bodkin arrow and bow saw.",
+          "fr": "Dès que vous passez en Âge Château, obtenez l'amélioration Arbalétrier, Pointe Bodkin et Scie à Arc."
+        },
+        {
+          "en": "Next most common thing while harassing with crossbow is setting a good eco with 2 or 3 TCs and then doing what suits the game and your play style (ballistics, siege, monks, etc).",
+          "fr": "La chose la plus courante ensuite, tout en harcelant avec des arbalétriers, est de mettre en place une bonne économie avec 2 ou 3 Forums puis de faire ce qui convient à la partie et à votre style (balistique, siège, moines, etc)."
+        },
+        {
+          "en": "With this opening, fast ballistics is really good if you feel that there's going to be a fight in early castle or if you think you can do some damage, so doing fast university even before the new TCs can be a good thing.",
+          "fr": "Avec cette ouverture, la balistique rapide est très efficace si vous sentez qu'il va y avoir un combat en début d'Âge Château ou si vous pensez pouvoir faire des dégâts — donc faire l'Université rapidement avant même les nouveaux Forums peut être une bonne chose."
+        }
       ]
     }
   ],
   "steps": [
     {
       "id": 1,
-      "label": "Début de partie",
-      "description": "6 villageois sur les moutons.",
+      "label": { "en": "Start of game", "fr": "Début de partie" },
+      "description": { "en": "6 villagers on sheep.", "fr": "6 villageois sur les moutons." },
       "villagerCount": 6,
       "food": 6,
       "wood": 0,
@@ -37,8 +64,8 @@
     },
     {
       "id": 2,
-      "label": "Création Vills 7 à 10",
-      "description": "4 villageois au bois.",
+      "label": { "en": "Create Vills 7 to 10", "fr": "Création Vills 7 à 10" },
+      "description": { "en": "4 villagers to wood.", "fr": "4 villageois au bois." },
       "villagerCount": 10,
       "food": 6,
       "wood": 4,
@@ -47,8 +74,8 @@
     },
     {
       "id": 3,
-      "label": "Création Vill 11",
-      "description": "1 villageois attire le premier sanglier.",
+      "label": { "en": "Create Vill 11", "fr": "Création Vill 11" },
+      "description": { "en": "1 villager lures the first boar.", "fr": "1 villageois attire le premier sanglier." },
       "villagerCount": 11,
       "food": 7,
       "wood": 4,
@@ -57,8 +84,11 @@
     },
     {
       "id": 4,
-      "label": "Création Vill 12",
-      "description": "1 villageois construit une maison puis un moulin sur les baies.",
+      "label": { "en": "Create Vill 12", "fr": "Création Vill 12" },
+      "description": {
+        "en": "1 villager builds a house then a mill near the berries.",
+        "fr": "1 villageois construit une maison puis un moulin sur les baies."
+      },
       "villagerCount": 12,
       "food": 8,
       "wood": 4,
@@ -67,8 +97,8 @@
     },
     {
       "id": 5,
-      "label": "Création Vills 13 à 14",
-      "description": "2 villageois supplémentaires sur les baies.",
+      "label": { "en": "Create Vills 13 to 14", "fr": "Création Vills 13 à 14" },
+      "description": { "en": "2 more villagers to berries.", "fr": "2 villageois supplémentaires sur les baies." },
       "villagerCount": 14,
       "food": 10,
       "wood": 4,
@@ -77,8 +107,8 @@
     },
     {
       "id": 6,
-      "label": "Création Vill 15",
-      "description": "1 villageois attire le deuxième sanglier.",
+      "label": { "en": "Create Vill 15", "fr": "Création Vill 15" },
+      "description": { "en": "1 villager lures the second boar.", "fr": "1 villageois attire le deuxième sanglier." },
       "villagerCount": 15,
       "food": 11,
       "wood": 4,
@@ -87,8 +117,8 @@
     },
     {
       "id": 7,
-      "label": "Création Vill 16",
-      "description": "1 villageois supplémentaire sur les baies.",
+      "label": { "en": "Create Vill 16", "fr": "Création Vill 16" },
+      "description": { "en": "1 more villager to berries.", "fr": "1 villageois supplémentaire sur les baies." },
       "villagerCount": 16,
       "food": 12,
       "wood": 4,
@@ -97,8 +127,11 @@
     },
     {
       "id": 8,
-      "label": "Création Vills 17 à 18",
-      "description": "2 villageois à la nourriture sous le Forum. L'un d'eux doit construire une maison.",
+      "label": { "en": "Create Vills 17 to 18", "fr": "Création Vills 17 à 18" },
+      "description": {
+        "en": "2 villagers to food under TC. One of them must build a house.",
+        "fr": "2 villageois à la nourriture sous le Forum. L'un d'eux doit construire une maison."
+      },
       "villagerCount": 18,
       "food": 14,
       "wood": 4,
@@ -107,8 +140,11 @@
     },
     {
       "id": 9,
-      "label": "Création Vills 19 à 20",
-      "description": "2 villageois au bois (construire un 2ème Camp de Bûcherons). Déplacer également 1 villageois de la nourriture vers le bois (pour avoir 7 au bois au total).",
+      "label": { "en": "Create Vills 19 to 20", "fr": "Création Vills 19 à 20" },
+      "description": {
+        "en": "2 villagers to wood (build a 2nd Lumber Camp). Also move 1 villager from food to wood (for 7 total on wood).",
+        "fr": "2 villageois au bois (construire un 2ème Camp de Bûcherons). Déplacer également 1 villageois de la nourriture vers le bois (pour avoir 7 au bois au total)."
+      },
       "villagerCount": 20,
       "food": 13,
       "wood": 7,
@@ -117,25 +153,37 @@
     },
     {
       "id": 10,
-      "label": "Pop 21 — Loom & Féodal",
-      "description": "Rechercher le Métier à tisser (Loom) et cliquer vers l'Âge Féodal (Temps visé : 07:30).",
+      "label": { "en": "Pop 21 — Loom & Feudal", "fr": "Pop 21 — Loom & Féodal" },
+      "description": {
+        "en": "Research Loom and click Feudal Age (target time: 07:30).",
+        "fr": "Rechercher le Métier à tisser (Loom) et cliquer vers l'Âge Féodal (Temps visé : 07:30)."
+      },
       "villagerCount": 20,
       "food": 13,
       "wood": 7,
       "gold": 0,
       "stone": 0,
-      "notes": "Le compteur de population inclut le scout. Objectif : Féodal à 7:30."
+      "notes": {
+        "en": "The population count includes the scout. Target: Feudal at 7:30.",
+        "fr": "Le compteur de population inclut le scout. Objectif : Féodal à 7:30."
+      }
     },
     {
       "id": 11,
-      "label": "Transition Féodal",
-      "description": "Déplacer 3 villageois des moutons vers l'or, construire une Caserne. Déplacer 2 villageois des moutons et 3 des baies vers le bois.",
+      "label": { "en": "Feudal Transition", "fr": "Transition Féodal" },
+      "description": {
+        "en": "Move 3 villagers from sheep to gold and build a Barracks. Move 2 from sheep and 3 from berries to wood.",
+        "fr": "Déplacer 3 villageois des moutons vers l'or, construire une Caserne. Déplacer 2 villageois des moutons et 3 des baies vers le bois."
+      },
       "villagerCount": 20,
       "food": 5,
       "wood": 12,
       "gold": 3,
       "stone": 0,
-      "notes": "Construire Range(s) et Forge. Rechercher Fletching en priorité."
+      "notes": {
+        "en": "Build Range(s) and Blacksmith. Research Fletching as a priority.",
+        "fr": "Construire Range(s) et Forge. Rechercher Fletching en priorité."
+      }
     }
   ]
 }

@@ -1,7 +1,8 @@
 <script lang="ts">
 import { catalog } from '$lib/registry';
 import { base } from '$app/paths';
-import { t } from '$lib/i18n';
+import { t, localize } from '$lib/i18n';
+import { settingsStore } from '$lib/stores/settingsStore';
 import type { CatalogEntry, Difficulty } from '@aegis/core';
 
 // ── Filter state ──────────────────────────────────────────────────────────
@@ -33,7 +34,7 @@ if (selectedAuthor && bo.author !== selectedAuthor) return false;
 if (selectedDifficulty && bo.difficulty !== selectedDifficulty) return false;
 if (searchQuery) {
 const q = searchQuery.toLowerCase().trim();
-const hay = [bo.name, bo.civilization, bo.description, bo.author, ...(bo.tags ?? [])]
+const hay = [bo.name, bo.civilization, localize(bo.description, $settingsStore.lang), bo.author, ...(bo.tags ?? [])]
 .filter(Boolean)
 .join(' ')
 .toLowerCase();
@@ -304,7 +305,7 @@ class="group bg-stone-900 border border-stone-800 hover:border-amber-500/60
 {/if}
 
 {#if bo.description}
-<p class="text-xs text-stone-400 leading-relaxed line-clamp-2 flex-1">{bo.description}</p>
+<p class="text-xs text-stone-400 leading-relaxed line-clamp-2 flex-1">{localize(bo.description, $settingsStore.lang)}</p>
 {/if}
 
 <!-- Tags -->

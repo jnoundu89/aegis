@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { builderStore } from '$lib/stores/builderStore';
+	import { settingsStore } from '$lib/stores/settingsStore';
 	import type { BuildOrder } from '@aegis/core';
-	import { t } from '$lib/i18n';
+	import { t, localize } from '$lib/i18n';
 
 	let { buildOrder }: { buildOrder: BuildOrder } = $props();
 
@@ -55,7 +56,7 @@
 					<td class="px-2 py-1.5">
 						<input
 							type="text"
-							value={step.label}
+							value={localize(step.label, $settingsStore.lang)}
 							oninput={(e) => builderStore.updateStep(i, { label: (e.target as HTMLInputElement).value })}
 							placeholder={$t('table.trigger_placeholder')}
 							class="w-full bg-transparent border border-transparent hover:border-stone-700
@@ -68,7 +69,7 @@
 					<td class="px-2 py-1.5">
 						<input
 							type="text"
-							value={step.description}
+							value={localize(step.description, $settingsStore.lang)}
 							oninput={(e) => builderStore.updateStep(i, { description: (e.target as HTMLInputElement).value })}
 							placeholder={$t('table.instruction_placeholder')}
 							class="w-full bg-transparent border border-transparent hover:border-stone-700
