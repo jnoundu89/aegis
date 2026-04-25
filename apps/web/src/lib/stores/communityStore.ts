@@ -55,7 +55,10 @@ function createCommunityStore() {
 				.select('id')
 				.single();
 
-			if (err) throw new Error(err.message);
+			if (err) {
+				const detail = err.details ? ` (${err.details})` : '';
+				throw new Error(`${err.message}${detail}`);
+			}
 			return (data as { id: string }).id;
 		},
 	};

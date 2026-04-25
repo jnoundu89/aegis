@@ -140,16 +140,20 @@
 										? 'bg-amber-500/20 border border-amber-500/60 ring-1 ring-amber-500/40'
 										: 'border border-transparent hover:border-stone-600'}"
 								>
-									{#if entry.url}
-										<img
-											src={entry.url}
-											alt={entry.label}
-											class="w-8 h-8 object-contain"
-											onerror={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-										/>
-									{:else}
-										<span class="text-xl leading-none">{entry.emoji}</span>
-									{/if}
+									<!-- Sprite icon: emoji always rendered; image overlays on top (hides on load error) -->
+									<span class="relative w-8 h-8 flex items-center justify-center shrink-0">
+										<span class="absolute inset-0 flex items-center justify-center text-xl leading-none" aria-hidden="true">
+											{entry.emoji}
+										</span>
+										{#if entry.url}
+											<img
+												src={entry.url}
+												alt={entry.label}
+												class="absolute inset-0 w-8 h-8 object-contain"
+												onerror={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+											/>
+										{/if}
+									</span>
 									<span class="text-stone-400 text-[10px] leading-tight line-clamp-1 w-full text-center">
 										{entry.label}
 									</span>

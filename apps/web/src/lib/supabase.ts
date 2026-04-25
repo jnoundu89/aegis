@@ -3,6 +3,16 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl: string = import.meta.env.VITE_SUPABASE_URL ?? '';
 const supabaseAnonKey: string = import.meta.env.VITE_SUPABASE_ANON_KEY ?? '';
 
+/** Whether Supabase has been configured with real credentials. */
+export const supabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
+
+if (!supabaseConfigured && typeof window !== 'undefined') {
+	console.warn(
+		'[Aegis] Supabase is not configured. Community features will be unavailable.\n' +
+		'Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env file.',
+	);
+}
+
 /**
  * Client-side Supabase client using the public anon key.
  * Row Level Security policies on the `community_builds` table enforce access control:
@@ -11,15 +21,12 @@ const supabaseAnonKey: string = import.meta.env.VITE_SUPABASE_ANON_KEY ?? '';
  *   - Only authenticated admins can UPDATE/DELETE rows
  *
  * Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env file.
- * If the keys are absent, community features will be silently disabled.
+ * Community features are gracefully disabled when credentials are absent.
  */
 export const supabase = createClient(
 	supabaseUrl || 'https://placeholder.supabase.co',
 	supabaseAnonKey || 'placeholder',
 );
-
-/** Whether Supabase has been configured with real credentials. */
-export const supabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
 
 /** Shape of a row in the `community_builds` table. */
 export interface CommunityBuild {

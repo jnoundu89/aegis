@@ -155,16 +155,20 @@
 								class="inline-flex items-center gap-1.5 bg-stone-800 border border-stone-700
 								       rounded-xl pl-2 pr-1 py-1 text-xs text-stone-200"
 							>
-								{#if entry.url}
-									<img
-										src={entry.url}
-										alt={entry.label}
-										class="w-5 h-5 object-contain shrink-0"
-										onerror={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-									/>
-								{:else}
-									<span class="text-base leading-none">{entry.emoji}</span>
-								{/if}
+								<!-- Sprite icon: emoji base with image overlay -->
+								<span class="relative w-5 h-5 flex items-center justify-center shrink-0">
+									<span class="absolute inset-0 flex items-center justify-center text-base leading-none" aria-hidden="true">
+										{entry.emoji}
+									</span>
+									{#if entry.url}
+										<img
+											src={entry.url}
+											alt={entry.label}
+											class="absolute inset-0 w-5 h-5 object-contain"
+											onerror={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+										/>
+									{/if}
+								</span>
 								<span>{sp.label ?? entry.label}</span>
 								<button
 									onclick={() => builderStore.removeSprite(i, sp.key)}

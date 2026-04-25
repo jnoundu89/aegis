@@ -70,7 +70,12 @@
 				.on(
 					'postgres_changes',
 					{ event: 'INSERT', schema: 'public', table: 'community_builds' },
-					() => { loadPending(); },
+					(payload) => {
+						const newBuild = payload.new as CommunityBuild;
+						if (newBuild.status === 'pending') {
+							pendingBuilds = [...pendingBuilds, newBuild];
+						}
+					},
 				)
 				.subscribe();
 		}
