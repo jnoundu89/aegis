@@ -17,6 +17,7 @@
 	"dependencies": {
 		"@aegis/core": "workspace:*",
 		"@aegis/data": "workspace:*",
+		"@supabase/supabase-js": "2.50.0",
 		"@tauri-apps/api": "^2",
 		"lz-string": "^1.5.0"
 	},

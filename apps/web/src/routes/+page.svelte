@@ -95,6 +95,13 @@ class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-amber-500 hover:b
 {$t('home.create_bo')}
 </a>
 
+<a
+href="{base}/community"
+class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-stone-800 hover:bg-stone-700 border border-stone-700 hover:border-sky-600/60 text-stone-200 font-semibold text-sm transition-all"
+>
+{$t('community.title')}
+</a>
+
 <!-- Quick stats per game -->
 <div class="flex items-center gap-6 text-xs text-stone-500 font-medium">
 {#each catalog.games as game}
