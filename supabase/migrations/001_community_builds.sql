@@ -28,7 +28,17 @@ create index if not exists community_builds_status_idx
 -- 2. Enable Row Level Security
 alter table public.community_builds enable row level security;
 
--- 3. RLS Policies ────────────────────────────────────────────
+-- 3. Table-level privileges ─────────────────────────────────
+-- Supabase SQL migrations do not automatically grant privileges to
+-- the anon / authenticated roles (unlike the Table Editor UI).
+-- Without these GRANTs, RLS policies are never reached and every
+-- INSERT from an unauthenticated client fails with
+-- "new row violates row-level security policy".
+
+grant select, insert on public.community_builds to anon;
+grant select, insert, update, delete on public.community_builds to authenticated;
+
+-- 4. RLS Policies ────────────────────────────────────────────
 
 -- Anyone can read approved builds (public catalogue)
 create policy "Public read approved"
