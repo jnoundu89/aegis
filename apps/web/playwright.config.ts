@@ -21,5 +21,10 @@ export default defineConfig({
 		command: 'pnpm dev',
 		url: 'http://localhost:5173',
 		reuseExistingServer: !process.env.CI,
+		env: {
+			// Fake credentials so supabaseConfigured=true; real API calls are intercepted by page.route()
+			VITE_SUPABASE_URL: 'http://localhost:54321',
+			VITE_SUPABASE_ANON_KEY: 'test-anon-key',
+		},
 	},
 });
