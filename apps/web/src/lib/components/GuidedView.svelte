@@ -3,6 +3,8 @@
 	import { settingsStore } from '$lib/stores/settingsStore';
 	import type { BuildOrder } from '@aegis/core';
 	import { t, localize } from '$lib/i18n';
+	import { sprites, getSprite } from '$lib/sprites';
+	import SpritePicker from '$lib/components/SpritePicker.svelte';
 
 	let { buildOrder }: { buildOrder: BuildOrder } = $props();
 
@@ -23,6 +25,9 @@
 		{ field: 'gold',  label: $t('resource.gold'),  emoji: '🪙', text: 'text-yellow-300' },
 		{ field: 'stone', label: $t('resource.stone'), emoji: '🪨', text: 'text-slate-300'  },
 	]);
+
+	/** Index of the step whose sprite picker is currently open, or -1 if closed. */
+	let pickerOpenForStep = $state(-1);
 </script>
 
 <div class="flex flex-col gap-4">
@@ -128,6 +133,50 @@
 				</div>
 			</div>
 
+			<!-- Sprites / icons -->
+			<div class="flex flex-col gap-2">
+				<div class="flex items-center justify-between gap-2">
+					<span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
+						{$t('guided.sprites')}
+					</span>
+					<button
+						onclick={() => (pickerOpenForStep = i)}
+						class="text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+					>
+						{$t('guided.add_sprite')}
+					</button>
+				</div>
+
+				{#if step.sprites && step.sprites.length > 0}
+					<div class="flex flex-wrap gap-2">
+						{#each step.sprites as sp}
+							{@const entry = getSprite(sp.key)}
+							<span
+								class="inline-flex items-center gap-1.5 bg-stone-800 border border-stone-700
+								       rounded-xl pl-2 pr-1 py-1 text-xs text-stone-200"
+							>
+								{#if entry.url}
+									<img
+										src={entry.url}
+										alt={entry.label}
+										class="w-5 h-5 object-contain shrink-0"
+										onerror={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+									/>
+								{:else}
+									<span class="text-base leading-none">{entry.emoji}</span>
+								{/if}
+								<span>{sp.label ?? entry.label}</span>
+								<button
+									onclick={() => builderStore.removeSprite(i, sp.key)}
+									class="text-stone-500 hover:text-red-400 transition-colors leading-none ml-0.5"
+									aria-label={$t('guided.remove_sprite')}
+								>✕</button>
+							</span>
+						{/each}
+					</div>
+				{/if}
+			</div>
+
 			<!-- Resource allocations -->
 			<div class="grid grid-cols-2 gap-3">
 				{#each resources as res}
@@ -165,3 +214,13 @@
 		{$t('guided.add_step')}
 	</button>
 </div>
+
+{#if pickerOpenForStep >= 0}
+	<SpritePicker
+		selectedKeys={buildOrder.steps[pickerOpenForStep]?.sprites?.map((s) => s.key) ?? []}
+		onselect={(key) => {
+			builderStore.addSprite(pickerOpenForStep, key);
+		}}
+		onclose={() => (pickerOpenForStep = -1)}
+	/>
+{/if}

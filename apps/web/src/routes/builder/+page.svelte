@@ -9,6 +9,7 @@
 	import { settingsStore } from '$lib/stores/settingsStore';
 	import GuidedView from '$lib/components/GuidedView.svelte';
 	import TableView from '$lib/components/TableView.svelte';
+	import SubmitModal from '$lib/components/SubmitModal.svelte';
 	import { t, localize } from '$lib/i18n';
 
 	type ViewMode = 'guided' | 'table';
@@ -27,6 +28,7 @@
 
 	let shareUrl = $state<string | null>(null);
 	let importError = $state<string | null>(null);
+	let showSubmitModal = $state(false);
 
 	const difficulties: Difficulty[] = ['beginner', 'intermediate', 'advanced'];
 
@@ -259,16 +261,29 @@
 
 	<!-- Share section -->
 	<section class="w-full max-w-3xl space-y-3">
-		<button
-			onclick={handleShare}
-			disabled={!isValid}
-			class="w-full h-12 rounded-2xl font-bold text-base transition-all
-			       {isValid
-				? 'bg-amber-500 hover:bg-amber-400 active:bg-amber-300 text-stone-950 shadow-lg shadow-amber-500/30'
-				: 'bg-stone-800 text-stone-500 cursor-not-allowed opacity-50'}"
-		>
-			{$t('builder.share')}
-		</button>
+		<div class="flex flex-col sm:flex-row gap-3">
+			<button
+				onclick={handleShare}
+				disabled={!isValid}
+				class="flex-1 h-12 rounded-2xl font-bold text-base transition-all
+				       {isValid
+					? 'bg-amber-500 hover:bg-amber-400 active:bg-amber-300 text-stone-950 shadow-lg shadow-amber-500/30'
+					: 'bg-stone-800 text-stone-500 cursor-not-allowed opacity-50'}"
+			>
+				{$t('builder.share')}
+			</button>
+
+			<button
+				onclick={() => (showSubmitModal = true)}
+				disabled={!isValid}
+				class="flex-1 h-12 rounded-2xl font-bold text-base transition-all
+				       {isValid
+					? 'bg-sky-600 hover:bg-sky-500 active:bg-sky-400 text-white shadow-lg shadow-sky-600/30'
+					: 'bg-stone-800 text-stone-500 cursor-not-allowed opacity-50'}"
+			>
+				{$t('builder.submit')}
+			</button>
+		</div>
 
 		{#if shareUrl}
 			<div class="bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 flex flex-col gap-1">
@@ -314,3 +329,7 @@
 		</div>
 	{/if}
 </main>
+
+{#if showSubmitModal}
+	<SubmitModal buildOrder={buildOrder} onclose={() => (showSubmitModal = false)} />
+{/if}

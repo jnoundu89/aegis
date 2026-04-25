@@ -136,6 +136,35 @@ function createBuilderStore() {
 			});
 		},
 
+		/** Append a sprite key to a step (no-op if already present). */
+		addSprite(stepIndex: number, key: string): void {
+			update((bo) => {
+				const steps = bo.steps.map((s, i) => {
+					if (i !== stepIndex) return s;
+					const existing = s.sprites ?? [];
+					if (existing.some((sp) => sp.key === key)) return s;
+					return { ...s, sprites: [...existing, { key }] };
+				});
+				const updated = { ...bo, steps };
+				save(updated);
+				return updated;
+			});
+		},
+
+		/** Remove a sprite key from a step. */
+		removeSprite(stepIndex: number, key: string): void {
+			update((bo) => {
+				const steps = bo.steps.map((s, i) => {
+					if (i !== stepIndex) return s;
+					const sprites = (s.sprites ?? []).filter((sp) => sp.key !== key);
+					return { ...s, sprites: sprites.length ? sprites : undefined };
+				});
+				const updated = { ...bo, steps };
+				save(updated);
+				return updated;
+			});
+		},
+
 		/** Reset to default empty draft and clear localStorage. */
 		reset(): void {
 			const fresh = structuredClone(defaultBuildOrder);
