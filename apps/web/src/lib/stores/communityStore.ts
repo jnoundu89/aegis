@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import { supabase } from '$lib/supabase';
+import { supabase, supabaseConfigured } from '$lib/supabase';
 import type { CommunityBuild } from '$lib/supabase';
 
 function createCommunityStore() {
@@ -14,6 +14,10 @@ function createCommunityStore() {
 
 		/** Fetch all approved community builds from Supabase. */
 		async load(): Promise<void> {
+			if (!supabaseConfigured) {
+				error.set('Community features are unavailable: Supabase is not configured.');
+				return;
+			}
 			loading.set(true);
 			error.set(null);
 			const { data, error: err } = await supabase
@@ -40,6 +44,9 @@ function createCommunityStore() {
 			data: unknown;
 			submitterEmail: string | null;
 		}): Promise<string> {
+			if (!supabaseConfigured) {
+				throw new Error('Community features are unavailable: Supabase is not configured.');
+			}
 			const { data, error: err } = await supabase
 				.from('community_builds')
 				.insert({
