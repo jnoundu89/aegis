@@ -2,9 +2,12 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Builder page', () => {
 	test.beforeEach(async ({ page }) => {
-		// Clear any previous draft from localStorage
+		// Clear any previous draft from localStorage and set language to French
 		await page.goto('/builder');
-		await page.evaluate(() => localStorage.removeItem('aegis_draft_bo'));
+		await page.evaluate(() => {
+			localStorage.removeItem('aegis_draft_bo');
+			localStorage.setItem('aegis_settings', JSON.stringify({ lang: 'fr', ttsEnabled: false }));
+		});
 		await page.reload();
 	});
 
@@ -65,6 +68,6 @@ test.describe('Builder page', () => {
 		await nameInput.fill('Test Reset');
 		// Reset
 		await page.locator('button', { hasText: 'Réinitialiser le brouillon' }).click();
-		await expect(nameInput).toHaveValue('Nouvel Ordre de Construction');
+		await expect(nameInput).toHaveValue('New Build Order');
 	});
 });

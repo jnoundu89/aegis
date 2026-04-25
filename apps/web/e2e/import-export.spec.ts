@@ -24,7 +24,10 @@ const VALID_BO = {
 test.describe('Import / Export JSON', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.goto('/builder');
-		await page.evaluate(() => localStorage.removeItem('aegis_draft_bo'));
+		await page.evaluate(() => {
+			localStorage.removeItem('aegis_draft_bo');
+			localStorage.setItem('aegis_settings', JSON.stringify({ lang: 'fr', ttsEnabled: false }));
+		});
 		await page.reload();
 	});
 
