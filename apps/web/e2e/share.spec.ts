@@ -6,12 +6,6 @@ import { test, expect } from '@playwright/test';
  * - sets villagerCount = food + wood + gold + stone to pass economy validation
  */
 async function fillValidStep(page: import('@playwright/test').Page, stepIndex = 0) {
-	// Ensure French language is set before interacting with French UI text
-	await page.evaluate(() => {
-		localStorage.setItem('aegis_settings', JSON.stringify({ lang: 'fr', ttsEnabled: false }));
-	});
-	await page.reload();
-
 	const labelInputs = page.locator('input[placeholder*="moutons"]');
 	await labelInputs.nth(stepIndex).fill('6 moutons');
 
